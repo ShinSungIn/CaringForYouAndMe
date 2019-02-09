@@ -22,8 +22,11 @@
 				<category android:name="android.intent.category.LAUNCHER"/>
 			</intent-filter>
 		</activity>
+		<!-- 회원가입 -->
 		<activity android:name=".RegisterActivity"/>
+		<!-- 메인 -->
 		<activity android:name=".activity.MainActivity"/>
+		<!-- 메인 하위 8개 메뉴 -->
 		<activity android:name=".KnownActivity" android:label="@string/title_activity_known" android:theme="@style/AppTheme.NoActionbar"/>
 		<activity android:name=".PreventionActivity" android:label="@string/title_activity_prevention" android:theme="@style/AppTheme.NoActionbar"/>
 		<activity android:name=".RoadmapActivity" android:label="@string/title_activity_roadmap" android:theme="@style/AppTheme.NoActionbar"/>
@@ -32,16 +35,16 @@
 		<activity android:name=".SupportSecActivity" android:label="@string/title_activity_supportmain2" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".SupportThiActivity" android:label="@string/title_activity_supportmain3" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".SupportForActivity" android:label="@string/title_activity_supportmain4" android:theme="@style/AppTheme.NoActionbar"></activity>
-
+		<activity android:name=".CrueprogramActivity" android:label="@string/title_activity_crueprogram" android:theme="@style/AppTheme.NoActionbar"></activity>
+		<activity android:name=".DiaryActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".DictionaryActivity" android:label="@string/title_activity_dictionary" android:theme="@style/AppTheme.NoActionbar"></activity>
-		<!--
-		<activity android:name=".KnownActivity" android:label="@string/title_activity_crueprogram" android:theme="@style/AppTheme.NoActionbar"></activity>
-		<activity android:name=".KnownActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
-		<activity android:name=".KnownActivity" android:label="@string/title_activity_feeling" android:theme="@style/AppTheme.NoActionbar"></activity
-        -->
-
+		<activity android:name=".FeelingActivity" android:label="@string/title_activity_feeling" android:theme="@style/AppTheme.NoActionbar"></activity>
+		<!-- 번외 1.유튜브 동영상 보기(각 페이지 동영상) -->
 		<activity android:name=".YoutubePlayerActivity"></activity>
+		<!-- 번외 2.이미지 확대(각 페이지 이미지) -->
 		<activity android:name=".PhotoViewActivity"></activity>
+		<!-- 번외 3.알람설정(메인) -->
+		<activity android:name=".AlarmActivity"></activity>
 	</application>
 
 </manifest>

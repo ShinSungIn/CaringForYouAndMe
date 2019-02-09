@@ -100,10 +100,10 @@ public class SupportThiActivity extends AppCompatActivity {
 
 	private void setToolbar() {
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
 		// toolbar 뒤로 버튼 활성화
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		toolbar.setTitle("4-3.치매안심센터");
+		setSupportActionBar(toolbar);
 	}
 
 	@Override

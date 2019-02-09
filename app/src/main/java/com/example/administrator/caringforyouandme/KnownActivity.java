@@ -160,10 +160,11 @@ public class KnownActivity extends AppCompatActivity {
 
 	private void setToolbar() {
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
 		// toolbar 뒤로 버튼 활성화
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		toolbar.setTitle("1.치매알기");
+
+		setSupportActionBar(toolbar);
 
 		System.out.println("setToolbar in");
 	}

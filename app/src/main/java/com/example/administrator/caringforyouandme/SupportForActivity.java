@@ -225,10 +225,10 @@ public class SupportForActivity extends AppCompatActivity {
 
 	private void setToolbar() {
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
 		// toolbar 뒤로 버튼 활성화
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		toolbar.setTitle("4-4.기타 지원서비스");
+		setSupportActionBar(toolbar);
 	}
 
 	@Override

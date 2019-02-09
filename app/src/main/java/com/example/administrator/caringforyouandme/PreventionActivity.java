@@ -104,10 +104,10 @@ public class PreventionActivity extends AppCompatActivity {
 
 	private void setToolbar() {
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
+		toolbar.setTitle("2.치매예방");
 		// toolbar 뒤로 버튼 활성화
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		toolbar.setTitle("2.치매예방");
+		setSupportActionBar(toolbar);
 
 		System.out.println("setToolbar in");
 	}

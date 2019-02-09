@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import com.example.administrator.caringforyouandme.AlarmActivity;
 import com.example.administrator.caringforyouandme.DictionaryActivity;
 import com.example.administrator.caringforyouandme.KnownActivity;
 import com.example.administrator.caringforyouandme.PreventionActivity;
@@ -149,6 +150,13 @@ public class MainActivity extends AppCompatActivity
 
 		//noinspection SimplifiableIfStatement
 		if (id == R.id.action_settings) {
+			Toast.makeText(this, "action_settings", Toast.LENGTH_SHORT).show();
+			return true;
+		} else if (id == R.id.action_alarm) {
+			// 알람설정 클릭
+			// 엑티비티만 만들어둔 것
+			Intent alarmIntent = new Intent(MainActivity.this, AlarmActivity.class);
+			MainActivity.this.startActivity(alarmIntent);
 			return true;
 		}
 
