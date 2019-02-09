@@ -1,0 +1,742 @@
+<resources>
+	<string name="app_name">CaringForYouAndMe</string>
+	<!-- 유튜브 테스트 -->
+	<string name="play_button">Play button</string>
+	<string name="null_time">0:00</string>
+	<string name="open_video_in_youtube">Open video in YouTube</string>
+	<string name="full_screen_button">Full screen button</string>
+	<string name="live">LIVE</string>
+
+	<!-- Strings related to login -->
+	<string name="prompt_id">ID</string>
+	<string name="prompt_password">Password</string>
+	<string name="action_sign_in">Sign in or register</string>
+	<string name="action_sign_in_short">Sign in</string>
+	<string name="error_invalid_id">아이디가 잘못되었습니다/</string>
+	<string name="error_invalid_password">비밀번호가 잘못되었습니다.</string>
+	<string name="error_incorrect_password">비밀번호가 올바르지 않습니다.</string>
+	<string name="error_field_required">필수입력입니다.</string>
+	<string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
+
+	<!-- Strings related to navigation -->
+	<string name="navigation_drawer_open">Open navigation drawer</string>
+	<string name="navigation_drawer_close">Close navigation drawer</string>
+	<string name="nav_header_title">Android Studio</string>
+	<string name="nav_header_subtitle">android.studio@android.com</string>
+	<string name="nav_header_desc">Navigation header</string>
+
+	<string name="section_format">Hello World from section: %1$d</string>
+	<string name="action_settings">Settings</string>
+	<string name="action_mainAll">전체</string>
+	<string name="action_prevention1">치매예방</string>
+
+	<!-- 메뉴 타이틀 정의 --><!-- 메뉴 타이틀 정의 --><!-- 메뉴 타이틀 정의 --><!-- 메뉴 타이틀 정의 --><!-- 메뉴 타이틀 정의 --><!-- 메뉴 타이틀 정의 --><!-- 메뉴 타이틀 정의 -->
+	<string name="title_activity_known">1.치매알기</string>
+	<string name="title_activity_prevention">2.치매예방</string>
+	<string name="title_activity_roadmap">3.치매서비스로드맵</string>
+	<string name="title_activity_support">4.치매지원서비스</string>
+		<string name="title_activity_supportmain1">4-1.장기요양급여 지원</string>
+		<string name="title_activity_supportmain2">4-2.장기요양급여 지원 신청방법</string>
+		<string name="title_activity_supportmain3">4-3.치매안심센터</string>
+		<string name="title_activity_supportmain4">4-4.기타 지원서비스</string>
+
+	<string name="title_activity_crueprogram">5.치료프로그램</string>
+	<string name="title_activity_diary">6.우리들의 돌봄일기</string>
+	<string name="title_activity_dictionary">7.돌봄사전</string>
+	<string name="title_activity_feeling">8.나의감정살피기</string>
+
+	<!-- 1.치매알기 --><!-- 1.치매알기 --><!-- 1.치매알기 --><!-- 1.치매알기 --><!-- 1.치매알기 --><!-- 1.치매알기 --><!-- 1.치매알기 --><!-- 1.치매알기 --><!-- 1.치매알기 --><!-- 1.치매알기 -->
+
+
+	<string name="known_main1">치매종류 및 원인</string>
+	<string name="known_main1_sub1">경도인지장애</string>
+	<string name="known_main1_sub2">알츠하이머형치매</string>
+	<string name="known_main1_sub3">혈관성치매</string>
+	<string name="known_main1_sub4">루이체치매</string>
+	<string name="known_main1_sub5">전두측두엽치매</string>
+	<string name="known_main1_sub6">알코올치매</string>
+	<string name="known_main1_sub7">가역성치매</string>
+	<string name="known_main2">치매약물치료</string>
+	<string name="known_main2_sub1">도네페질</string>
+	<string name="known_main2_sub2">리바스티그민</string>
+	<string name="known_main2_sub3">메만틴</string>
+	<string name="known_main2_sub4">갈란타민</string>
+
+	<string name="text_known_kind1">
+		기억력의 저하가 정형적 노화를 벗어나 진행하여 정상이 범주에 속하지 않지만 치매로 진단할 수 있을 정도로 심하지 않은 상태입니다.\n\n
+		매년 10~15% 비율로 치매로 이행되므로 치매의 조기진단과 치료에 중요하다.\n
+		‘치매의 전 단계’라고도 합니다.\n\n
+		정상노화 \u003C 경도인지장애 \u003C 치매
+	</string>
+	<string name="text_known_kind2">
+		"가장 대표적이며 전체 치매의 50-80%를 차지합니다.\n"
+		"뇌세포의 퇴화로 기억력을 비롯한 여러 인지기능이 점진적으로 저하되며 일상생활의 장애가 초래되는 만성 뇌질환 입니다.\n"
+		"매우 서서히 발병하여 점진적으로 안화가 진행되는 것이 특징입니다.\n"
+		"노인반과 신경섬유다발이 뇌에 점차 쌓이고, 이로 인하여 신경세포들이 죽으면서 발생합니다."
+	</string>
+	<string name="text_known_kind3">
+		"두번째로 흔한 치매의 원인이며, 전체 치매의 15-20%를 차지합니다. 우리나라는 서양보다 비율이 높다.\n"
+		"뇌졸증의 위험인자와 비슷하며, 뇌 혈관이 좋아지거나 막혀서 나타나는 허혈성 뇌혈관질환과 뇌혈관의 파열로 인해 출혈이 발생하는 출혈성 뇌혈관질환이 있습니다.\n"
+		"고혈압, 당뇨, 고지혈증 등이 있는 경우, 또 흡연을 하거나 과음을 자주 할 경우 발생 위험이 증가합니다."
+	</string>
+	<string name="text_known_kind4">
+		"전체 치매의 10-25% 정도를 차지할 정도로 흔한 질환이며, 시누클린이라는 단백질에 이상이 생겨 루이체가 만들어 집니다.\n"
+		"루이체가 뇌 겉질에 축적이 되면 치매증상을 먼저 일으키게 되고, 환시, 주의력과 각성 등의 인지변화가 현저히 나타납니다."
+	</string>
+	<string name="text_known_kind5">
+		"치매 중 5-10%정도를 차지하며, 전두엽이나 측두엽의 앞쪽에서부터 진행됩니다.\n"
+		"많은 말을 하면서, 많은 것을 절제하고, 많은 것을 생각하고, 많은 것을 판단하는데 대부분 뇌의 앞쪽에서 담당합니다.\n"
+		"이 부위에 문제가 발생할 경우 말을 이상하게 하고, 참을 성이 없어지고, 판단력이 저하될 수 있습니다."
+	</string>
+	<string name="text_known_kind6">
+		"알코올은 신경세포에 부정적인 영향을 주며, 장기간 과음을 지속할 경우 이러한 영향이 축적되어 치매로 진행할 수 있습니다.\n"
+		"알코올 자체의 독성에 의해 발생하는 경우도 있고, 알코올 섭취로 인한 비타민 B1결핍이 원인인 경우도 있습니다."
+	</string>
+	<string name="text_known_kind7">
+		"완치가 가능한 원인에 의해 발생한 치매를 말하며 전체 치매의5-10%가 이에 해당합니다.\n"
+		"대표적인 원인질환으로 우울증에 의한 가성치매, 정상압 뇌수두증, 뇌종양 및 만성 경막하 혈종, 감염성 질환, 내분비 질환, 결핍성 질환, 알코올 중독, 약물과 연관된 치매가 있습니다."
+	</string>
+	<string name="text_known_drug_info">
+		!! 약물의 용량과 부작용은 의사와 상의합니다.\n
+		과거에 먹던 약을 먹거나 의사와 상의 없이 약 복용을 중단하면 안됩니다.
+	</string>
+	<string name="text_known_drug1">
+		▶ 아리셉트\n
+		-사용시기: 경증, 중등도, 중증 치매\n
+		-제형: 경구용\n
+		-부작용: 오심, 구토, 설사, 어지럼증\n\n
+
+		▶작용:\n
+		아세틸콜린의 이용도를 높임으로써 작용하는 것으로 알려져 있는데 취침 전 하루에 한번 복용으로 가능합니다.\n
+		뇌 안에서 아세틸콜린이 분해되어 없어지는 것을 담당하는 효소를 억제함으로써 뇌 안의 아세틸콜린의 양을 증가시켜 환자의 증상을 호전 시키고자 개발된 약물들입니다.\n
+		초기 및 중기의 알츠하이머병에 걸려있는 일부 환자들에게서는 이 약에 의하여 인지 기능이 향상되는 것을 볼 수 있습니다.\n
+		그러나 알츠하이머병 자체를 멈추거나 되돌이킬 수는 없습니다.\n
+		얼마나 오랫동안 환자들이 이러한 약을 복용해야 하는지 또 얼마나 오랫동안 효과가 있는지에 대해서는 아직 명확하지 않습니다.\n\n
+
+		▶부작용:\n
+		오심과 설사, 피곤감등이 있으나 이러한 부작용들은 심하지 않고 곧 없어지게 됩니다.
+	</string>
+	<string name="text_known_drug2">
+		▶ 엑셀론\n
+		-사용시기: 경증, 중등도 치매\n
+		-제형: 경구용, 패치\n
+		-부작용: 오심, 구토, 설사, 어지럼증\n\n
+
+		▶작용:\n
+		아세틸콜린 에스테라제 억제제입니다.\n
+		뇌 안에서 아세틸콜린이 분해되어 없어지는 것을 담당하는 효소를 억제함으로써 뇌 안의 아세틸콜린의 양을 증가시켜 환자의 증상을 호전 시키고자 개발된 약물들입니다.\n
+		경증, 중등도 치매환자에게 사용합니다.\n\n
+
+		▶부작용:\n
+		오심, 구토, 설사, 어지럼증이 있으며 심하면 의사, 약사에게 알립니다.
+	</string>
+	<string name="text_known_drug3">
+		▶ 에빅사\n
+		-사용시기: 중등도, 중증 치매\n
+		-제형: 경구용\n
+		-부작용: 오심, 구토, 설사, 어지럼증\n\n
+
+		▶작용:\n
+		중등도에서 중증의 알츠하이머 치료에 사용하며 신경의 과도한 칼슘 유입 노출을 막습니다.\n
+		보호자가 환자의 약물복용을 주기적으로 확인할 수 있는 경우 한해 시작합니다.\n\n
+
+		▶부작용:\n
+		오심, 구토, 설사, 어지럼증이 있으며 심하면 의사, 약사에게 알립니다.
+	</string>
+	<string name="text_known_drug4">
+		▶ 레미닐\n
+		-사용시기: 경등도, 중등도 치매\n
+		-제형: 경구용\n
+		-부작용: 오심, 구토, 설사, 어지럼증\n\n
+
+		▶작용:\n
+		신경전달물질 분비를 촉진하는 아세틸콜린이 분해효소에 의해 줄어드는 것을 방지함으로써 정상적인 뇌기능을 유지하게	해주는 작용을 합니다.\n
+		신경전달물질의 분비를 증가시킴으로써 인지장애, 행동장애를 개선하고 기억력을 증진시키는 작용으로 알쯔하이머형 치매에 해한 치료효과를 가집니다.\n\n
+
+		▶부작용:\n
+		오심, 구토, 설사, 어지럼증이 있으며 심하면 의사, 약사에게 알립니다.
+	</string>
+	<!-- TODO: Remove or change this placeholder text -->
+	<string name="hello_blank_fragment">Hello blank fragment</string>
+
+	<string name="large_text">
+		"Material is the metaphor.\n\n"
+
+		"A material metaphor is the unifying theory of a rationalized space and a system of motion."
+		"The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+		"technologically advanced and open to imagination and magic.\n"
+		"Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+		"use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+		"flexibility of the material creates new affordances that supercede those in the physical "
+		"world, without breaking the rules of physics.\n"
+		"The fundamentals of light, surface, and movement are key to conveying how objects move, "
+		"interact, and exist in space and in relation to each other. Realistic lighting shows "
+		"seams, divides space, and indicates moving parts.\n\n"
+
+		"Bold, graphic, intentional.\n\n"
+
+		"The foundational elements of print based design typography, grids, space, scale, color, "
+		"and use of imagery guide visual treatments. These elements do far more than please the "
+		"eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+		"imagery, large scale typography, and intentional white space create a bold and graphic "
+		"interface that immerse the user in the experience.\n"
+		"An emphasis on user actions makes core functionality immediately apparent and provides "
+		"waypoints for the user.\n\n"
+
+		"Motion provides meaning.\n\n"
+
+		"Motion respects and reinforces the user as the prime mover. Primary user actions are "
+		"inflection points that initiate motion, transforming the whole design.\n"
+		"All action takes place in a single environment. Objects are presented to the user without "
+		"breaking the continuity of experience even as they transform and reorganize.\n"
+		"Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+		"Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+		"3D world.\n\n"
+
+		"The material environment is a 3D space, which means all objects have x, y, and z "
+		"dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+		"positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+		"position along the z-axis and has a standard 1dp thickness.\n"
+		"On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+		"emulated by manipulating the y-axis.\n\n"
+
+		"Light and shadow.\n\n"
+
+		"Within the material environment, virtual lights illuminate the scene. Key lights create "
+		"directional shadows, while ambient light creates soft shadows from all angles.\n"
+		"Shadows in the material environment are cast by these two light sources. In Android "
+		"development, shadows occur when light sources are blocked by sheets of material at "
+		"various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+		"y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+		"Resting elevation.\n\n"
+
+		"All material objects, regardless of size, have a resting elevation, or default elevation "
+		"that does not change. If an object changes elevation, it should return to its resting "
+		"elevation as soon as possible.\n\n"
+
+		"Component elevations.\n\n"
+
+		"The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+		"does not vary from 6dp in one app to 16dp in another app).\n"
+		"Components may have different resting elevations across platforms, depending on the depth "
+		"of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+		"Responsive elevation and dynamic elevation offsets.\n\n"
+
+		"Some component types have responsive elevation, meaning they change elevation in response "
+		"to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+		"changes are consistently implemented using dynamic elevation offsets.\n"
+		"Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+		"to the component’s resting state. They ensure that elevation changes are consistent "
+		"across actions and component types. For example, all components that lift on press have "
+		"the same elevation change relative to their resting elevation.\n"
+		"Once the input event is completed or cancelled, the component will return to its resting "
+		"elevation.\n\n"
+
+		"Avoiding elevation interference.\n\n"
+
+		"Components with responsive elevations may encounter other components as they move between "
+		"their resting elevations and dynamic elevation offsets. Because material cannot pass "
+		"through other material, components avoid interfering with one another any number of ways, "
+		"whether on a per component basis or using the entire app layout.\n"
+		"On a component level, components can move or be removed before they cause interference. "
+		"For example, a floating action button (FAB) can disappear or move off screen before a "
+		"user picks up a card, or it can move if a snackbar appears.\n"
+		"On the layout level, design your app layout to minimize opportunities for interference. "
+		"For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+		"when a user tries to pick up one of cards.\n\n"
+	</string>
+
+	<!-- 2.치매예방 --><!-- 2.치매예방 --><!-- 2.치매예방 --><!-- 2.치매예방 --><!-- 2.치매예방 --><!-- 2.치매예방 --><!-- 2.치매예방 --><!-- 2.치매예방 --><!-- 2.치매예방 -->
+	<string name="prevention_main1">치매예방</string>
+	<string name="prevention_main1_sub1">치매위험인자</string>
+	<string name="prevention_main1_sub2">치매예방수칙</string>
+	<string name="prevention_main1_sub3">세대별 치매예방액션플랜</string>
+
+	<string name="text_prevention1">
+
+	</string>
+
+	<!-- 3.치매서비스로드맵 -->
+
+	<!-- 4.치매지원서비스 --><!-- 4.치매지원서비스 --><!-- 4.치매지원서비스 --><!-- 4.치매지원서비스 --><!-- 4.치매지원서비스 --><!-- 4.치매지원서비스 --><!-- 4.치매지원서비스 -->
+	<!-- 4.치매지원서비스 --><!-- 4-1.장기요양급여 지원서비스 --><!-- 4-1-1.재가급여 -->
+	<string name="support_main1_sub1">장기요양급여지원-재가급여</string>
+		<string name="support_main1_sub1_1">방문간호</string>
+			<string name="text_support_main1_sub1_1">
+				-장기요양요원인 간호(조무)사 또는 치과위생사가 의사, 한의사 또는 치과의사의 방문간호지시서에 따라 수급자의 가정 등을 방문하여\n
+				간호, 진료의 보조, 요양에 관한 상담 또는 교육, 구강 위생 등을 제공합니다.\n\n
+
+				-의료기관에서 방문간호지시서를 발급받고, 이를 방문간호 급여이용시 기관에 제출합니다.\n\n
+
+				-본인일부부담금: 장기요양급여비용의 15%\n\n
+
+				장기요양보험인정서 지참\n
+				↓(다음)\n
+				방문간호지시서 발급\n
+				↓(다음)\n
+				원하는 서비스 이용\n
+			</string>
+		<string name="support_main1_sub1_2">방문요양</string>
+			<string name="text_support_main1_sub1_2">
+				-장기요양요원이 수급자의 가정 등을 방문하여 신체활동 및 가사활동 등을 지원합니다.\n\n
+
+				1) 인지활동형 방문요양: 인지기능 악화 방지 및 잔존능력 유지를 위해 인지자극 활동과 일상생활 함께하기를 제공합니다.\n
+				가사지원은 제공할 수 없으나, 사회활동 훈련을 제공하는 방법으로 대상자와 함께 옷 개기, 요리하기 등은 가능합니다.\n\n
+
+				2) 24시간 방문요양: 가정에서 중증치매어르신을 돌보는 가족을 지원하기 위한 제도로,\n
+				24시간 동안 치매 어르신의 가정에서 요양보호사가 보호자를 대신하여 일상적인 돌봄 서비스를 제공합니다.\n
+				서비스 기간 중 간호(조무)사가 1회 이상 방문하여 응급상황에 대비할 수 있습니다.
+			</string>
+		<string name="support_main1_sub1_3">방문목욕</string>
+			<string name="text_support_main1_sub1_3">
+				-장기요양요원이 목욕설비를 갖춘 장비를 이용하여 수급자의 가정 등을 방문하여 목욕을 제공합니다.
+			</string>
+		<string name="support_main1_sub1_4">주.야간보호</string>
+			<string name="text_support_main1_sub1_4">
+				-하루 중 일정 기간 동안 장기요양기관에 보호하여 신체활동 지원 및 심신기능의 유지, 향상을 위한 교육과 활동 등을 제공합니다.\n\n
+
+				-일상생활지원(취미, 운동 등 여가생활서비스), 일상생활동작훈련(이동, 체위변경, 기능훈련, 식사 등)을 제공합니다.
+			</string>
+		<string name="support_main1_sub1_5">단기보호</string>
+			<string name="text_support_main1_sub1_5">
+				-일정 기간 동안 장기요양기관에 보호하여 신체활동 지원 및 심신기능의 유지와 향상을 위한 교육, 훈련 등을 제공합니다.\n
+				(월 한도액 범위 내에서 월 9일 이내로 이용해야 하지만 연간 4회(1회9일 범위 내)에 한하여 월 한도액에 관계없이 연장하여 이용할 수 있습니다.)
+			</string>
+		<string name="support_main1_sub1_6">복지용구</string>
+			<string name="text_support_main1_sub1_6">
+				-수급자의 일상생활, 신체활동 지원에 필요한 물품을 구입하거나 대여가 가능합니다.\n\n
+				-건강보험공단 지성 복지용구사업소에 복지용구급여확인서 제시하여야 합니다.\n\n
+				-복지용구 연 한도액: 연간 160만원\n
+			</string>
+			<string name="text_support_main1_sub1_6_1">
+				▷ 구입 가능한 복지용구 품목(10종)
+			</string>
+			<string name="text_support_main1_sub1_6_2">
+				▷ 대여 가능한 복지용구 품목(7종)
+			</string>
+			<string name="text_support_main1_sub1_6_3">
+				▷ 구입 또는 대여품목(1종)
+			</string>
+
+	<!-- 4.치매지원서비스 --><!-- 4-1.장기요양급여 지원서비스 --><!-- 4-1-2.시설급여 -->
+	<string name="support_main1_sub2">장기요양급여지원-시설급여</string>
+	<string name="support_main1_sub2_1">노인요양시설</string>
+		<string name="text_support_main1_sub2_1_1">
+			1.노인요양시설(요양원이라고도 합니다)\n
+			-미리 건강보험공단 각 지역별 지사에 신청하여 장기요양등급판정(1~2급, 3~5 등급자 중 가족 구성원이 돌보기 곤란하거나 주거환경 열약 둥 특별한 사유 있으면 예외적으로 가능)을 받아두셔야 합니다.\n\n
+			-치매, 뇌 혈관성 질환 등 심신에 상당한 장애가 발생하여 도움을 필요로 하는 노인에게 급식요양과 그 밖에 일상생활에 필요한 편의를 제공합니다.\n\n
+			-가족의 건강악화 등 일상적인 돌봄을 제공하기 어려운 경우는 의사는 상주하지 않고 간단한 외래 치료만 가능한 요양원을 먼저 고려합니다.\n\n
+			-요양원 내에는 상주하는 의사가 없으므로, 현재 복용 중인 모든 약물을 가져가야 합니다.
+		</string>
+		<string name="text_support_main1_sub2_1_2">
+			단! 요양병원은 국민건강보험의 지원을 받으며 의료적 처치와 관찰이 필요한 어르신에게 적합합니다.
+		</string>
+	<string name="support_main1_sub2_2">노인요양공동생활</string>
+		<string name="text_support_main1_sub2_2">
+			1.노인요양공동생활가정\n
+			-가정의 환경과 유사합니다.\n\n
+			-치매, 뇌혈관성 질환 등 심신에 상당한 장애가 발생하여 도움을 필요로 하는 노인에게 가정과 같은 주거여건과 급식, 요양, 그 밖에 일상생활에 필요한 편의를 제공합니다.\n\n
+
+			※ 본인일부부담금: 장기요양급여비용의 20%\n
+			※ 장기요양보험공단-검색서비스 에서 적합한 기관을 찾을 수 있습니다.
+		</string>
+
+	<!-- 4.치매지원서비스 --><!-- 4-1.장기요양급여 지원서비스 --><!-- 4-1-3.가족요양비 -->
+	<string name="support_main1_sub3">장기요양급여지원-가족요양비</string>
+	<string name="support_main1_sub3_1">가족요양비</string>
+		<string name="text_support_main1_sub2_3">
+			-가족요양비는 도서,벽지 등 방문요양기관이 현저히 부족한 지역에 거주하거나 천재지변이나 그 밖에 이와 유사한 사유로 인하여 장기요양기관에서 장기요양급여를 이용하기 어려운자,\n
+			신체 정신 또는 성격 등 대통령이 정하는 사유로 인하여 가족 등으로부터 장기요양을 받아야하는 수급자에게 현금으로 지급\n\n
+
+			-장기요양등급(가족요양비) 1.2.3 등급 1개월 15.000원 동일
+		</string>
+
+	<!-- 4.치매지원서비스 --><!-- 4-2.장기요양급여 신청방법 -->
+	<string name="support_main2">신청방법</string>
+		<string name="text_support_main2_sub1_1">
+			〮장기요양보험공단 홈페이지 서비스이용가이드 참고\n
+			〮노인장기요양보험 문의전화 1577-1000
+		</string>
+	<!-- 4.치매지원서비스 --><!-- 4-3.치매안심센터 -->
+	<string name="support_main3">치매안심센터</string>
+	<string name="support_main3_sub1_1">소개</string>
+	<string name="support_main3_sub1_2">환자지원</string>
+	<string name="support_main3_sub1_3">가족지원</string>
+	<!-- 4.치매지원서비스 --><!-- 4-4.기타 지원서비스 -->
+	<string name="support_main4">기타 지원서비스</string>
+		<string name="support_main4_sub1_1">치매가족휴가제</string>
+		<string name="text_support_main4_sub1_1">
+			-간병으로 지친 가족들이 쉴 수 있도록 치매 어르신(장기요양1~5등급 치매수급자, 인지지원 등급수급자, 노인돌봄 종합서비스 이용자)이 월 한도액과 관계없이 연간 최대 6일까지 단기보호시설 또는 24시간 방문요양서비스를 이용하실 수 있습니다.
+		</string>
+		<string name="support_main4_sub2_1">치매가족휴가제</string>
+		<string name="text_support_main4_sub2_1">
+			-꾸준한 약물치료로 치매를 조기에 지속적으로 치료, 관리함으로써 증상악화가 보다 지연될 수 있도록 치매 어르신의 치매치료관리비를 지원합니다.\n\n
+			-치매치료관리비 보험급여 중 본인부담금(치매 약제비 본인부담금+약 처방 당일의 진료비 본인부담금)을 월 최대 30,000 원까지 실비로 보장합니다.\n\n
+			단, 기준 중위소득120%이하 , 3인 가구의 경우 평균소득 100%이하인 분
+		</string>
+		<string name="support_main4_sub3_1">배회가능어르신 인식표보급</string>
+		<string name="text_support_main4_sub3_1">
+			1.배회가능 어르신 인식표 보급\n
+			1) 신청대상: 실종 위험이 있는 치매환자 및 만 60세 이상 어르신\n
+			2) 신청방법: 발급대상자의 주민등록 상 주소지 치매안심센터\n
+			3) 비용: 무료(80매제송), 재신청 가능
+		</string>
+		<string name="support_main4_sub3_2">지문 등 사전등록제</string>
+		<string name="text_support_main4_sub3_2">
+			1.지문 등 사전등록제\n\n
+			1) 신청대상: 치매어르신 누구나\n
+			2) 방문신청:\n
+			- 오프라인: 치매안심센터 및 경찰서(지구대, 파출소 포함)로 치매환자와 함께 방문 등록, 치매요양병원 등 찾아가는 현장방문 등록\n
+			- 온란인: 안전드림 홈페이지 및 안전드립 앱을 통해 등록\n\n
+			3) 구비서류: 치매진단서 및 소견서, 가족을 증명할 수 있는 주민등록 증 또는 가족관계증명서, 치매환자 및 치매환자 보호자 신분증
+		</string>
+		<string name="support_main4_sub3_3">배회감지기</string>
+		<string name="text_support_main4_sub3_3">
+			1.배회감지기\n\n
+			1) 신청대상: 국민건강보험공단 노인장기요양보험 수급자 중 복지용구 급여확인서에 배회감지기가 이용가능으로 표시된 수급자\n\n
+			2) 신청방법: 복지용구 급여확인서에 사용가능 여부확인, 장기요양인정서, 표준장기요양이용계획서, 복지용구급여확인서를 지참하여 복지용구 사업소 방문 -> 복지용구사업소와 상담을 통해 계약 체결 후 이용\n\n
+			3) 배회감지기 종류
+		</string>
+		<string name="text_support_main4_sub3_3_1">
+			-GPS형: 착용하거나 부착하여 사용하는 형태로 위성신호 이용
+		</string>
+		<string name="text_support_main4_sub3_3_2">
+			-매트형: 침대 밑이나 현관문 앞에 설치하여 램프 등 알람 울려 알려주는 형태
+		</string>
+		<string name="support_main4_sub4_1">성년후견제도</string>
+		<string name="text_support_main4_sub4_1">
+			-치매 어르신과 같이 정신적 어려움(인지기능저하, 판단력 장애)등으로 본인 스스로 의사결정을 할 수 없는 경우이거나 추후에 판단력 저하(인지기능저하)에 대비하여 신뢰할 수 있는 사람과 후견계약을 맺는 제도입니다. 후견을 통해 법률행위(부동산 계약), 재산관리(통장관리), 사회복지서비스 이용, 신상보호(시설입소 및 병원입원)및 사회생활에서 필요한 사무처리를 지원받을 수 있습니다.
+		</string>
+
+	<!-- 5.치료프로그램 -->
+	<!-- 6.우리들의 돌봄일기 -->
+	<!-- 7.돌봄사전 -->
+	<string name="dictionary_main1">경도치매</string>
+		<string name="dictionary_main1_sub1">돌봄원칙 및 대화</string>
+		<string name="text_dictionary_main1_sub1">
+			* 경도 치매환자의 돌봄원칙\n\n
+			1.스스로 할 수 있도록 합니다.\n
+			2.도움이 필요한 동작은 보조해 주어야 합니다.\n
+			3.필요한 동작을 보조해줄 때 간결하고 쉽게 말합니다.\n
+			4.규칙적인 생활을 유지합니다.\n
+			5.따뜻하게 응대하고 치매환자의 생활을 소중히 여깁니다.\n\n
+
+			* 대화\n\n
+			-치매어르신을 빼 놓고 다른 사람과 대화하지 않습니다.\n
+			-치매어르신이 원하는 것을 짐작하지 말고 직접 물어보고 대답을 듣습니다.\n
+			-대화할 수 있는 시간을 충분히 줍니다. 도움을 필요로 하지 않는 이상은 말을 중간에 끊거나 끼어들지 않습니다.\n
+			-자신의 감정에 대해 정직하고 솔직해야 합니다.\n
+			-치매어르신을 멀리하지 마십시오, 가족의 지지와 격려는 치매어르신에게 매우 중요합니다.\n
+		</string>
+		<string name="dictionary_main1_sub2">식사,배뇨 및 배설</string>
+		<string name="text_dictionary_main1_sub2">
+			* 식사\n\n
+			-치매환자는 질병이 진행됨에 따라 식사를 준비하는 기능에서부터 음식을 씹고 삼키는 기능에 이르기까지 서서히 기능이 쇠퇴하여 스스로 식사를 할 수 없게 됩니다.\n
+			-가족은 치매환자의 식사와 관련되어 남아있는 기능과 쇠퇴한 기능을 파악하고 어떤 동작을 도와주어야 하는지, 어떻게 도와주어야 하는지 등을 파악해야 합니다.\n
+			-치매환자의 식습관을 미리 파악하여 가능한 정해진 시간에 식사하도록 도와주어야 합니다.\n
+			-과식하는 치매환자가 계속해서 먹을 것을 찾을 때에는 간단한 음식을 함께 만들어 먹거나 필요에 따라 과일 등 칼로리가 높지 않은 간식을 소량씩 제공합니다.\n
+			-입맛을 잃은 대상자는 작은 접시에 적은 양의 음식을 자주 주는 것이 좋습니다. 식사시간이나 횟수를 늘려 영양불균형과 지나친 체중감소를 예방합니다.\n
+			-금방 식사하고 나서 또 먹겠다고 재촉하면 “식사를 만들어 드릴게요”라고 말하며 함께 장을 보러 나간다든지, 식사 준비에 필요한 야채를 함께 다듬어 보는 것을 시도해 봅니다.\n\n
+
+			* 배뇨 및 배설\n\n
+			-배설문제는 매우 개인적인 부분이므로 배설 문제가 발생하면 가족뿐만 아니라 치매 환자도 매우 당황하게 되고 수치심을 느낄 수 있습니다.\n
+			이때 가족이 야단을 치면, 치매환자는 야단의 내용을 이해하지 못한 채 수치심과 불안감만 커질 수 있으므로\n
+			치매환자의 행동을 바꾸기 위해 야단을 치거나 벌을 주는 것이 배설 문제를 해결하는데 아무 도움이 되지 않는 다는 사실을 기억해야 합니다.\n\n
+
+			-환자의 감정과 자존심이 상하지 않도록 화를 내거나 무시하는 태도를 보이지 않는 것이 가장 중요합니다.\n
+			그리고 평소에 대소변 패턴을 잘 관찰하여 배설 전에 미리 화장실에 가도록 유도하거나 치매환자가 대소변을 보는 곳에 이동식 변기를 설치하여 치매환자가 쉽게 이용하도록 합니다.\n\n
+
+			-배뇨시간을 계획하여 습관화 할 수 있는 훈련을 하거나 규칙적으로 식사 후, 활동 전이나 잠들기 전에 화장실을 다녀올 수 있도록 합니다.\n
+			-화장실 까지 이동이 어렵거나 시간이 오래 걸리는 경우, 이동 가능한 가벼운 변기(양변기)가 도움이 됩니다.\n
+		</string>
+		<string name="text_dictionary_main1_sub2_1">
+			* 식사\n\n
+			-치매환자는 질병이 진행됨에 따라 식사를 준비하는 기능에서부터 음식을 씹고 삼키는 기능에 이르기까지 서서히 기능이 쇠퇴하여 스스로 식사를 할 수 없게 됩니다.\n
+			-가족은 치매환자의 식사와 관련되어 남아있는 기능과 쇠퇴한 기능을 파악하고 어떤 동작을 도와주어야 하는지, 어떻게 도와주어야 하는지 등을 파악해야 합니다.\n
+			-치매환자의 식습관을 미리 파악하여 가능한 정해진 시간에 식사하도록 도와주어야 합니다.\n
+			-과식하는 치매환자가 계속해서 먹을 것을 찾을 때에는 간단한 음식을 함께 만들어 먹거나 필요에 따라 과일 등 칼로리가 높지 않은 간식을 소량씩 제공합니다.\n
+			-입맛을 잃은 대상자는 작은 접시에 적은 양의 음식을 자주 주는 것이 좋습니다. 식사시간이나 횟수를 늘려 영양불균형과 지나친 체중감소를 예방합니다.\n
+			-금방 식사하고 나서 또 먹겠다고 재촉하면 “식사를 만들어 드릴게요”라고 말하며 함께 장을 보러 나간다든지, 식사 준비에 필요한 야채를 함께 다듬어 보는 것을 시도해 봅니다.
+		</string>
+		<string name="text_dictionary_main1_sub2_2">
+			* 배뇨 및 배설\n\n
+			-배설문제는 매우 개인적인 부분이므로 배설 문제가 발생하면 가족뿐만 아니라 치매 환자도 매우 당황하게 되고 수치심을 느낄 수 있습니다.\n
+			이때 가족이 야단을 치면, 치매환자는 야단의 내용을 이해하지 못한 채 수치심과 불안감만 커질 수 있으므로\n
+			치매환자의 행동을 바꾸기 위해 야단을 치거나 벌을 주는 것이 배설 문제를 해결하는데 아무 도움이 되지 않는 다는 사실을 기억해야 합니다.\n\n
+
+			-환자의 감정과 자존심이 상하지 않도록 화를 내거나 무시하는 태도를 보이지 않는 것이 가장 중요합니다.\n
+			그리고 평소에 대소변 패턴을 잘 관찰하여 배설 전에 미리 화장실에 가도록 유도하거나 치매환자가 대소변을 보는 곳에 이동식 변기를 설치하여 치매환자가 쉽게 이용하도록 합니다.\n\n
+
+			-배뇨시간을 계획하여 습관화 할 수 있는 훈련을 하거나 규칙적으로 식사 후, 활동 전이나 잠들기 전에 화장실을 다녀올 수 있도록 합니다.\n
+			-화장실 까지 이동이 어렵거나 시간이 오래 걸리는 경우, 이동 가능한 가벼운 변기(양변기)가 도움이 됩니다.\n
+		</string>
+		<string name="dictionary_main1_sub3">개인위생 및 운동</string>
+		<string name="text_dictionary_main1_sub3">
+			* 개인위생\n\n
+			-씻지 않으려 하거나 옷을 갈아입지 않으려고 하는 행동의 변화는 비교적 초기 치매에 보이는 증상 중에 하나이므로 잘 관찰하여 환자를 격려하고 존중하여 스스로 개인위생을 수행 할 수 있도록 도와주어야 합니다.\n\n
+			-목욕시간은 10분은 넘지 않도록 합니다. 옷을 입고 벗는 시간을 포함해서 30분 정도가 적당하며 물의 온도는 40도 정도가 적당합니다.\n\n
+			-목욕을 거부하는 치매환자를 씻길 때는 따뜻한 물을 준비하고 치매환자가 물을 만지도록 하여 물에 익숙하게 하는 시간을 갖도록 합니다.\n\n
+			-목욕탕에서 일어날 수 있는 여러 가지 안전사고(낙상, 화상 등)의 가능성을 염두고 두고 있어야 합니다. 화상을 방지하기 위하여 온수 꼭지를 끝까지 틀어도 대상자가 화상 입지 않을 정도로 온도를 맞춰 두고 미끄러워 넘어질 수 있으므로 바다에 고무매트를 깔아 두어 대비하는 것이 좋습니다. 목욕 후에는 반드시 바닥에 물기를 완전히 닦아내야 합니다.\n\n
+			-면도하는 방법을 잊어버린 치매환자에게는 수염 깎는 동작을 시범 보이고 조금씩 깎아 주면서 자신이 스스로 할 수 있도록 격려합니다.\n\n
+			평소에 화장을 하던 치매환자라면 화장을 계속하도록 격려해 주는 것이 좋습니다\n\n
+			-치매환자가 잠옷과 일상복, 외출복을 구별할 수 없어도 매일 같은 옷을 입도록 내버려두지 않습니다. 아침에 일어나면 잠옷에서 일상복으로 갈아입혀 밤, 낮을 구별하게 해주고 생활리듬을 알려줍니다.\n\n
+			-옷의 지퍼, 단추, 벨트는 다루기 힘들어 하므로 통째로 연결되는 커다란 지퍼를 달아 주거나 찍찍이 혹은 똑딱단추를 이용하도록 합니다.\n\n
+			-옷은 계절, 날씨에 맞게 선택하여 옷을 입는 순서대로 배치하며 스스로 입을 수 있도록 유도합니다.\n\n
+
+			* 운동\n\n
+			-재미요소가 지속성과 연결되기 때문에 음악과 함께 즐겁게 실시하면 좋습니다.\n
+			-체조, 산책하기 하루 10분 이상, 주 3회 이상 실사하면 뇌건강과 혈액순환에 좋습니다.
+		</string>
+	<string name="dictionary_main2">중고도치매</string>
+		<string name="dictionary_main2_sub1">돌봄원칙 및 대화</string>
+		<string name="text_dictionary_main2_sub1">
+			* 중고도 치매환자의 돌봄원칙\n\n
+			1.치매환자를 존중하고 환자의 요구를 파악하여 안전을 지키기 위해 노력합니다.\n
+			2.치매환자에게 남아 있는 감각을 최대한 활용합니다.\n
+			3.신체적 합병증을 예방하고 관리하기 위해 노력합니다.\n
+			4.치매환자에게 편안한 환경을 마련해 줍니다.\n
+
+			* 대화\n\n
+			-관심을 주고 있다는 것을 나타내기 위해 눈맞춤을 유지합니다.\n
+			-잘못된 말을 고치지 않습니다. 말하는 것이 무슨 의미인지 이해하기 위해 노력합니다.\n
+			-이해한 것이 맞는 지 명확히 하기 위해 무슨 말인지 반복해 줍니다.\n
+			-논쟁을 피합니다. 만약 치매어르신이 당신에게 동의하지 않아도 그냥 그대로 둡니다.\n
+			-긴 문장은 이해하기 어렵습니다. 한 가지 의미씩 잘라 이야기를 전달합니다.\n
+			-천천히 그리고 명확히 말하며, 한 번에 하나의 질문을 합니다.\n
+		</string>
+		<string name="dictionary_main2_sub2">식사,배뇨 및 배설</string>
+		<string name="text_dictionary_main2_sub2">
+			* 식사\n\n
+			-음식을 먹거나 물을 마실 때 다른 사람의 도움이 전적으로 필요합니다. 적당한 영양공급과 수분섭취를 유지하는 동시에 이러한 즐거운 경험을 최대한 유지하도록 도와주어야 합니다.\n\n
+			-식사에 집중하지 못하고 배회하는 경우에는 규칙적인 식사를 제공하고 한 두가지 음식만 환자 앞에 놓아두어 집중할 수 있게 합니다.\n\n
+			-식사시간은 적어도 45분 이상 되도록 충분한 시간을 갖도록 합니다. 그리고 사래에 걸릴 위험을 감소시키기 위하여 식사 시 몸을 똑바로 세운 상태를 유지하게 해 줍니다.\n\n
+			-음식을 잘게 썰어 목이 막히지 않도록 하고, 음식을 으깨거나 주스로 만들어 제공할 수 있습니다.\n\n
+			-식사 후에는 물을 마실 수 있도록 해서 입안을 헹구어 냅니다.\n\n
+			-식사를 계속 거부하는 경우 식사 전 대상자의 몸 상태를 충분히 살피고 입안의 염증이나 부종, 발적, 통증 등이 발견되면 치료 받도록 합니다.\n\n
+
+			* 식사\n\n
+			-화장실이 아닌 곳에서 대변을 보고 손으로 만지거나 옷, 방바닥, 벽 등에 대변을 묻히는 경우는 변을 스스로 처리하려는 마음이 있지만 제대로 처리하지 못하기 때문이거나 변을 변으로 인식하지 못하기 때문입니다.\n\n
+			-와상상태에 있는 경우 변비가 자주 발생하므로 변비예방을 위하여 신선한 야채, 과일, 수분을 충분히 공급합니다.\n\n
+			-요의나 변의가 없는 상태라도 앉은 자세를 유지할 수 있다면 식사 후에 규칙적으로 이동식 변기 등을 사용하여 배변을 유도하도록 합니다.\n\n
+			-와상 치매환자의 경우에도 배설습관을 미리 확인하고, 배설시간을 일지에 기록하여 미리 변기를 이용하여 배설을 돕도록 합니다.\n\n
+		</string>
+		<string name="dictionary_main2_sub3">개인위생 및 운동</string>
+		<string name="text_dictionary_main2_sub3">
+			* 개인위생\n\n
+			-구강위생을 실시할 때 젓가락에 거즈나 작은 수건을 감고 구강 청결제 액에 적혀서 짜낸 다음 치매환자의 입을 벌리고 구강 청결제를 적신 거즈를 사용하여 치아, 잇몸, 혀 점막을 닦습니다.\n\n
+			-구강위생을 시행 할 때 흡인을 방지하기 위해 앉은 자세나 반쯤 앉은 자세가 바람직하나 불가능한 경우 옆으로 눕히고 머리를 들어 올린 후 시행합니다.\n\n
+			-비위관으로 영양을 공급하는 치매환자의 경우 음식물을 씹지 않아 침의 분비량이 줄어 입안이 쉽게 건조해지고 입 냄새가 심해지므로 밥을 먹지 않더라도 구강위생을 규칙적으로 실시합니다.\n\n
+			-와상상태에 있는 경우 침상목욕을 하면 관절수축을 예방하고 전신상태를 관찰 할 수 있는 기회가 될 수 있으므로 환자가 움직일 수 없다고 하여 목욕을 포기하지 않도록 합니다.\n\n
+			-욕창은 예방하는 것이 최우선이며 같은 신체부위에 장시간 압박하지 않기 위해서는 누워서만 지내지 않고 활동하는 시간을 늘리는 것이 좋습니다. 앉거나 일어서는 자세가 어려우면 체위를 자주 변경하도록 하고 피부조직이 마찰에 의해 밀리지 않도록 합니다.\n\n
+
+			* 운동\n\n
+			-중고도의 치매환자에게 운동의 궁극적인 목적은 뇌운동과 함께 와상생활자는 앉을 수 있도록, 좌상생활자는 설 수 있도록, 혼자서 걷기 힘든 환자들은 걸을 수 있도록 기능을 향상시키고 유지시켜주는 것입니다.\n\n
+			-앉아서 걷기 운동\n
+			 가능하면 무릎을 높게 들고 팔도 같이 활용하여 걷습니다.\n\n
+			-누워서 하는 운동\n
+			 누운 상태에서 발가락을 4박자 동안 오므렸다 폅니다.(양쪽 10회)\n
+			 누운 상태에서 한쪽 무릎을 위 방향으로 끌어 올립니다.(각 10회)
+		</string>
+	<string name="dictionary_main3">정신행동증상</string>
+		<string name="dictionary_main3_sub1">돌봄원칙 및 우울증</string>
+		<string name="text_dictionary_main3_sub1">
+			* 정신행동증상 돌봄원칙\n\n
+			1.환자 각각에 대해 개별적으로 접근합니다.\n
+			2.비약물적 접근을 우선적으로 합니다.\n
+			3.모든 증상은 제가기 다른 원인과 의미를 가질 수 있으므로 다른 접근이 필요합니다.\n
+			4.증상에 어떻게 대처할지 계획할 때는 증상의 원인과 그 증상에 내재된 치매환자의 요구를 이해하는 것이 가장 우선되어야 합니다.\n
+			5.돌봄제공자인 나의 태도와 행동이 원인이 된 것은 아닌지 되돌아 봅니다.\n
+			6.치매환자에게 남아있는 능력, 힘, 기억, 요구 등이 모두 사용되어 질 수 있도록 합니다.\n
+			7.정신행동증상 대처 시 기본적인 요소인 예방, 편의, 융통성을 항상 고려합니다.\n
+
+			* 우울증\n\n
+			-치매환자를 위축시키고, 슬프게 만든 상황을 관찰합니다.\n
+			-전문의에 의뢰하여 항우울제의 투약 필요성을 알아봅니다.\n
+			-돌봄 제공자는 조용하고 따뜻하며 수용적이고, 솔직한 태도로 환자와 의사소통이 가능함을 보여주어야 합니다.\n
+			-표현력이 떨어져도 감정을 느끼고 있다는 것을 인식하여야 합니다.\n
+			-환자가 좋아하거나 많이 사용했던 물건을 배치하거나 조용한 음악을 틀어 놓는 등 환경을 조절합니다.\n
+			-환자가 좋아 하고 즐거워하는 활동을 증가시켜 우울한 생각을 전환시킵니다.
+		</string>
+		<string name="dictionary_main3_sub2">무감동,불안</string>
+		<string name="text_dictionary_main3_sub2">
+			* 무감동\n\n
+			-환자가 무표정하고 감정변화가 없다하더라도 지속적으로 활동에 참여시킵니다.\n\n
+			-관심을 보이는 활동위주로 환자의 능력에 맞는 적당한 환경자극을 제공하며, 환자가 수용하는 정도에 따라 그 수준을 다시 조절합니다.\n\n
+			-치매는 진행성이기 때문에 환자의 관심과 흥미는 계속해서 변하게 됩니다.  따라서 돌봄제공자는 환자에게 제공하는 자극의 형태나 수준을 상황에 맞게 변경해야 합니다.\n\n
+			-격려에도 불구하고 환자가 반복해서 좌절하면 그 활동을 중지합니다.\n\n
+			-무감동으로 인한 활동부족이 지속되고 환자의 건강에 해가 된다면 담당의사와 상의하여 약물치료를 고려해 봅니다.\n\n
+
+			* 불안\n\n
+			-불안감을 오후에 더 빈번히 일어나므로, 이 시간에는 조용한 활동(예:빨래접기, 청소하기 등의 집안일, 화초돌보기, 조용한 음악)을 하도록 합니다.\n\n
+			-가급적 혼자 있는 시간을 줄여 염려와 근심할 여지를 줄입니다.\n\n
+			-좋아하는 일을 자주 하게 함으로써 다른 것에 집중할 수 있도록 합니다.\n\n
+			-카페인이 들어있는 음료수(예:커피, 홍차, 콜라, 초콜릿)를 피합니다.\n\n
+			-치매가 다소 진행된 환자의 경우 요구 사항을 줄이고 규칙적인 생활을 일관성 있게 유지하도록 하며 혼자가 아니라고 위로해줌으로써 파국반응을 줄일 수 있습니다. 파국반응이란 무의미한 사건으로 보이는 것에 치매환자가 자신뿐만 아니라 주위 사람들에게 정서적으로 난폭한 행동을 보이는 것을 의미합니다.
+		</string>
+		<string name="dictionary_main3_sub3">망상 의심 환각</string>
+		<string name="text_dictionary_main3_sub3">
+			* 망상과 의심, 그리고 환각\n\n
+			-망상은 대게 해로운 것은 아니므로 환자를 편안히 안전하고 즐겁게 해주면 효과가 있습니다.\n\n
+			-환자에게 다가갈 때는 서두르지 않는 것이 좋습니다. 지나치게 빨리 다가갈 경우 환자는 자신을 공격하는 것으로 오해하기 쉽기 때문입니다.\n\n
+			-다른 사람들에게 환자의 의심이나 행동, 환자가 잃어버렸다고 의심하는 물건에 대해 이야기하거나 조롱하는 말투를 사용하지 않으며, 특히 귓속말을 하지 않도록 주의합니다.\n\n
+			-환자가 주장하는 것에 대해 부정하거나 논쟁하지 말고 환자의 감정을 받아들여 환자를 안심시켜 줍니다. 환자의 주장을 부정하거나 설득하려고 하면 오히려 환자는 강한 불신감을 가지게 됩니다.\n\n
+			-물건이 없어졌다고 하면 그것을 사실로 받아들이고 같이 찾아봅니다. 돌봄 제공자는 어디까지나 도와준다는 행동을 하고 환자 자신이 물건을 찾도록 합니다.\n
+			 물건을 찾더라도 환자의 물건에 손을 대지 않는 것이 좋습니다.\n\n
+			-잃어버렸거나 훔쳐갔다고 주장하는 물건을 찾은 경우, 환자를 비난하거나 훈계하지 않습니다. 물건을 발견했을 때, 아무 일도 아닌 것처럼 행동하는 것이 중요합니다.\n\n
+			-귀중품은 보이지 않는 곳에 치워두고, 쓰레기통을 비우기 전에 다시 확인하며, 실제 분실되는 경우를 대비해 같은 물건을 2개 이상 준비하는 것도 도움이 됩니다.\n
+			 환자의 주위를 다른 곳으로 돌리는 전환요법을 적용합니다. 음악, 운동, 친구와의 대화, 사진첩보기, 애완동무로가 놀기 등을 통해 환자의 주의를 돌려주는 것도 한 방법이 될 수 있습니다.\n
+			 망상이나 환각이 심한 경우 전문의에게 알리며, 약물치료가 도움이 됩니다.
+		</string>
+		<string name="text_dictionary_main3_sub3_1">
+			* 망상과 의심, 그리고 환각\n\n
+			-망상은 대게 해로운 것은 아니므로 환자를 편안히 안전하고 즐겁게 해주면 효과가 있습니다.\n\n
+			-환자에게 다가갈 때는 서두르지 않는 것이 좋습니다. 지나치게 빨리 다가갈 경우 환자는 자신을 공격하는 것으로 오해하기 쉽기 때문입니다.\n\n
+			-다른 사람들에게 환자의 의심이나 행동, 환자가 잃어버렸다고 의심하는 물건에 대해 이야기하거나 조롱하는 말투를 사용하지 않으며, 특히 귓속말을 하지 않도록 주의합니다.\n\n
+			-환자가 주장하는 것에 대해 부정하거나 논쟁하지 말고 환자의 감정을 받아들여 환자를 안심시켜 줍니다. 환자의 주장을 부정하거나 설득하려고 하면 오히려 환자는 강한 불신감을 가지게 됩니다.\n\n
+		</string>
+		<string name="text_dictionary_main3_sub3_2">
+			* 망상과 의심, 그리고 환각\n\n
+			-물건이 없어졌다고 하면 그것을 사실로 받아들이고 같이 찾아봅니다. 돌봄 제공자는 어디까지나 도와준다는 행동을 하고 환자 자신이 물건을 찾도록 합니다.\n
+			 물건을 찾더라도 환자의 물건에 손을 대지 않는 것이 좋습니다.\n\n
+			-잃어버렸거나 훔쳐갔다고 주장하는 물건을 찾은 경우, 환자를 비난하거나 훈계하지 않습니다. 물건을 발견했을 때, 아무 일도 아닌 것처럼 행동하는 것이 중요합니다.\n\n
+			-귀중품은 보이지 않는 곳에 치워두고, 쓰레기통을 비우기 전에 다시 확인하며, 실제 분실되는 경우를 대비해 같은 물건을 2개 이상 준비하는 것도 도움이 됩니다.\n
+			 환자의 주위를 다른 곳으로 돌리는 전환요법을 적용합니다. 음악, 운동, 친구와의 대화, 사진첩보기, 애완동무로가 놀기 등을 통해 환자의 주의를 돌려주는 것도 한 방법이 될 수 있습니다.\n
+			 망상이나 환각이 심한 경우 전문의에게 알리며, 약물치료가 도움이 됩니다.
+		</string>
+		<string name="dictionary_main3_sub4">초조행동 및 배회</string>
+		<string name="text_dictionary_main3_sub4">
+			* 초조행동\n\n
+			-논쟁을 삼가고 왜 이런 행동을 하는지 이유를 캐묻지 않습니다.\n\n
+			-가볍게 등 두드리기, 손잡기, 어깨 감싸기 등으로 환자의 감정이 이해되었음을 알도록 합니다.\n\n
+			-환자에게 접근 시 천천히 앞에서 하여 놀라게 하지 않아야 합니다.\n\n
+			-반복행동이 위험하지 않고 부적절하지 않은 경우 제한하지 않습니다.\n\n
+			-규칙적인 운동이나 산책을 하도록 하여 환자의 신체적 에너지 소모하도록 하면 야간배회를 줄이고 수면에 도움이 될 수 있습니다. 만약 밤에 배회하는 경향이 있다면 늦은 시간에 긴 산책을 하도록 하면 효과적입니다.\n\n
+
+			* 배회\n\n
+			-배가 고픈지, 배변을 하고 싶은지, 통증이 있는지, 특별히 불편한 사항이 없는지, 지루한지, 불안한지, 지금 장소가 너무 복잡해서 조용한 곳을 원하는 것인지 등을 점검하여 배회의 신체적, 정신적, 환경적 원인을 없애도록 합니다.\n\n
+			-배회의 기간, 시기, 형태 등을 관찰하고 기록합니다. \n
+			 언제. 어디서. 얼마나 그리고 어떤 형태로 배회를 하는지 환자의 특성을 파악하면 예방에 도움이 됩니다.\n\n
+			-환자 본인은 배회하고 있다고 인식하지 못합니다. \n
+			 환자에게 해가 되지 않는 다면 배회를 허락하고 안전한 환경에서 배회할 수 있도록 합니다. 배회를 허락할 때 너무 춥거나 더운 환경, 익숙하지 않는 환경, 너무 시끄럽거나 조용한 환경, 너무 습하거나 건조한 환경, 너무 어둡거나 밝은 환경은 가급적 피하도록 합니다.\n\n
+			-좋아하는 음식, 음료 혹은 활동을 제공하여 배회를 자연스럽게 제지합니다.\n\n
+			-환자가 밖에 나가 길을 읽을 경우를 대비합니다. \n
+			 현관에 종 달기, 출입문 가리기, 미리 이웃이나 아파트 경비원 등에게 환자의 상태에 관해 양해 구하기, 경찰에 미리 연락해 두기 등이 도움이 됩니다. 목걸이, 팔찌 등에 환자의 이름과 주소, 연락처 등을 기록하여 착용시켜 주며, 환자가 화를 내거나 이를 떼어버리려고 할 때는 옷 안쪽에 눈에 잘 띄지 않게 부착합니다.\n\n
+			-배회 시 낙상이나 미끄럼을 방지할 수 있도록 안전한 환경을 조성하고 집안을 어둡지 않게 합니다.\n\n
+		</string>
+		<string name="text_dictionary_main3_sub4_1">
+			* 초조행동\n\n
+			-논쟁을 삼가고 왜 이런 행동을 하는지 이유를 캐묻지 않습니다.\n\n
+			-가볍게 등 두드리기, 손잡기, 어깨 감싸기 등으로 환자의 감정이 이해되었음을 알도록 합니다.\n\n
+			-환자에게 접근 시 천천히 앞에서 하여 놀라게 하지 않아야 합니다.\n\n
+			-반복행동이 위험하지 않고 부적절하지 않은 경우 제한하지 않습니다.\n\n
+			-규칙적인 운동이나 산책을 하도록 하여 환자의 신체적 에너지 소모하도록 하면 야간배회를 줄이고 수면에 도움이 될 수 있습니다. 만약 밤에 배회하는 경향이 있다면 늦은 시간에 긴 산책을 하도록 하면 효과적입니다.\n\n
+		</string>
+		<string name="text_dictionary_main3_sub4_2">
+			* 배회\n\n
+			-배가 고픈지, 배변을 하고 싶은지, 통증이 있는지, 특별히 불편한 사항이 없는지, 지루한지, 불안한지, 지금 장소가 너무 복잡해서 조용한 곳을 원하는 것인지 등을 점검하여 배회의 신체적, 정신적, 환경적 원인을 없애도록 합니다.\n\n
+			-배회의 기간, 시기, 형태 등을 관찰하고 기록합니다. \n
+			언제. 어디서. 얼마나 그리고 어떤 형태로 배회를 하는지 환자의 특성을 파악하면 예방에 도움이 됩니다.\n\n
+			-환자 본인은 배회하고 있다고 인식하지 못합니다. \n
+			환자에게 해가 되지 않는 다면 배회를 허락하고 안전한 환경에서 배회할 수 있도록 합니다. 배회를 허락할 때 너무 춥거나 더운 환경, 익숙하지 않는 환경, 너무 시끄럽거나 조용한 환경, 너무 습하거나 건조한 환경, 너무 어둡거나 밝은 환경은 가급적 피하도록 합니다.\n\n
+			-좋아하는 음식, 음료 혹은 활동을 제공하여 배회를 자연스럽게 제지합니다.\n\n
+			-환자가 밖에 나가 길을 읽을 경우를 대비합니다. \n
+			현관에 종 달기, 출입문 가리기, 미리 이웃이나 아파트 경비원 등에게 환자의 상태에 관해 양해 구하기, 경찰에 미리 연락해 두기 등이 도움이 됩니다. 목걸이, 팔찌 등에 환자의 이름과 주소, 연락처 등을 기록하여 착용시켜 주며, 환자가 화를 내거나 이를 떼어버리려고 할 때는 옷 안쪽에 눈에 잘 띄지 않게 부착합니다.\n\n
+			-배회 시 낙상이나 미끄럼을 방지할 수 있도록 안전한 환경을 조성하고 집안을 어둡지 않게 합니다.\n\n
+		</string>
+		<string name="dictionary_main3_sub5">공격적행동 및 반복행동</string>
+		<string name="text_dictionary_main3_sub5">
+			* 공격적행동\n\n
+			-공격적행동이 나타나면 즉시 환자를 조용한 곳에 두고 사람을 포함한 외부자극을 제거합니다.\n\n
+			-돌봄제공자는 어떠한 상황에서도 화를 내서는 안됩니다. 화가나면 올바르게 대처하기 힘들기 때문에 심호흡을 하고 균형을 되찾아야 합니다.\n\n
+			-환자는 자신의 주장을 굽히지 않는 경우가 많으므로 논쟁을 하지 말아야 합니다.\n\n
+			-말일 환자가 평상시보다 더 심하게 돌발적 행동을 보이면 다른 질병이나 통증을 느끼는 것이 아닌지 살펴봅니다.\n\n
+			-자해나 타해의 위험성이 있다면 신체적 억제법이나 약물을 사용할 수도 있으나 가급적 자제하고 공격적 행동이 심해지면 전문의와 상의합니다.\n\n
+
+			* 반복행동\n\n
+			-환자의 반복적 행동보다는 감정에 초점을 둡니다.\n\n
+			-크게 손뼉을 쳐서 관심을 다른 곳으로 돌리기, 다른 방으로 가기, 활동 바꾸기, 과거 즐거운 예기로 대화주제 전환하기 등으로 환자의 주의를 전환시킵니다.\n\n
+			-단순하게 할 수 있는 일거리를 제공합니다.(예: 빨래 접기, 나물 다듬기, 콩 고르기)\n\n
+			-반복행동이 위험하지 않고 부적절하지 않은 경우에는 제한하지 않습니다.\n\n
+			-같은 질문을 반복할 때 환자에게는 질문할 때마다 새로운 질문이므로 질문 받은 적이 없었던 것처럼 행동하면서 답을 하여 안심시키는 것이 좋습니다.\n\n
+			-환자가 어떤 이야기를 반복해서 할 때는 이전에 들었다는 것을 나타내지 말고 흥미 있는 것처럼 받아들입니다.\n\n
+			-환자가 방금 식사를 하고도 그 사실을 잊어버리고 음식에 집착하여 “점심 언제 먹어?”라고 계속해서 묻는 경우가 있습니다.  이럴 때는 “어르신, 배가 고프신가 봐요, 금방 식사를 할 꺼예요. 시장기를 가라앉히기 위해 과일 좀 드세요”라고 대답하며 환자의 질문을 인정해주며, 간식을 제공함으로써 밥 먹자는 생각을 전환시킵니다.\n\n
+			-방안에서 계속 침을 뱉는 경우 환자의 행동을 지적하고 화를 내면 그의 침 뱉기가 지속될 뿐 아니라, 불안감으로 인해 다른 종류의 정신행동증상을 추가적으로 나타낼 수 있습니다.\n
+			 좋아하는 간식이나 뻥튀기, 강냉이, 바나나, 홍삼캔디 등 칼로리가 적으면서 입을 계속 사용할 수 있는 음식을 제공하면 침 뱉기를 줄일 수 있습니다.\n
+			 집중하여 할 수 있는 즐거운 소일거리를 제공하면 도움이 됩니다.
+		</string>
+		<string name="dictionary_main3_sub6">수면장애 및 거부(저항)</string>
+		<string name="text_dictionary_main3_sub6">
+			* 수면장애\n\n
+			-치매환자에게 적절한 하루 일과를 계획하고 규칙적인 생활을 하도록 배려합니다.\n\n
+			-낮에는 활동량을 늘리고 졸리는 시간에 산책을 하거나 좋아하는 활동을 하여 낮잠을 제한합니다.\n\n
+			-낮 동안 30분 정도 햇볕을 충분히 쪼이며 가벼운 산책이나 체조 같은 신체활동을 하여 운동량을 늘리면 밤에 잘 자는데 도움이 됩니다.\n\n
+			-조명, 소음, 온도와 같은 침실의 환경을 변화시키지 말고 수면에 적절하게 유지합니다.\n\n
+			-저녁 동안은 음식섭취를 제한하고 커피, 알코올, 콜라와 같은 자극적인 음식의 섭취를 제한합니다. 하지만 배고픔이 불면의 원인일 수 있으므로 가벼운 간식이나 따뜻한 차나 우유를 섭취할 수 있습니다.\n\n
+			-환자에게 일몰증후군(오후가 되면서 혼돈이 증가하는 경우)이나 밤낮이 뒤바뀌는 증상이 나타난다면 섬망이 나타날 수 있다는 것을 염두해 두고, 변화를 일으키는 신체질환이나 뇌질환, 혹은 정신적은 스트레스를 확인해서 대응해 나가야 합니다.\n\n
+
+			* 거부(저항)\n\n
+			-늘 하는 일상적인 일을 항상 하던 시간에 순서대로 진행하고 방법도 가능한 동일하게 하여 환자가 혼란을 적게 느끼도록 합니다.
+		</string>
+		<string name="dictionary_main3_sub7">뒤적거리기와 모아두기</string>
+		<string name="text_dictionary_main3_sub7">
+			* 뒤적거리기와 모아두기\n\n
+			-환자가 물건을 숨겨 모아둘 수 있는 장소를 많지 않게 합니다.\n\n
+			-흔히 모아두는 장소는 의자 밑, 서랍 속, 구두 속, 침대 밑, 이불 밑 입니다. 환자는 동일한 장소에 모아두는 경향이 있으므로, 환자가 물건을 주로 모아두는 곳을 파악하여 주기적으로 그 장소를 확인해 봅니다\n\n
+			-뒤적거릴 수 있는 물건을 제공하거나, 뒤적거릴 수 있는 물건이 많이 있는 특별한 장소를 만들어 뒤적거리고 싶어하는 욕구를 충족시켜줍니다.
+		</string>
+		<string name="dictionary_main3_sub8">부적절한 성적 행동</string>
+		<string name="text_dictionary_main3_sub8">
+			* 부적절한 성적 행동\n\n
+			-의복으로 인한 불편감이나 대소변을 보고 싶은 욕구가 있는지 확인하고 도와줍니다.\n\n
+			-선정적이거나 자극적인 복장은 하지 않도록 합니다.\n\n
+			-부적절한 성적 행동이 나타날 때 가족이나 다른 사람이 함께 있도록 합니다.\n\n
+			-성적행동이 관심이나 애정을 얻기 위해서라면 더 관심을 가져 줌으로써 환자의 욕구를 충족시켜 줍니다.\n\n
+			치매환자가 성적 이상행동을 보이는 것은 성적인 요구나 친밀감의 요구가 충족되지 않았음을 의미할 수도 있다는 것을 염두해 두어야 합니다.
+		</string>
+		<string name="dictionary_main3_sub9">일몰증후군</string>
+		<string name="text_dictionary_main3_sub9">
+			* 일몰증후군\n\n
+			-오전에는 활발하게 움직이고 점심 이후에는 편안히 쉬도록 합니다.\n\n
+			-방에 은은한 조명을 켜놓고, 조용한 음악을 틀거나 좋아하는 TV프로그램을 켜놓는 것이 심리적인 안정을 유도할 수 있습니다.\n\n
+			-환자가 평소 예뻐하던 애완동물을 가까이 두거나 가족 중에 특별히 좋아하는 사람이 옆에 있어 주거나 전에 좋아하던 일이 있다면 증상이 나타나기 전에 할 수 있게 하여 심리적 안정을 유도합니다.
+		</string>
+
+	<string name="dictionary_main4">안전관리</string>
+		<string name="dictionary_main4_sub1">안전관리</string>
+		<string name="text_dictionary_main4_sub1">
+			* 치매환자의 안전관리입니다.\n\n
+			-모든 전화기 옆에 응급 전화번호를 적어 둡니다.\n\n
+			-치매환자의 방은 가능한 돌보는 사람의 방과 가까운 곳에 배치하고, 하루 종일 혼자 지내는 일이 없도록 합니다.\n\n
+			-미끄러져 넘어지는 것을 방지하기 위해 미끄럼 방지양말이나 신발을 착용하도록 합니다.\n\n
+			-방문이 안에서 잠기는 사고를 방지하기 위해 미리 열쇠를 준비해 두어 사고에 대처하도록 합니다.\n\n
+			-예리한 칼, 가위, 유리식기, 연장들 또한 잠금 장치가 있는 서랍 같은 곳에 안전하게 보관하도록 합니다.\n\n
+			-보온물통, 헤어드라이기 등 수시로 사용하는 전기제품은 가급적 치매환자의 눈에 띄지 않는 곳에 보관합니다.\n\n
+			-샤워벤치, 고무매트, 욕조와 샤워실 밑의 끈끈이 등은 모두 낙상을 방지하는데 도움을 줍니다.\n\n
+			-수돗물은 섭씨43도에서 48정도 되도록 유지해 화상을 예방합니다.\n\n
+			-처방, 비 처방 약물들은 반드시 잠금 장치가 있는 서랍에 보관합니다.\n\n
+			-모든 약을 한곳에 보관하도록 하고, 또 빠뜨린 약이 있는지 또는 환자가 감추어 놓은 약이 있는지 확인합니다.\n\n
+			-정기적으로 약의 개수를 확인해 치매환자가 약을 처방대로 복용하는지 확인합니다.\n\n
+			-치매환자가 도움 없이 약을 먹지 못한다면 약에 접근하지 못하도록 약을 안전한 곳에 보관하고 꼭 필요할 때만 약을 준 후 환자가 약을 삼켰는지 반드시 확인합니다.\n\n
+			-사용하지 않는 전기기구의 전원은 반드시 끄고 코드를 뽑아 놓습니다.\n\n
+			-가능한 자동으로 전원이 꺼지는 기능을 가진 것을 사용합니다.\n\n
+			-가구의 모서리, 예리한 부분 등에 의해 쉽게 사고를 당할 수 있으므로 모서리 보호장치를 사용해 사고를 예방합니다.\n\n
+			-낮과 밤 모두 적절한 조명을 켜 두는 것이 필요합니다.\n\n
+			-걸어 다니는 길에 있는 장애물은 전부 치우고 작고 사소한 장애물이 있어도 넘어지거나 다칠 수 있으므로 가능한 주위환경을 단순하게 정리 유지합니다.\n\n
+			-이동을 제한을 하지 않는 방향으로 가능한 한 이동범위를 확보합니다.\n\n
+			-시력과 공간 지각 능력이 손상된 환자가 유리나 유리벽에 충돌하지 않도록 유리에 스티커나 그림을 붙여둡니다.\n\n
+			-화재예방을 위해 모든 화재 일으키는 물건에 경고문구를 써서 부착하며, 담배를 피울 경우 옆에서 지켜보고 재떨이에 약간의 물을 담아두며, 가스 불은 수시로 점검합니다.\n\n
+			-생활용품 등은 가능하다면 자동으로 전원이 꺼지는 것을 사용하고 가스밸브는 보이지 않게 설치합니다.
+		</string>
+	<!-- 8.나의감정살피기 -->
+
+	<!-- 테스트 -->
+	<string name="cheese_ipsum">Jarlsberg lancashire edam. Dolcelatte hard cheese brie st. agur blue
+		cheese caerphilly bavarian bergkase cheese and biscuits mascarpone. Cheeseburger swiss bavarian
+		bergkase cream cheese fromage frais cheesy feet port-salut airedale. St. agur blue cheese rubber
+		cheese caerphilly cheddar cheesecake cream cheese manchego lancashire. Roquefort squirty cheese
+		the big cheese.
+	</string>
+</resources>

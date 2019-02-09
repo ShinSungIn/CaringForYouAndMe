@@ -1,0 +1,32 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+	<item
+			android:id="@+id/action_call1"
+			android:icon="@drawable/ic_phone_black_24dp"
+			android:title="Call_1"
+			app:showAsAction="never"/><!--never: 화면에 안보이게 해놓고 점점점안에 하위 메뉴로 넣기-->
+	<item
+			android:id="@+id/action_call2"
+			android:icon="@drawable/ic_phone_black_24dp"
+			android:title="Call_2"
+			app:showAsAction="never"/>
+	<item
+			android:id="@+id/action_call3"
+			android:icon="@drawable/ic_phone_black_24dp"
+			android:title="Call_#"
+			app:showAsAction="never"/>
+
+	<item
+			android:id="@+id/action_info"
+			android:icon="@drawable/menu_icon"
+			android:title="@string/action_prevention1"
+			android:orderInCategory="100"
+			app:showAsAction="always"/><!--always: 액션바에 항상 보이기-->
+
+	<item
+			android:id="@+id/action_settings"
+			android:icon="@drawable/ic_perm_identity_black_24dp"
+			android:title="@string/action_prevention1"
+			android:orderInCategory="100"
+			app:showAsAction="always"/>
+
+</menu>

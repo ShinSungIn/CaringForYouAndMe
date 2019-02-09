@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:id="@+id/main_content"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:fitsSystemWindows="true"
+		tools:context=".SupportFirActivity">
+
+	<android.support.v7.widget.Toolbar
+			android:id="@+id/toolbar"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"
+			android:background="?attr/colorPrimary"
+			android:theme="@style/AppTheme.AppBarOverlay"
+			android:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+	</android.support.v7.widget.Toolbar>
+
+	<TabHost
+			android:id="@+id/tabHost"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_marginTop="56dp"
+			android:theme="@style/TapTheme"	>
+
+		<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical">
+
+			<TabWidget
+					android:id="@android:id/tabs"
+					android:background="@color/colorBackground_Tap"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content" />
+
+			<!-- 상단 탭 메뉴에 의해 화면 변경 대상 FrameLayout -->
+			<FrameLayout
+					android:id="@android:id/tabcontent"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+
+				<!-- 재가급여 -->
+				<LinearLayout
+						android:id="@+id/tabHostFirContent"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:orientation="vertical">
+
+						<LinearLayout
+								android:orientation="vertical"
+								android:layout_width="match_parent"
+								android:layout_height="match_parent"
+								android:background="@color/colorWhite">
+
+							<android.support.design.widget.CoordinatorLayout
+									xmlns:android="http://schemas.android.com/apk/res/android"
+									xmlns:app="http://schemas.android.com/apk/res-auto"
+									xmlns:tools="http://schemas.android.com/tools"
+									android:layout_width="match_parent"
+									android:layout_height="match_parent"
+									android:fitsSystemWindows="true"
+									tools:context=".SupportFirActivity">
+
+								<android.support.design.widget.AppBarLayout android:id="@+id/appbar1"
+										android:layout_width="match_parent"
+										android:layout_height="wrap_content"
+										android:theme="@style/AppTheme.NoActionbar.AppBarOverlay">
+									<android.support.design.widget.TabLayout
+											android:layout_width="match_parent"
+											android:layout_height="match_parent"
+											app:tabMode="scrollable"
+											app:tabIndicatorColor="@android:color/white"
+											app:layout_scrollFlags="scroll|enterAlways"
+											android:id="@+id/tabLayout1"
+											android:orientation="vertical">
+
+										<android.support.design.widget.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/support_main1_sub1_1"/>
+										<android.support.design.widget.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/support_main1_sub1_2"/>
+										<android.support.design.widget.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content"	android:text="@string/support_main1_sub1_3"/>
+										<android.support.design.widget.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/support_main1_sub1_4"/>
+										<android.support.design.widget.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/support_main1_sub1_5"/>
+										<android.support.design.widget.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/support_main1_sub1_6"/>
+
+									</android.support.design.widget.TabLayout>
+								</android.support.design.widget.AppBarLayout>
+
+								<android.support.v4.view.ViewPager
+										android:id="@+id/Container1"
+										android:layout_width="match_parent"
+										android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+							</android.support.design.widget.CoordinatorLayout>
+
+						</LinearLayout>
+
+				</LinearLayout>
+
+				<!-- 시설급여 -->
+				<LinearLayout
+						android:id="@+id/tabHostSecContent"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:orientation="vertical">
+
+					<LinearLayout
+							android:orientation="vertical"
+							android:layout_width="match_parent"
+							android:layout_height="match_parent"
+							android:background="@color/colorWhite">
+
+						<android.support.design.widget.CoordinatorLayout
+								xmlns:android="http://schemas.android.com/apk/res/android"
+								xmlns:app="http://schemas.android.com/apk/res-auto"
+								xmlns:tools="http://schemas.android.com/tools"
+								android:layout_width="match_parent"
+								android:layout_height="match_parent"
+								android:fitsSystemWindows="true"
+								tools:context=".SupportFirActivity">
+
+							<android.support.design.widget.AppBarLayout android:id="@+id/appbar2"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:theme="@style/AppTheme.NoActionbar.AppBarOverlay">
+								<android.support.design.widget.TabLayout
+										android:layout_width="match_parent"
+										android:layout_height="match_parent"
+										app:tabMode="scrollable"
+										app:tabIndicatorColor="@android:color/white"
+										app:layout_scrollFlags="scroll|enterAlways"
+										android:id="@+id/tabLayout2"
+										android:orientation="vertical">
+									<android.support.design.widget.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/support_main1_sub2_1"/>
+									<android.support.design.widget.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/support_main1_sub2_2"/>
+
+								</android.support.design.widget.TabLayout>
+							</android.support.design.widget.AppBarLayout>
+
+							<android.support.v4.view.ViewPager
+									android:id="@+id/Container2"
+									android:layout_width="match_parent"
+									android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+						</android.support.design.widget.CoordinatorLayout>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+				<!-- 가족요양비 -->
+				<LinearLayout
+						android:id="@+id/tabHostThiContent"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:orientation="vertical">
+
+					<LinearLayout
+							android:orientation="vertical"
+							android:layout_width="match_parent"
+							android:layout_height="match_parent"
+							android:background="@color/colorWhite">
+
+						<android.support.design.widget.CoordinatorLayout
+								xmlns:android="http://schemas.android.com/apk/res/android"
+								xmlns:app="http://schemas.android.com/apk/res-auto"
+								xmlns:tools="http://schemas.android.com/tools"
+								android:layout_width="match_parent"
+								android:layout_height="match_parent"
+								android:fitsSystemWindows="true"
+								tools:context=".SupportFirActivity">
+
+							<android.support.design.widget.AppBarLayout android:id="@+id/appbar3"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:theme="@style/AppTheme.NoActionbar.AppBarOverlay">
+								<android.support.design.widget.TabLayout
+										android:layout_width="match_parent"
+										android:layout_height="match_parent"
+										app:tabMode="scrollable"
+										app:tabIndicatorColor="@android:color/white"
+										app:layout_scrollFlags="scroll|enterAlways"
+										android:id="@+id/tabLayout3"
+										android:orientation="vertical">
+									<android.support.design.widget.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/support_main1_sub3_1"/>
+
+								</android.support.design.widget.TabLayout>
+							</android.support.design.widget.AppBarLayout>
+
+							<android.support.v4.view.ViewPager
+									android:id="@+id/Container3"
+									android:layout_width="match_parent"
+									android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+						</android.support.design.widget.CoordinatorLayout>
+
+					</LinearLayout>
+
+				</LinearLayout>
+
+			</FrameLayout>
+
+		</LinearLayout>
+	</TabHost>
+
+</android.support.constraint.ConstraintLayout>
