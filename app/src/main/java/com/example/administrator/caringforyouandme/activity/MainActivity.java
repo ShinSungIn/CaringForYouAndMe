@@ -15,7 +15,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 import com.example.administrator.caringforyouandme.AlarmActivity;
+import com.example.administrator.caringforyouandme.CrueprogramActivity;
+import com.example.administrator.caringforyouandme.DiaryActivity;
 import com.example.administrator.caringforyouandme.DictionaryActivity;
+import com.example.administrator.caringforyouandme.FeelingActivity;
 import com.example.administrator.caringforyouandme.KnownActivity;
 import com.example.administrator.caringforyouandme.PreventionActivity;
 import com.example.administrator.caringforyouandme.R;
@@ -77,11 +80,31 @@ public class MainActivity extends AppCompatActivity
 		});
 
 		// 4.치매지원서비스 클릭
-		Button RoadmapButton4 = (Button) findViewById(R.id.SupportButton4);
-		RoadmapButton4.setOnClickListener(new View.OnClickListener() {
+		Button SupportButton4 = (Button) findViewById(R.id.SupportButton4);
+		SupportButton4.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
 				Intent registerIntent = new Intent(MainActivity.this, SupportMenuActivity.class);
+				MainActivity.this.startActivity(registerIntent);
+			}
+		});
+
+		// 5.치료프로그램
+		Button CureProgramButton5 = (Button) findViewById(R.id.CureProgramButton5);
+		CureProgramButton5.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent registerIntent = new Intent(MainActivity.this, CrueprogramActivity.class);
+				MainActivity.this.startActivity(registerIntent);
+			}
+		});
+
+		// 6.우리들의 돌봄일기
+		Button DiaryButton6 = (Button) findViewById(R.id.DiaryButton6);
+		DiaryButton6.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent registerIntent = new Intent(MainActivity.this, DiaryActivity.class);
 				MainActivity.this.startActivity(registerIntent);
 			}
 		});
@@ -92,6 +115,16 @@ public class MainActivity extends AppCompatActivity
 			@Override
 			public void onClick(View view) {
 				Intent registerIntent = new Intent(MainActivity.this, DictionaryActivity.class);
+				MainActivity.this.startActivity(registerIntent);
+			}
+		});
+
+		// 8.나의감정 살피기
+		Button FeelingsButton8 = (Button) findViewById(R.id.FeelingsButton8);
+		FeelingsButton8.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent registerIntent = new Intent(MainActivity.this, FeelingActivity.class);
 				MainActivity.this.startActivity(registerIntent);
 			}
 		});

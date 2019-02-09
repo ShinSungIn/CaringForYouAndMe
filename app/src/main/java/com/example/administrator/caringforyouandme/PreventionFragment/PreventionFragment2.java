@@ -1,6 +1,5 @@
 package com.example.administrator.caringforyouandme.PreventionFragment;
 
-import android.arch.lifecycle.Lifecycle;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -10,19 +9,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.VideoView;
 import com.example.administrator.caringforyouandme.BitmapHelper;
 import com.example.administrator.caringforyouandme.PhotoViewActivity;
 import com.example.administrator.caringforyouandme.R;
-import com.example.administrator.caringforyouandme.androidyoutubeplayer.player.YouTubePlayer;
-import com.example.administrator.caringforyouandme.androidyoutubeplayer.player.YouTubePlayerView;
-import com.example.administrator.caringforyouandme.androidyoutubeplayer.player.listeners.AbstractYouTubePlayerListener;
-import com.example.administrator.caringforyouandme.androidyoutubeplayer.player.playerUtils.FullScreenHelper;
-import com.github.chrisbanes.photoview.PhotoViewAttacher;
-
-import java.util.Random;
 
 /**
  * A simple {@link Fragment} subclass. Activities that contain this fragment must implement the {@link PreventionFragment2.OnFragmentInteractionListener} interface to handle interaction events. Use the {@link PreventionFragment2#newInstance} factory method to create an instance of this fragment.
@@ -38,13 +28,6 @@ public class PreventionFragment2 extends Fragment {
 	private String mParam2;
 
 	private OnFragmentInteractionListener mListener;
-
-	VideoView videoView;
-	private String[] videoIds = {"6JYIGclVQdw", "LvetJ9U_tVY"};
-	private YouTubePlayerView youTubePlayerView;
-	private FullScreenHelper fullScreenHelper;
-	private Button playNextVideoButton;
-	private PhotoViewAttacher photoViewAttacher;
 
 	public PreventionFragment2() {
 		// Required empty public constructor
@@ -93,65 +76,7 @@ public class PreventionFragment2 extends Fragment {
 			}
 		});
 
-		// 비디오뷰는 영상 파일이 있을때
-		/*
-		getActivity().getWindow().setFormat(PixelFormat.TRANSLUCENT);
-		videoView = (VideoView) view.findViewById(R.id.videoView);
-		videoView.setVideoURI(Uri.parse(Uri.encode("http://tv.kakao.com/v/395147538")));
-		MediaController mediaController = new MediaController(getActivity());
-		mediaController.setAnchorView(videoView);
-		videoView.setMediaController(mediaController);
-		//videoView.setVisibility(View.VISIBLE);
-
-		videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-			public void onPrepared(MediaPlayer mp) {
-				videoView.start();
-			}
-		});
-		*/
-
-		// 화면안에 유뷰브 넣기(미완성이여서 안쓰기로 함)
-		//youTubePlayerView = view.findViewById(R.id.youtube_player_view);
-		//playNextVideoButton = view.findViewById(R.id.next_video_button);
-		//initYouTubePlayerView();
-
 		return view;
-		//return inflater.inflate(R.layout.fragment_prevention2, container, false);
-	}
-
-	private void initYouTubePlayerView() {
-		youTubePlayerView.getPlayerUIController().showFullscreenButton(false);
-
-		// The player will automatically release itself when the fragment is destroyed.
-		// The player will automatically pause when the fragment is stopped
-		// If you don't add YouTubePlayerView as a lifecycle observer, you will have to release it manually.
-		getLifecycle().addObserver(youTubePlayerView);
-
-		youTubePlayerView.initialize(youTubePlayer -> {
-			youTubePlayer.addListener(new AbstractYouTubePlayerListener() {
-				@Override
-				public void onReady() {
-					//loadVideo(youTubePlayer, videoIds[0]);
-				}
-			});
-
-			setPlayNextVideoButtonClickListener(youTubePlayer);
-
-		}, true);
-	}
-
-	private void loadVideo(YouTubePlayer youTubePlayer, String videoId) {
-		if(getLifecycle().getCurrentState() == Lifecycle.State.RESUMED)
-			youTubePlayer.loadVideo(videoId, 0);
-		else
-			youTubePlayer.cueVideo(videoId, 0);
-	}
-
-	private void setPlayNextVideoButtonClickListener(final YouTubePlayer youTubePlayer) {
-		playNextVideoButton.setOnClickListener(view -> {
-			String videoId = videoIds[new Random().nextInt(videoIds.length)];
-			loadVideo(youTubePlayer, videoId);
-		});
 	}
 
 	// TODO: Rename method, update argument and hook method into UI event

@@ -33,13 +33,6 @@
 				android:layout_gravity="center"
 				android:text="(사진 클릭시 확대)"/>
 
-		<!--TextView android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_margin="@dimen/text_margin"
-				android:text="@string/large_text"/-->
-
-		<!--include android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/activity_youtube_player" /-->
-
 	</LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

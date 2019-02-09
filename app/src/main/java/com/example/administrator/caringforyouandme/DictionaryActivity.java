@@ -219,9 +219,9 @@ public class DictionaryActivity extends AppCompatActivity {
 	private void setToolbar() {
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
 		// toolbar 뒤로 버튼 활성화
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		toolbar.setTitle("7.돌봄사전");
 		setSupportActionBar(toolbar);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 
 	@Override
