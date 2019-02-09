@@ -23,7 +23,7 @@
 			</intent-filter>
 		</activity>
 		<activity android:name=".RegisterActivity"/>
-		<activity android:name=".MainActivity"/>
+		<activity android:name=".activity.MainActivity"/>
 		<activity android:name=".KnownActivity" android:label="@string/title_activity_known" android:theme="@style/AppTheme.NoActionbar"/>
 		<activity android:name=".PreventionActivity" android:label="@string/title_activity_prevention" android:theme="@style/AppTheme.NoActionbar"/>
 		<activity android:name=".RoadmapActivity" android:label="@string/title_activity_roadmap" android:theme="@style/AppTheme.NoActionbar"/>

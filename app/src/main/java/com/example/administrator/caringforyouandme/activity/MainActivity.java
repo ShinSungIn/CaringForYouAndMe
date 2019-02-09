@@ -1,4 +1,4 @@
-package com.example.administrator.caringforyouandme;
+package com.example.administrator.caringforyouandme.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,6 +14,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import com.example.administrator.caringforyouandme.DictionaryActivity;
+import com.example.administrator.caringforyouandme.KnownActivity;
+import com.example.administrator.caringforyouandme.PreventionActivity;
+import com.example.administrator.caringforyouandme.R;
+import com.example.administrator.caringforyouandme.RoadmapActivity;
+import com.example.administrator.caringforyouandme.SupportMenuActivity;
 
 public class MainActivity extends AppCompatActivity
 	implements NavigationView.OnNavigationItemSelectedListener {
