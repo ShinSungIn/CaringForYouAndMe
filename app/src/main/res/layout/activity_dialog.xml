@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@android:color/transparent"	>
+
+	<RelativeLayout
+			android:background="#1f9bed"
+			android:layout_width="match_parent"
+			android:layout_height="60dp">
+
+		<ImageView
+				android:layout_width="30dp"
+				android:layout_height="30dp"
+				android:id="@+id/image_Dialog"
+				android:layout_centerVertical="true"
+				android:layout_toStartOf="@+id/dialog_subject"
+				android:src="@drawable/dialog_icon"
+				tools:ignore="ContentDescription"/>
+
+		<TextView android:id="@+id/dialog_subject"
+				  android:layout_width="wrap_content"
+				  android:layout_height="wrap_content"
+				  android:textSize="16sp"
+				  android:textColor="@color/colorText_White"
+				  android:textStyle="bold"
+				  android:layout_marginStart="10dp"
+				  android:layout_centerVertical="true"
+				  android:layout_centerHorizontal="true"
+				  android:text="알림"
+				  tools:ignore="RelativeOverlap"/>
+
+	</RelativeLayout>
+
+	<TextView
+			android:id="@+id/dialog_content"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textSize="16sp"
+			android:textColor="@color/colorText_Black"
+			android:text="내용"
+			android:lineSpacingMultiplier="1.5"
+			android:layout_marginStart="10dp"
+			android:layout_marginEnd="10dp"
+			android:layout_marginTop="30dp"
+			android:layout_marginBottom="30dp"/>
+
+</LinearLayout>

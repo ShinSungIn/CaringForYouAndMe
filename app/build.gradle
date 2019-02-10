@@ -36,4 +36,12 @@ dependencies {
 	implementation 'com.github.bumptech.glide:glide:4.6.1'
 	implementation 'de.hdodenhof:circleimageview:2.2.0'
 	implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+
+	// lombok
+	compileOnly 'org.projectlombok:lombok:+'
+	annotationProcessor('org.projectlombok:lombok:+')
+
+    // guava
+    implementation 'com.google.guava:guava:26.0-android'
+
 }
