@@ -358,13 +358,24 @@
 	<!-- 4.치매지원서비스 --><!-- 4-2.장기요양급여 신청방법 -->
 	<string name="support_main2">신청방법</string>
 		<string name="text_support_main2_sub1_1">
-			〮장기요양보험공단 홈페이지 서비스이용가이드 참고\n
-			〮노인장기요양보험 문의전화 1577-1000
+			-장기요양보험공단 홈페이지 서비스이용가이드 참고\n
+			-노인장기요양보험 문의전화 1577-1000
 		</string>
 	<!-- 4.치매지원서비스 --><!-- 4-3.치매안심센터 -->
 	<string name="support_main3">치매안심센터</string>
 	<string name="support_main3_sub1_1">소개</string>
+		<string name="text_support_main3_sub1_1">
+			-치매국가책임제에 따라 인지 건가 상태에 따라 요구되는 다양한 서비스를 맞춤형으로 제공받을 수 있습니다.
+		</string>
 	<string name="support_main3_sub1_2">환자지원</string>
+		<string name="text_support_main3_sub1_2">
+			1.등록관리 서비스\n
+			2.치매조기검진 서비스\n
+			3.치매환자 서비스\n
+			4.치매가족 서비스\n
+			5.치매예방 서비스\n
+			6.치매친화적 지역사회
+		</string>
 	<string name="support_main3_sub1_3">가족지원</string>
 	<!-- 4.치매지원서비스 --><!-- 4-4.기타 지원서비스 -->
 	<string name="support_main4">기타 지원서비스</string>

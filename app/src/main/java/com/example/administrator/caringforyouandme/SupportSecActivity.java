@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 import com.example.administrator.caringforyouandme.KnownFragment.KnownKindFragment1;
+import com.example.administrator.caringforyouandme.SupportFragment.SupportMain2Sub1Fragment1;
 
 /**
  * 장기요양급여 지원 신청방법
@@ -77,7 +78,7 @@ public class SupportSecActivity extends AppCompatActivity {
 		tabHost = findViewById(R.id.tabHost);
 		tabHost.setup();
 
-		TabHost.TabSpec tabSupportMain2Sub1 = tabHost.newTabSpec("0").setContent(R.id.tabHostFirContent).setIndicator("신청방법", null);
+		TabHost.TabSpec tabSupportMain2Sub1 = tabHost.newTabSpec("0").setContent(R.id.tabHostFirContent).setIndicator("장기요양서비스", null);
 		// 상단 탭 추가
 		tabHost.addTab(tabSupportMain2Sub1);
 
@@ -101,27 +102,16 @@ public class SupportSecActivity extends AppCompatActivity {
 					textViewFirContent.setTextColor(getResources().getColor(R.color.colorText_White, null));
 					//textViewSecContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 
-					setKnownKindView();
 					break;
 				case 1:
 					System.out.println("setTab tabHost1: " + tabId);
 					textViewFirContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 					//textViewSecContent.setTextColor(getResources().getColor(R.color.colorText_White, null));
 
-					setKnownDrugView();
 					break;
 			}
 
 			}
-
-			private void setKnownKindView() {
-				System.out.println("setKnownKindView in");
-			}
-			private void setKnownDrugView() {
-				System.out.println("setKnownDrugView in");
-			}
-
-
 		});
 	}
 
@@ -131,7 +121,6 @@ public class SupportSecActivity extends AppCompatActivity {
 		toolbar.setTitle("4-2.장기요양서비스 신청방법");
 		setSupportActionBar(toolbar);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 	}
 
 	@Override
@@ -153,9 +142,6 @@ public class SupportSecActivity extends AppCompatActivity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
 		TabLayout tabLayout1 = (TabLayout) findViewById(R.id.tabLayout1);
 		TabLayout tabLayout2 = (TabLayout) findViewById(R.id.tabLayout2);
 
@@ -187,16 +173,14 @@ public class SupportSecActivity extends AppCompatActivity {
 
 
 			if (currentTab == 0) {
-				System.out.println("PagerAdapter Class=Tabhost:0 " + currentTab + " position :" + position);
 				switch (position) {
 					case 0:
-						KnownKindFragment1 tab1 = new KnownKindFragment1();
+						SupportMain2Sub1Fragment1 tab1 = new SupportMain2Sub1Fragment1();
 						return tab1;
 					default:
 						return null;
 				}
 			} else if (currentTab == 1) {
-				System.out.println("PagerAdapter Class=Tabhost:1 " + currentTab + " Tablayout position :" + position);
 				switch (position) {
 					case 0:
 						return null;
