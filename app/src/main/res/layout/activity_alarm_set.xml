@@ -2,7 +2,7 @@
 <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     <android.support.v7.widget.Toolbar
@@ -24,8 +24,28 @@
 
     </TimePicker>
 
-    <LinearLayout
+    <View
             app:layout_constraintTop_toBottomOf="@+id/timepicker"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerInParent="true"
+            android:background="#d33e85a0"/>
+
+    <TextView
+            app:layout_constraintTop_toBottomOf="@+id/timepicker"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.05"
+            android:id="@+id/label_week"
+            android:text="요일 반복"
+            android:layout_marginTop="8dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <LinearLayout
+            app:layout_constraintTop_toBottomOf="@+id/label_week"
             android:id="@+id/selectWeek"
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -35,9 +55,10 @@
                 android:layout_weight="1.0"
                 android:id="@+id/selectSun"
                 android:text="일"
+                android:textColor="@android:color/holo_red_light"
                 android:layout_gravity="center_vertical"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:layout_marginStart="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -48,7 +69,7 @@
                 android:text="월"
                 android:layout_gravity="center_vertical"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -58,7 +79,7 @@
                 android:text="화"
                 android:layout_gravity="center_vertical"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -68,7 +89,7 @@
                 android:text="수"
                 android:layout_gravity="center_vertical"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -78,7 +99,7 @@
                 android:text="목"
                 android:layout_gravity="center_vertical"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -88,7 +109,7 @@
                 android:text="금"
                 android:layout_gravity="center_vertical"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -98,18 +119,27 @@
                 android:text="토"
                 android:layout_gravity="center_vertical"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:layout_marginEnd="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
     </LinearLayout>
 
+    <View
+            app:layout_constraintTop_toBottomOf="@+id/selectWeek"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerInParent="true"
+            android:background="#d33e85a0"/>
+
     <TextView
             app:layout_constraintTop_toBottomOf="@+id/selectWeek"
             android:id="@+id/alarmContent"
+            android:layout_marginTop="10dp"
             android:text="내용"
             android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
 </android.support.constraint.ConstraintLayout>

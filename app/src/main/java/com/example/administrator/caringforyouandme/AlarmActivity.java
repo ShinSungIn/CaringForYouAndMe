@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import com.example.administrator.caringforyouandme.activity.alarm.AlarmSetActivity;
 import com.example.administrator.caringforyouandme.listview.alarm.AlarmListviewAdapter;
@@ -16,11 +17,23 @@ public class AlarmActivity extends AppCompatActivity {
 	private Toolbar toolbar;
 
 	private Context context;
+
+	private Button button;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_alarm);
         context = this;
+
+        button = findViewById(R.id.button_alarm_create);
+        button.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(context, AlarmSetActivity.class));
+			}
+		});
+
 		setToolbar();
         _setListView();
 	}
