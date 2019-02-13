@@ -45,6 +45,7 @@
 		<activity android:name=".PhotoViewActivity"></activity>
 		<!-- 번외 3.알람설정(메인) -->
 		<activity android:name=".AlarmActivity"></activity>
+		<activity android:name=".activity.alarm.AlarmSetActivity"></activity>
 	</application>
 
 </manifest>

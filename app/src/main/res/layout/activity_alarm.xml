@@ -25,15 +25,12 @@
 			android:layout_height="60dp">
 
 		<Button
-
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintEnd_toEndOf="parent"
 				app:layout_constraintTop_toTopOf="parent"
 				app:layout_constraintBottom_toBottomOf="parent"
-
 				app:layout_constraintHorizontal_bias="0.9"
 				app:layout_constraintVertical_bias="0.5"
-
 				android:id="@+id/button_alarm_create"
 				android:text="생성"
 				android:layout_width="wrap_content"
@@ -41,11 +38,17 @@
 
 	</android.support.constraint.ConstraintLayout>
 
+	<View
+			app:layout_constraintTop_toBottomOf="@+id/constraintLayout_alarmCreate"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:layout_centerInParent="true"
+			android:background="#d3d3d3"/>
+
 	<ListView
 			app:layout_constraintTop_toBottomOf="@+id/constraintLayout_alarmCreate"
 			android:id="@+id/listview_alarm"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
-	</ListView>
+			android:layout_height="wrap_content"/>
 
 </android.support.constraint.ConstraintLayout>

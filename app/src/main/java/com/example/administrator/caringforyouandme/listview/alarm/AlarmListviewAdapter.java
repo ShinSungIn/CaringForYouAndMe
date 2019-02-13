@@ -92,4 +92,48 @@ public class AlarmListviewAdapter extends BaseAdapter {
         return convertView;
     }
 
+
+    @SuppressWarnings("Duplicates")
+    public void addItem(Alarm alarm) {
+        String time = alarm.getTime();
+        String halfTime = Integer.parseInt(time.split(":")[0].trim()) >= 12 ? "오후" : "오전";
+        StringBuffer stringBuffer  =  new StringBuffer();
+
+        if ( alarm.getIsSun().equals("true")) {
+            stringBuffer.append("일 ");
+        }
+
+        if ( alarm.getIsMon().equals("true")) {
+            stringBuffer.append("월 ");
+        }
+
+        if ( alarm.getIsTue().equals("true")) {
+            stringBuffer.append("화 ");
+        }
+
+        if ( alarm.getIsWed().equals("true")) {
+            stringBuffer.append("수 ");
+        }
+
+        if ( alarm.getIsThu().equals("true")) {
+            stringBuffer.append("목 ");
+        }
+
+        if ( alarm.getIsFri().equals("true")) {
+            stringBuffer.append("금 ");
+        }
+
+        if ( alarm.getIsSat().equals("true")) {
+            stringBuffer.append("토 ");
+        }
+
+        String alarmWeek = stringBuffer.toString();
+
+        AlarmListviewItem alarmListviewItem = new AlarmListviewItem();
+        alarmListviewItem.setHalfTime(halfTime);
+        alarmListviewItem.setAlarmTime(time);
+        alarmListviewItem.setAlarmWeek(alarmWeek);
+
+        arrayList.add(alarmListviewItem);
+    }
 }

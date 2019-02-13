@@ -20,6 +20,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 	private DatabaseHelper(Context context, String databaseName, SQLiteDatabase.CursorFactory factory, int version) {
 		super(context, databaseName, factory, version);
+		_initWritableDatabase();
 	}
 
 	public static synchronized DatabaseHelper getInstance(Context context, String databaseName, SQLiteDatabase.CursorFactory factory, int version){

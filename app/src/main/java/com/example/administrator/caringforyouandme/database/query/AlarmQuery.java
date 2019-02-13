@@ -22,9 +22,10 @@ public class AlarmQuery {
 
     public AlarmQuery(Context context) {
         this.context = context;
+        _onCreate();
     }
 
-    public void onCreate() {
+    private void _onCreate() {
         databaseHelper = DatabaseHelper.getInstance(context, null, 1);
     }
 
@@ -33,7 +34,18 @@ public class AlarmQuery {
      */
     public long set(Alarm alarm) {
         ContentValues contentValues = new ContentValues();
-
+        contentValues.put(Column.ALARM_TIME, alarm.getTime());
+        contentValues.put(Column.ALARM_CONTENT, alarm.getContent());
+        contentValues.put(Column.ALARM_ISSUN, alarm.getIsSun());
+        contentValues.put(Column.ALARM_ISMON, alarm.getIsMon());
+        contentValues.put(Column.ALARM_ISTUE, alarm.getIsTue());
+        contentValues.put(Column.ALARM_ISWED, alarm.getIsWed());
+        contentValues.put(Column.ALARM_ISTHU, alarm.getIsThu());
+        contentValues.put(Column.ALARM_ISFRI, alarm.getIsFri());
+        contentValues.put(Column.ALARM_ISSAT, alarm.getIsSat());
+        if(alarm == null) {
+            return -1;
+        }
         return databaseHelper.onInsert(Entity.alarm, contentValues);
     }
 
