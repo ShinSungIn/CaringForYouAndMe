@@ -68,12 +68,16 @@
 								<android.support.design.widget.AppBarLayout android:id="@+id/appbar1"
 										android:layout_width="match_parent"
 										android:layout_height="wrap_content"
+										android:background="@color/colorBackground_Tapsub"
 										android:theme="@style/AppTheme.NoActionbar.AppBarOverlay">
 									<android.support.design.widget.TabLayout
 											android:layout_width="match_parent"
 											android:layout_height="match_parent"
 											app:tabMode="scrollable"
-											app:tabIndicatorColor="@android:color/white"
+											app:tabTextColor="@color/colorText_Tapsub"
+											app:tabIndicatorColor="@color/colorAccent_Tabsub"
+											app:tabSelectedTextColor="@color/colorAccent_Tabsub"
+											app:tabBackground="@color/colorBackground_Tapsub"
 											app:layout_scrollFlags="scroll|enterAlways"
 											android:id="@+id/tabLayout1"
 											android:orientation="vertical">
@@ -89,7 +93,6 @@
 										android:id="@+id/Container1"
 										android:layout_width="match_parent"
 										android:layout_height="match_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
-
 
 							</android.support.design.widget.CoordinatorLayout>
 

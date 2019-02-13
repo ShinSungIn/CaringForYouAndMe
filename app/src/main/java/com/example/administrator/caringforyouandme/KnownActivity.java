@@ -1,19 +1,25 @@
 package com.example.administrator.caringforyouandme;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
+import android.widget.TabWidget;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.example.administrator.caringforyouandme.KnownFragment.KnownDrugFragment1;
 import com.example.administrator.caringforyouandme.KnownFragment.KnownDrugFragment2;
 import com.example.administrator.caringforyouandme.KnownFragment.KnownDrugFragment3;
@@ -117,44 +123,38 @@ public class KnownActivity extends AppCompatActivity {
 		textViewFirContent = tabHost.getTabWidget().getChildAt(0).findViewById(android.R.id.title);
 		textViewSecContent = tabHost.getTabWidget().getChildAt(1).findViewById(android.R.id.title);
 
-		//textViewFirContent.setTextSize(20);
-		//textViewSecContent.setTextSize(20);
+		textViewFirContent.setTextSize(16);
+		textViewSecContent.setTextSize(16);
 
 		// 초기셋팅
 		textViewFirContent.setTextColor(getResources().getColor(R.color.colorText_White, null));
 		textViewSecContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
-
+		tabHost.getTabWidget().getChildAt(0).setBackgroundColor(getResources().getColor(R.color.colorBackground_Tap, null));
+		
 		tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
 			@Override
 			public void onTabChanged(String tabId) {
-			int index = Integer.parseInt(tabId);
-			switch (index) {
+				int index = Integer.parseInt(tabId);
+				switch (index) {
 				case 0:
-					System.out.println("setTab tabHost0: " + tabId);
 					textViewFirContent.setTextColor(getResources().getColor(R.color.colorText_White, null));
 					textViewSecContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 
-					setKnownKindView();
+					tabHost.getTabWidget().getChildAt(0).setBackgroundColor(getResources().getColor(R.color.colorBackground_Tap, null));
+					tabHost.getTabWidget().getChildAt(1).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+
 					break;
 				case 1:
-					System.out.println("setTab tabHost1: " + tabId);
 					textViewFirContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 					textViewSecContent.setTextColor(getResources().getColor(R.color.colorText_White, null));
 
-					setKnownDrugView();
+					tabHost.getTabWidget().getChildAt(0).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+					tabHost.getTabWidget().getChildAt(1).setBackgroundColor(getResources().getColor(R.color.colorBackground_Tap, null));
+
 					break;
-			}
+				}
 
 			}
-
-			private void setKnownKindView() {
-				System.out.println("setKnownKindView in");
-			}
-			private void setKnownDrugView() {
-				System.out.println("setKnownDrugView in");
-			}
-
-
 		});
 	}
 
@@ -165,8 +165,6 @@ public class KnownActivity extends AppCompatActivity {
 
 		setSupportActionBar(toolbar);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-		System.out.println("setToolbar in");
 	}
 
 	@Override
@@ -188,20 +186,34 @@ public class KnownActivity extends AppCompatActivity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		TabLayout tabLayout1 = (TabLayout) findViewById(R.id.tabLayout1);
-		TabLayout tabLayout2 = (TabLayout) findViewById(R.id.tabLayout2);
-
-		System.out.println("onOptionsItemSelected getItemId()= " + item.getItemId());
 
 		switch (item.getItemId()) {
 			case android.R.id.home :
 				//toolbar의 back키 눌렀을 때 동작
 				finish();
 				return true;
+
+			case R.id.action_mainAll :
+				Toast.makeText(this, "도움말 기능입니다. 메뉴를 선택하세요.", Toast.LENGTH_SHORT).show();
+				return true;
+			case R.id.action_known1 :
+				AlertDialog.Builder builder1 = new AlertDialog.Builder(KnownActivity.this);
+				builder1.setMessage("" +
+					" 치매환자가족들이 가족원에 대한 치매원인은 대략 알고 있으나 다른 치매 원인에 대해서도 관심이 있으며 알고 싶어 함\n" +
+					" 링크 연결하여 원하는 치매종류와 약물을 바로 확인할 수 있도록 지원\n")
+					.setNegativeButton("닫기", null)
+					.create()
+					.show();
+				return true;
+			case R.id.action_known2 :
+				AlertDialog.Builder builder2 = new AlertDialog.Builder(KnownActivity.this);
+				builder2.setMessage("준비중입니다.")
+					.setNegativeButton("닫기", null)
+					.create()
+					.show();
+				return true;
 		}
+
 
 		return super.onOptionsItemSelected(item);
 	}
@@ -222,7 +234,6 @@ public class KnownActivity extends AppCompatActivity {
 
 
 			if (currentTab == 0) {
-				System.out.println("PagerAdapter Class=Tabhost:0 " + currentTab + " position :" + position);
 				switch (position) {
 					case 0:
 						KnownKindFragment1 tab1 = new KnownKindFragment1();
@@ -249,7 +260,6 @@ public class KnownActivity extends AppCompatActivity {
 						return null;
 				}
 			} else if (currentTab == 1) {
-				System.out.println("PagerAdapter Class=Tabhost:1 " + currentTab + " Tablayout position :" + position);
 				switch (position) {
 					case 0:
 						KnownDrugFragment1 tab1 = new KnownDrugFragment1();

@@ -9,7 +9,7 @@
 	<color name="colorWhite">#FFFFFF</color>
 	<color name="colorBlack">#000000</color>
 	<color name="colorWarning">#ED00CB</color>
-	<color name="colorGray">#8C8C8C</color>
+	<color name="colorGray">#acacac</color><!--tabhost 배경 비활성-->
 
 	<!-- Text -->
 	<color name="colorText_White">#fdfdfe</color>
@@ -19,11 +19,16 @@
 	<color name="colorText_Red">#fe1233</color>
 	<color name="colorText_Black">#131416</color>
 	<color name="colorText_DarkGray">#47464b</color>
-	<color name="colorText_Gray">#5f626a</color>
+	<color name="colorText_Gray">#d4d4d4</color>
 	<color name="colorText_LightGray">#838a96</color>
 
-	<color name="colorAccent_Tab">#1f9bed</color>
-	<color name="colorBackground_Tap">#161922</color>
+	<color name="colorAccent_Tab">#f72f5e</color>
+	<color name="colorBackground_Tap">#f77695</color><!--tabhost 배경 활성-->
+
+	<color name="colorAccent_Tabsub">#f73b66</color>
+	<color name="colorBackground_Tapsub">#f7f7f7</color>
+	<color name="colorText_Tapsub">#3a3a3a</color>
+
 
 	<!-- 유튜브 테스트 -->
 	<color name="red">#F44336</color>

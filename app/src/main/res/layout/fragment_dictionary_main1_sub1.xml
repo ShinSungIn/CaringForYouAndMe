@@ -18,12 +18,17 @@
 				<Button android:text="읽기 멈춤" android:layout_columnWeight="1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/dic_speakstop1" android:adjustViewBounds="true" android:scaleType="fitCenter" android:layout_marginTop="@dimen/text_margin"/>
 		</GridLayout>
 
-		<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="새창"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
 				android:id="@+id/dic_main1_view1"
-				android:src="@drawable/known_main2_sub1_drug"
+				android:src="@drawable/dictionary_main1_sub1_1"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:background="@color/colorWhite"
 				android:layout_margin="@dimen/text_margin"
-				android:layout_gravity="center_horizontal"
-				android:contentDescription="@string/dictionary_main1_sub1"
+				android:layout_gravity="center"
 		/>
 
 		<TextView android:layout_width="wrap_content"
@@ -34,16 +39,18 @@
 				android:lineSpacingExtra="@dimen/textView_lineheight"
 				android:text="@string/text_dictionary_main1_sub1"/>
 
-		<Button android:text="자세히 알아보기" android:layout_width="match_parent"
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="새창"
+				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:id="@+id/dic_main1_sub1_linkbutton"
+				android:id="@+id/dic_main1_view2"
+				android:src="@drawable/dictionary_main1_sub1_2"
 				android:adjustViewBounds="true"
 				android:scaleType="fitCenter"
-				android:layout_marginTop="@dimen/text_margin"
-				android:layout_marginLeft="@dimen/text_margin"
-				android:layout_marginRight="@dimen/text_margin"
+				android:background="@color/colorWhite"
+				android:layout_margin="@dimen/text_margin"
+				android:layout_gravity="center"
 		/>
-
 
 	</LinearLayout>
 

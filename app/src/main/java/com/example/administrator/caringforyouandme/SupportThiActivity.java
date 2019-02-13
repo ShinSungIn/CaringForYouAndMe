@@ -77,7 +77,7 @@ public class SupportThiActivity extends AppCompatActivity {
 
 		textViewFirContent = tabHost.getTabWidget().getChildAt(0).findViewById(android.R.id.title);
 
-		//textViewFirContent.setTextSize(20);
+		textViewFirContent.setTextSize(20);
 		//textViewSecContent.setTextSize(20);
 
 		// 초기셋팅

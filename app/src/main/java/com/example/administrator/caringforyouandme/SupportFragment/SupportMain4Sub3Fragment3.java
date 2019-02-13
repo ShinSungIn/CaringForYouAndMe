@@ -1,11 +1,17 @@
 package com.example.administrator.caringforyouandme.SupportFragment;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import com.example.administrator.caringforyouandme.BitmapHelper;
+import com.example.administrator.caringforyouandme.PhotoViewActivity;
 import com.example.administrator.caringforyouandme.R;
 
 /**
@@ -57,6 +63,32 @@ public class SupportMain4Sub3Fragment3 extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_support_main4_sub3_3, container, false);
+
+		ImageButton imageButton1 = (ImageButton) view.findViewById(R.id.support_main4_sub3_view1);
+		imageButton1.setOnClickListener(new ImageButton.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// 전달할 이미지 만들기
+				Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.support_main4_sub3_3_1);
+				BitmapHelper.getInstance().setBitmap(sendBitmap);
+
+				Intent intent = new Intent(getActivity(), PhotoViewActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		ImageButton imageButton2 = (ImageButton) view.findViewById(R.id.support_main4_sub3_view2);
+		imageButton2.setOnClickListener(new ImageButton.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// 전달할 이미지 만들기
+				Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.support_main4_sub3_3_2);
+				BitmapHelper.getInstance().setBitmap(sendBitmap);
+
+				Intent intent = new Intent(getActivity(), PhotoViewActivity.class);
+				startActivity(intent);
+			}
+		});
 
 		return view;
 	}

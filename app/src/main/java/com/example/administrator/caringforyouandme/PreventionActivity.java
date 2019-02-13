@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -70,6 +71,7 @@ public class PreventionActivity extends AppCompatActivity {
 		tabHost.setup();
 
 		TabHost.TabSpec tabHeartbeat = tabHost.newTabSpec("0").setContent(R.id.tabHostFirContent).setIndicator("치매예방", null);
+
 		// 상단 탭 추가
 		tabHost.addTab(tabHeartbeat);
 
@@ -77,6 +79,7 @@ public class PreventionActivity extends AppCompatActivity {
 
 		// 초기셋팅
 		textViewHeartbeat.setTextColor(getResources().getColor(R.color.colorText_White, null));
+		textViewHeartbeat.setTextSize(20);
 
 		tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
 			@Override
@@ -84,7 +87,6 @@ public class PreventionActivity extends AppCompatActivity {
 			int index = Integer.parseInt(tabId);
 			switch (index) {
 				case 0:
-					System.out.println("setTab tabHost0: " + tabId);
 					textViewHeartbeat.setTextColor(getResources().getColor(R.color.colorText_White, null));
 					textViewBreath.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 
@@ -138,22 +140,23 @@ public class PreventionActivity extends AppCompatActivity {
 				finish();
 				return true;
 
-			case R.id.action_call1 :
-				Toast.makeText(this, "action_call1", Toast.LENGTH_SHORT).show();
+			case R.id.action_mainAll :
+				Toast.makeText(this, "도움말 기능입니다. 메뉴를 선택하세요.", Toast.LENGTH_SHORT).show();
 				return true;
-			case R.id.action_call2 :
-				Toast.makeText(this, "action_call2", Toast.LENGTH_SHORT).show();
+			case R.id.action_prevention1 :
+				AlertDialog.Builder builder1 = new AlertDialog.Builder(PreventionActivity.this);
+				builder1.setMessage("" +
+					" 치매환자가족들이 본인도 치매에 걸릴 수 있다는 두려움을 가지고 있으므로 실천사항을 제시 함으로써 예방 가능함을 강조\n")
+					.setNegativeButton("닫기", null)
+					.create()
+					.show();
 				return true;
-			case R.id.action_call3 :
-				Toast.makeText(this, "action_call3", Toast.LENGTH_SHORT).show();
-				return true;
-
-			case R.id.action_info :
-				Toast.makeText(this, "action_info", Toast.LENGTH_SHORT).show();
-				return true;
-
-			case R.id.action_settings :
-				Toast.makeText(this, "action_settings", Toast.LENGTH_SHORT).show();
+			case R.id.action_prevention2 :
+				AlertDialog.Builder builder2 = new AlertDialog.Builder(PreventionActivity.this);
+				builder2.setMessage("준비중입니다.")
+					.setNegativeButton("닫기", null)
+					.create()
+					.show();
 				return true;
 		}
 

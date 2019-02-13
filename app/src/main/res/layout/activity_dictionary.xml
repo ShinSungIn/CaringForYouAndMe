@@ -32,7 +32,7 @@
 
 			<TabWidget
 					android:id="@android:id/tabs"
-					android:background="@color/colorBackground_Tap"
+					android:background="@color/colorGray"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content" />
 
@@ -42,7 +42,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="match_parent">
 
-				<!-- 경도치매 -->
+				<!-- 초기치매 -->
 				<LinearLayout
 						android:id="@+id/tabHostFirContent"
 						android:layout_width="match_parent"
@@ -67,16 +67,21 @@
 								<android.support.design.widget.AppBarLayout android:id="@+id/appbar1"
 										android:layout_width="match_parent"
 										android:layout_height="wrap_content"
+										android:background="@color/colorBackground_Tapsub"
 										android:theme="@style/AppTheme.NoActionbar.AppBarOverlay">
 									<android.support.design.widget.TabLayout
 											android:layout_width="match_parent"
 											android:layout_height="match_parent"
 											app:tabMode="scrollable"
-											app:tabIndicatorColor="@android:color/white"
+											app:tabTextColor="@color/colorText_Tapsub"
+											app:tabIndicatorColor="@color/colorAccent_Tabsub"
+											app:tabSelectedTextColor="@color/colorAccent_Tabsub"
+											app:tabBackground="@color/colorBackground_Tapsub"
 											app:layout_scrollFlags="scroll|enterAlways"
 											android:id="@+id/tabLayout1"
 											android:orientation="vertical">
 
+										<android.support.design.widget.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dictionary_main1_sub0"/>
 										<android.support.design.widget.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dictionary_main1_sub1"/>
 										<android.support.design.widget.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/dictionary_main1_sub2"/>
 										<android.support.design.widget.TabItem android:layout_width="wrap_content" android:layout_height="wrap_content"	android:text="@string/dictionary_main1_sub3"/>
@@ -120,12 +125,16 @@
 							<android.support.design.widget.AppBarLayout android:id="@+id/appbar2"
 									android:layout_width="match_parent"
 									android:layout_height="wrap_content"
+									android:background="@color/colorBackground_Tapsub"
 									android:theme="@style/AppTheme.NoActionbar.AppBarOverlay">
 								<android.support.design.widget.TabLayout
 										android:layout_width="match_parent"
 										android:layout_height="match_parent"
 										app:tabMode="scrollable"
-										app:tabIndicatorColor="@android:color/white"
+										app:tabTextColor="@color/colorText_Tapsub"
+										app:tabIndicatorColor="@color/colorAccent_Tabsub"
+										app:tabSelectedTextColor="@color/colorAccent_Tabsub"
+										app:tabBackground="@color/colorBackground_Tapsub"
 										app:layout_scrollFlags="scroll|enterAlways"
 										android:id="@+id/tabLayout2"
 										android:orientation="vertical">
@@ -171,12 +180,16 @@
 							<android.support.design.widget.AppBarLayout android:id="@+id/appbar3"
 									android:layout_width="match_parent"
 									android:layout_height="wrap_content"
+									android:background="@color/colorBackground_Tapsub"
 									android:theme="@style/AppTheme.NoActionbar.AppBarOverlay">
 								<android.support.design.widget.TabLayout
 										android:layout_width="match_parent"
 										android:layout_height="match_parent"
 										app:tabMode="scrollable"
-										app:tabIndicatorColor="@android:color/white"
+										app:tabTextColor="@color/colorText_Tapsub"
+										app:tabIndicatorColor="@color/colorAccent_Tabsub"
+										app:tabSelectedTextColor="@color/colorAccent_Tabsub"
+										app:tabBackground="@color/colorBackground_Tapsub"
 										app:layout_scrollFlags="scroll|enterAlways"
 										android:id="@+id/tabLayout3"
 										android:orientation="vertical">
@@ -228,12 +241,16 @@
 							<android.support.design.widget.AppBarLayout android:id="@+id/appbar4"
 									android:layout_width="match_parent"
 									android:layout_height="wrap_content"
+									android:background="@color/colorBackground_Tapsub"
 									android:theme="@style/AppTheme.NoActionbar.AppBarOverlay">
 								<android.support.design.widget.TabLayout
 										android:layout_width="match_parent"
 										android:layout_height="match_parent"
 										app:tabMode="scrollable"
-										app:tabIndicatorColor="@android:color/white"
+										app:tabTextColor="@color/colorText_Tapsub"
+										app:tabIndicatorColor="@color/colorAccent_Tabsub"
+										app:tabSelectedTextColor="@color/colorAccent_Tabsub"
+										app:tabBackground="@color/colorBackground_Tapsub"
 										app:layout_scrollFlags="scroll|enterAlways"
 										android:id="@+id/tabLayout4"
 										android:orientation="vertical">

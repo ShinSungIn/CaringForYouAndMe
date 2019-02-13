@@ -172,14 +172,17 @@ public class SupportForActivity extends AppCompatActivity {
 		textViewThiContent = tabHost.getTabWidget().getChildAt(2).findViewById(android.R.id.title);
 		textViewForContent = tabHost.getTabWidget().getChildAt(3).findViewById(android.R.id.title);
 
-		//textViewFirContent.setTextSize(20);
-		//textViewSecContent.setTextSize(20);
+		textViewFirContent.setTextSize(16);
+		textViewSecContent.setTextSize(15);
+		textViewThiContent.setTextSize(15);
+		textViewForContent.setTextSize(16);
 
 		// 초기셋팅
 		textViewFirContent.setTextColor(getResources().getColor(R.color.colorText_White, null));
 		textViewSecContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 		textViewThiContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 		textViewForContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
+		tabHost.getTabWidget().getChildAt(0).setBackgroundColor(getResources().getColor(R.color.colorBackground_Tap, null));
 
 		tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
 			@Override
@@ -191,6 +194,11 @@ public class SupportForActivity extends AppCompatActivity {
 					textViewSecContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 					textViewThiContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 					textViewForContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
+
+					tabHost.getTabWidget().getChildAt(0).setBackgroundColor(getResources().getColor(R.color.colorBackground_Tap, null));
+					tabHost.getTabWidget().getChildAt(1).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+					tabHost.getTabWidget().getChildAt(2).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+					tabHost.getTabWidget().getChildAt(3).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
 					
 					break;
 				case 1:
@@ -199,6 +207,11 @@ public class SupportForActivity extends AppCompatActivity {
 					textViewThiContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 					textViewForContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 
+					tabHost.getTabWidget().getChildAt(0).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+					tabHost.getTabWidget().getChildAt(1).setBackgroundColor(getResources().getColor(R.color.colorBackground_Tap, null));
+					tabHost.getTabWidget().getChildAt(2).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+					tabHost.getTabWidget().getChildAt(3).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+
 					break;
 				case 2:
 					textViewFirContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
@@ -206,12 +219,22 @@ public class SupportForActivity extends AppCompatActivity {
 					textViewThiContent.setTextColor(getResources().getColor(R.color.colorText_White, null));
 					textViewForContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 
+					tabHost.getTabWidget().getChildAt(0).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+					tabHost.getTabWidget().getChildAt(1).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+					tabHost.getTabWidget().getChildAt(2).setBackgroundColor(getResources().getColor(R.color.colorBackground_Tap, null));
+					tabHost.getTabWidget().getChildAt(3).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+
 					break;
 				case 3:
 					textViewFirContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 					textViewSecContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 					textViewThiContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 					textViewForContent.setTextColor(getResources().getColor(R.color.colorText_White, null));
+
+					tabHost.getTabWidget().getChildAt(0).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+					tabHost.getTabWidget().getChildAt(1).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+					tabHost.getTabWidget().getChildAt(2).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+					tabHost.getTabWidget().getChildAt(3).setBackgroundColor(getResources().getColor(R.color.colorBackground_Tap, null));
 
 					break;
 				default:

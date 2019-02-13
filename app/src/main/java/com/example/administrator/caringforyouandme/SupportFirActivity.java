@@ -144,13 +144,15 @@ public class SupportFirActivity extends AppCompatActivity {
 		textViewSecContent = tabHost.getTabWidget().getChildAt(1).findViewById(android.R.id.title);
 		textViewThiContent = tabHost.getTabWidget().getChildAt(2).findViewById(android.R.id.title);
 
-		//textViewFirContent.setTextSize(20);
-		//textViewSecContent.setTextSize(20);
+		textViewFirContent.setTextSize(20);
+		textViewSecContent.setTextSize(20);
+		textViewThiContent.setTextSize(20);
 
 		// 초기셋팅
 		textViewFirContent.setTextColor(getResources().getColor(R.color.colorText_White, null));
 		textViewSecContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 		textViewThiContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
+		tabHost.getTabWidget().getChildAt(0).setBackgroundColor(getResources().getColor(R.color.colorBackground_Tap, null));
 
 		tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
 			@Override
@@ -162,8 +164,11 @@ public class SupportFirActivity extends AppCompatActivity {
 					textViewFirContent.setTextColor(getResources().getColor(R.color.colorText_White, null));
 					textViewSecContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 					textViewThiContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
+
+					tabHost.getTabWidget().getChildAt(0).setBackgroundColor(getResources().getColor(R.color.colorBackground_Tap, null));
+					tabHost.getTabWidget().getChildAt(1).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+					tabHost.getTabWidget().getChildAt(2).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
 					
-					setSupportMain1Sub1();
 					break;
 				case 1:
 					System.out.println("setTab tabHost1: " + tabId);
@@ -171,7 +176,10 @@ public class SupportFirActivity extends AppCompatActivity {
 					textViewSecContent.setTextColor(getResources().getColor(R.color.colorText_White, null));
 					textViewThiContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 
-					setSupportMain1Sub2();
+					tabHost.getTabWidget().getChildAt(0).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+					tabHost.getTabWidget().getChildAt(1).setBackgroundColor(getResources().getColor(R.color.colorBackground_Tap, null));
+					tabHost.getTabWidget().getChildAt(2).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+
 					break;
 				case 2:
 					System.out.println("setTab tabHost2: " + tabId);
@@ -179,23 +187,14 @@ public class SupportFirActivity extends AppCompatActivity {
 					textViewSecContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 					textViewThiContent.setTextColor(getResources().getColor(R.color.colorText_White, null));
 
-					setSupportMain1Sub3();
+					tabHost.getTabWidget().getChildAt(0).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+					tabHost.getTabWidget().getChildAt(1).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+					tabHost.getTabWidget().getChildAt(2).setBackgroundColor(getResources().getColor(R.color.colorBackground_Tap, null));
+
 					break;
 			}
 
 			}
-
-			private void setSupportMain1Sub1() {
-				System.out.println("setSupportMain1Sub1 in");
-			}
-			private void setSupportMain1Sub2() {
-				System.out.println("setSupportMain1Sub2 in");
-			}
-			private void setSupportMain1Sub3() {
-				System.out.println("setSupportMain1Sub3 in");
-			}
-
-
 		});
 	}
 
@@ -231,8 +230,6 @@ public class SupportFirActivity extends AppCompatActivity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		TabLayout tabLayout1 = (TabLayout) findViewById(R.id.tabLayout1);
 		TabLayout tabLayout2 = (TabLayout) findViewById(R.id.tabLayout2);
-
-		System.out.println("onOptionsItemSelected getItemId()= " + item.getItemId());
 
 		switch (item.getItemId()) {
 			case android.R.id.home :

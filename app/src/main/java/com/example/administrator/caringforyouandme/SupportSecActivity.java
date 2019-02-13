@@ -85,7 +85,7 @@ public class SupportSecActivity extends AppCompatActivity {
 		textViewFirContent = tabHost.getTabWidget().getChildAt(0).findViewById(android.R.id.title);
 		//textViewSecContent = tabHost.getTabWidget().getChildAt(1).findViewById(android.R.id.title);
 
-		//textViewFirContent.setTextSize(20);
+		textViewFirContent.setTextSize(20);
 		//textViewSecContent.setTextSize(20);
 
 		// 초기셋팅

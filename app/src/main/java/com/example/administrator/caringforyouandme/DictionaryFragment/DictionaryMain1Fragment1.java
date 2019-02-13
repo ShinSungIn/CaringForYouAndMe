@@ -1,6 +1,8 @@
 package com.example.administrator.caringforyouandme.DictionaryFragment;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -10,7 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
+import com.example.administrator.caringforyouandme.BitmapHelper;
+import com.example.administrator.caringforyouandme.PhotoViewActivity;
 import com.example.administrator.caringforyouandme.R;
 
 import java.util.Locale;
@@ -66,11 +71,29 @@ public class DictionaryMain1Fragment1 extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_dictionary_main1_sub1, container, false);
 
-		Button linkButton = (Button) view.findViewById(R.id.dic_main1_sub1_linkbutton);
-		linkButton.setOnClickListener(new View.OnClickListener() {
+		ImageButton imageButton1 = (ImageButton) view.findViewById(R.id.dic_main1_view1);
+		imageButton1.setOnClickListener(new ImageButton.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.kimsonline.co.kr/drugcenter/search/totalSearch?Keyword=%EC%95%84%EB%A6%AC%EC%85%89%ED%8A%B8")));
+				// 전달할 이미지 만들기
+				Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dictionary_main1_sub1_1);
+				BitmapHelper.getInstance().setBitmap(sendBitmap);
+
+				Intent intent = new Intent(getActivity(), PhotoViewActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		ImageButton imageButton2 = (ImageButton) view.findViewById(R.id.dic_main1_view2);
+		imageButton2.setOnClickListener(new ImageButton.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// 전달할 이미지 만들기
+				Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dictionary_main1_sub1_2);
+				BitmapHelper.getInstance().setBitmap(sendBitmap);
+
+				Intent intent = new Intent(getActivity(), PhotoViewActivity.class);
+				startActivity(intent);
 			}
 		});
 
@@ -113,7 +136,6 @@ public class DictionaryMain1Fragment1 extends Fragment {
 				tts.stop();
 			}
 		});
-
 
 		return view;
 	}

@@ -23,7 +23,8 @@
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:layout_marginTop="56dp"
-			android:theme="@style/TapTheme"	>
+			android:theme="@style/TapTheme"
+	>
 
 		<LinearLayout
 				android:layout_width="match_parent"
@@ -32,9 +33,10 @@
 
 			<TabWidget
 					android:id="@android:id/tabs"
-					android:background="@color/colorBackground_Tap"
+					android:background="@color/colorGray"
 					android:layout_width="match_parent"
-					android:layout_height="wrap_content" />
+					android:layout_height="wrap_content"
+			/>
 
 			<!-- 상단 탭 메뉴에 의해 화면 변경 대상 FrameLayout -->
 			<FrameLayout
@@ -42,7 +44,7 @@
 					android:layout_width="match_parent"
 					android:layout_height="match_parent">
 
-				<!-- 심박 -->
+				<!-- 치매종류 및 원인 -->
 				<LinearLayout
 						android:id="@+id/tabHostFirContent"
 						android:layout_width="match_parent"
@@ -67,12 +69,16 @@
 								<android.support.design.widget.AppBarLayout android:id="@+id/appbar1"
 										android:layout_width="match_parent"
 										android:layout_height="wrap_content"
-										android:theme="@style/AppTheme.NoActionbar.AppBarOverlay">
+										android:theme="@style/AppTheme.NoActionbar.AppBarOverlay"
+										android:background="@color/colorBackground_Tapsub">
 									<android.support.design.widget.TabLayout
 											android:layout_width="match_parent"
 											android:layout_height="match_parent"
 											app:tabMode="scrollable"
-											app:tabIndicatorColor="@android:color/white"
+											app:tabTextColor="@color/colorText_Tapsub"
+											app:tabIndicatorColor="@color/colorAccent_Tabsub"
+											app:tabSelectedTextColor="@color/colorAccent_Tabsub"
+											app:tabBackground="@color/colorBackground_Tapsub"
 											app:layout_scrollFlags="scroll|enterAlways"
 											android:id="@+id/tabLayout1"
 											android:orientation="vertical">
@@ -99,7 +105,7 @@
 
 				</LinearLayout>
 
-				<!-- 호흡 -->
+				<!-- 치매약물치료 -->
 				<LinearLayout
 						android:id="@+id/tabHostSecContent"
 						android:layout_width="match_parent"
@@ -124,12 +130,17 @@
 							<android.support.design.widget.AppBarLayout android:id="@+id/appbar2"
 									android:layout_width="match_parent"
 									android:layout_height="wrap_content"
-									android:theme="@style/AppTheme.NoActionbar.AppBarOverlay">
+									android:theme="@style/AppTheme.NoActionbar.AppBarOverlay"
+									android:background="@color/colorBackground_Tapsub"
+							>
 								<android.support.design.widget.TabLayout
 										android:layout_width="match_parent"
 										android:layout_height="match_parent"
 										app:tabMode="scrollable"
-										app:tabIndicatorColor="@android:color/white"
+										app:tabTextColor="@color/colorText_Tapsub"
+										app:tabIndicatorColor="@color/colorAccent_Tabsub"
+										app:tabSelectedTextColor="@color/colorAccent_Tabsub"
+										app:tabBackground="@color/colorBackground_Tapsub"
 										app:layout_scrollFlags="scroll|enterAlways"
 										android:id="@+id/tabLayout2"
 										android:orientation="vertical">

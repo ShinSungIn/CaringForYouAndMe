@@ -6,7 +6,7 @@
 		app:layout_behavior="@string/appbar_scrolling_view_behavior"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		tools:context=".SupportThiActivity">
+		tools:context=".SupportForActivity">
 
 	<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
 		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
@@ -27,15 +27,20 @@
 				android:lineSpacingExtra="@dimen/textView_lineheight"
 				android:text="@string/text_support_main4_sub3_3_1"/>
 
-		<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="새창"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
 				android:id="@+id/support_main4_sub3_view1"
 				android:src="@drawable/support_main4_sub3_3_1"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:background="@color/colorWhite"
 				android:layout_marginTop="@dimen/text_margin"
 				android:layout_marginLeft="@dimen/text_margin"
 				android:layout_marginRight="@dimen/text_margin"
-				android:layout_gravity="center_horizontal"
-				android:contentDescription="@string/support_main4_sub3_3"
 		/>
+
 
 		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
 				android:layout_marginTop="@dimen/text_margin"
@@ -46,15 +51,20 @@
 				android:lineSpacingExtra="@dimen/textView_lineheight"
 				android:text="@string/text_support_main4_sub3_3_2"/>
 
-		<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="새창"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
 				android:id="@+id/support_main4_sub3_view2"
 				android:src="@drawable/support_main4_sub3_3_2"
-				android:layout_marginBottom="@dimen/text_margin"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:background="@color/colorWhite"
+				android:layout_marginTop="@dimen/text_margin"
 				android:layout_marginLeft="@dimen/text_margin"
 				android:layout_marginRight="@dimen/text_margin"
-				android:layout_gravity="center_horizontal"
-				android:contentDescription="@string/support_main4_sub3_3"
 		/>
+
 
 	</LinearLayout>
 
