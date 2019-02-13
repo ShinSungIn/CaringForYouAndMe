@@ -2,6 +2,7 @@ package com.example.administrator.caringforyouandme.listview.alarm;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,49 +46,16 @@ public class AlarmListviewAdapter extends BaseAdapter {
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = layoutInflater.inflate(R.layout.listview_alarm, parent, false);
 
-        AlarmQuery alarmQuery = new AlarmQuery(activity);
-        Alarm alarm = alarmQuery.get(position+1);
-
-        String time = alarm.getTime();
-
-        StringBuffer stringBuffer = new StringBuffer();
-
-        if(alarm.getIsSun().equals("true")) {
-            stringBuffer.append("일 ");
-        }
-
-        if(alarm.getIsMon().equals("true")) {
-            stringBuffer.append("월 ");
-        }
-
-        if(alarm.getIsTue().equals("true")) {
-            stringBuffer.append("화 ");
-        }
-
-        if(alarm.getIsWed().equals("true")) {
-            stringBuffer.append("수 ");
-        }
-
-        if(alarm.getIsThu().equals("true")) {
-            stringBuffer.append("목 ");
-        }
-
-        if(alarm.getIsFri().equals("true")) {
-            stringBuffer.append("금 ");
-        }
-
-        if(alarm.getIsSat().equals("true")) {
-            stringBuffer.append("토 ");
-        }
+        AlarmListviewItem alarmListviewItem = arrayList.get(position);
 
         TextView halfTime = convertView.findViewById(R.id.halfTime);
-        halfTime.setText("오전");
+        halfTime.setText(alarmListviewItem.getHalfTime());
 
         TextView alarmTime = convertView.findViewById(R.id.alarmTime);
-        alarmTime.setText(time);
+        alarmTime.setText(alarmListviewItem.getAlarmTime());
 
         TextView alarmWeek = convertView.findViewById(R.id.alarmWeek);
-        alarmWeek.setText(stringBuffer.toString());
+        alarmWeek.setText(alarmListviewItem.getAlarmWeek());
 
         return convertView;
     }
@@ -95,8 +63,27 @@ public class AlarmListviewAdapter extends BaseAdapter {
 
     @SuppressWarnings("Duplicates")
     public void addItem(Alarm alarm) {
-        String time = alarm.getTime();
-        String halfTime = Integer.parseInt(time.split(":")[0].trim()) >= 12 ? "오후" : "오전";
+        String timeArray[] = alarm.getTime().trim().split(":");
+        int hour = Integer.parseInt(timeArray[0].trim());
+        int minute = Integer.parseInt(timeArray[1].trim());
+
+        String time;
+        String zeroHour = "";
+        String zeroMinute = "";
+        if(hour < 10) {
+            zeroHour = "0";
+        } else if (hour > 12 ) {
+            hour = hour - 12;
+        }
+
+        if(minute <10) {
+            zeroMinute = "0";
+        }
+
+        time = zeroHour + hour + ":"+ zeroMinute + minute;
+
+        String halfTime =  hour >= 12 ? "오후" : "오전";
+
         StringBuffer stringBuffer  =  new StringBuffer();
 
         if ( alarm.getIsSun().equals("true")) {

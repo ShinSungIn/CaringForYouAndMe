@@ -56,10 +56,11 @@
                 android:layout_weight="1.0"
                 android:id="@+id/textview_select_sun"
                 android:text="일"
-                android:textColor="@android:color/holo_red_light"
+                android:textColor="@color/colorText_Red"
                 android:layout_gravity="center_vertical"
                 android:textAlignment="center"
                 android:textSize="15sp"
+                android:onClick="onSunday"
                 android:layout_marginStart="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -68,9 +69,11 @@
                 android:layout_weight="1.0"
                 android:id="@+id/textview_select_mon"
                 android:text="월"
+                android:textColor="@color/colorText_Black"
                 android:layout_gravity="center_vertical"
                 android:textAlignment="center"
                 android:textSize="15sp"
+                android:onClick="onMonday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -78,9 +81,11 @@
                 android:layout_weight="1.0"
                 android:id="@+id/textview_select_tue"
                 android:text="화"
+                android:textColor="@color/colorText_Black"
                 android:layout_gravity="center_vertical"
                 android:textAlignment="center"
                 android:textSize="15sp"
+                android:onClick="onTuesday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -88,9 +93,11 @@
                 android:layout_weight="1.0"
                 android:id="@+id/textview_select_wed"
                 android:text="수"
+                android:textColor="@color/colorText_Black"
                 android:layout_gravity="center_vertical"
                 android:textAlignment="center"
                 android:textSize="15sp"
+                android:onClick="onWednesday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -98,9 +105,11 @@
                 android:layout_weight="1.0"
                 android:id="@+id/textview_select_thu"
                 android:text="목"
+                android:textColor="@color/colorText_Black"
                 android:layout_gravity="center_vertical"
                 android:textAlignment="center"
                 android:textSize="15sp"
+                android:onClick="onThursday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -108,9 +117,11 @@
                 android:layout_weight="1.0"
                 android:id="@+id/textview_select_fri"
                 android:text="금"
+                android:textColor="@color/colorText_Black"
                 android:layout_gravity="center_vertical"
                 android:textAlignment="center"
                 android:textSize="15sp"
+                android:onClick="onFridy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
@@ -118,9 +129,11 @@
                 android:layout_weight="1.0"
                 android:id="@+id/textview_select_sat"
                 android:text="토"
+                android:textColor="@color/colorText_Black"
                 android:layout_gravity="center_vertical"
                 android:textAlignment="center"
                 android:textSize="15sp"
+                android:onClick="onSaturday"
                 android:layout_marginEnd="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -134,9 +147,9 @@
             android:layout_centerInParent="true"
             android:background="#dee0e4"/>
 
-    <TextView
+    <EditText
             app:layout_constraintTop_toBottomOf="@+id/linearlayout_select_week"
-            android:id="@+id/textview_alarm_set_content"
+            android:id="@+id/edittext_alarm_set_content"
             android:layout_marginTop="10dp"
             android:text="     \n 내용"
             android:textSize="20sp"
@@ -151,6 +164,15 @@
 
         <Button
                 android:layout_weight="1"
+                android:text="취소"
+                android:onClick="onCancel"
+                android:id="@+id/button_alarm_set_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+        />
+
+        <Button
+                android:layout_weight="1"
                 android:text="저장"
                 android:textColor="@android:color/background_dark"
                 android:id="@+id/button_alarm_set_save"
@@ -159,14 +181,6 @@
                 android:layout_height="match_parent"
                 />
 
-        <Button
-                android:layout_weight="1"
-                android:text="취소"
-                android:onClick="onCancel"
-                android:id="@+id/button_alarm_set_cancel"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -32,6 +32,7 @@ public class AlarmQuery {
     /**
      * 알람 등록
      */
+    @SuppressWarnings("Duplicates")
     public long set(Alarm alarm) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(Column.ALARM_TIME, alarm.getTime());
@@ -152,9 +153,22 @@ public class AlarmQuery {
     /**
      * 알람 수정
      */
-    private int modify(Diary diary) {
+    @SuppressWarnings("Duplicates")
+    public int modify(Alarm alarm) {
         ContentValues contentValues = new ContentValues();
-        return databaseHelper.onUpdate(Entity.alarm, null, null, null);
+        contentValues.put(Column.ALARM_TIME, alarm.getTime());
+        contentValues.put(Column.ALARM_CONTENT, alarm.getContent());
+        contentValues.put(Column.ALARM_ISSUN, alarm.getIsSun());
+        contentValues.put(Column.ALARM_ISMON, alarm.getIsMon());
+        contentValues.put(Column.ALARM_ISTUE, alarm.getIsTue());
+        contentValues.put(Column.ALARM_ISWED, alarm.getIsWed());
+        contentValues.put(Column.ALARM_ISTHU, alarm.getIsThu());
+        contentValues.put(Column.ALARM_ISFRI, alarm.getIsFri());
+        contentValues.put(Column.ALARM_ISSAT, alarm.getIsSat());
+
+        String whereClause = Column.ALARM_SEQ + " == ? ";
+        String[] whereArgs = new String[]{alarm.getSeq().toString()};
+        return databaseHelper.onUpdate(Entity.alarm, contentValues, whereClause, whereArgs);
     }
 
 }
