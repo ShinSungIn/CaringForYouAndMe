@@ -70,10 +70,15 @@ public class AlarmListviewAdapter extends BaseAdapter {
         String time;
         String zeroHour = "";
         String zeroMinute = "";
+
+        String halfTime =  hour >= 12 ? "오후" : "오전";
+
+        if (hour > 12 ) {
+            hour = hour - 12;
+        }
+
         if(hour < 10) {
             zeroHour = "0";
-        } else if (hour > 12 ) {
-            hour = hour - 12;
         }
 
         if(minute <10) {
@@ -81,8 +86,6 @@ public class AlarmListviewAdapter extends BaseAdapter {
         }
 
         time = zeroHour + hour + ":"+ zeroMinute + minute;
-
-        String halfTime =  hour >= 12 ? "오후" : "오전";
 
         StringBuffer stringBuffer  =  new StringBuffer();
 

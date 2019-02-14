@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 import com.example.administrator.caringforyouandme.R;
 import com.example.administrator.caringforyouandme.database.domain.Alarm;
 import com.example.administrator.caringforyouandme.database.query.AlarmQuery;
@@ -87,9 +88,9 @@ public class AlarmSetActivity extends AppCompatActivity implements TimePicker.On
         finish();
     }
 
+    @SuppressWarnings("Duplicates")
     @Override
     public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-//        content.setText("time is  " + hourOfDay + ":" + minute );
         String zeroHour = "";
         String zeroMinute = "";
         if(hourOfDay < 10 ) {
@@ -103,6 +104,14 @@ public class AlarmSetActivity extends AppCompatActivity implements TimePicker.On
     }
 
     public void onSave(View view) {
+
+        if (isSun.equals("false") && isMon.equals("false")  && isTue.equals("false")  && isWed.equals("false")  && isThu.equals("false")  && isFri.equals("false")  && isSat.equals("false") ) {
+            Toast.makeText(this, "반복 요일을 선택 하세요.", Toast.LENGTH_SHORT).show();
+            return;
+        } else if (content.getText().toString().trim().equals("")){
+            Toast.makeText(this, "내용을 입력 하세요.", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         if( alarm == null) {
             alarm = new Alarm();
@@ -150,12 +159,12 @@ public class AlarmSetActivity extends AppCompatActivity implements TimePicker.On
     }
 
     public void onTuesday(View view) {
-        if (isThu.equals("false")){
-            isThu = "true";
+        if (isTue.equals("false")){
+            isTue = "true";
         } else {
-            isThu = "false";
+            isTue = "false";
         }
-        _setTextview(textViewTue, isThu);
+        _setTextview(textViewTue, isTue);
     }
 
     public void onWednesday(View view) {
