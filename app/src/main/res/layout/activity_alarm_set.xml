@@ -150,7 +150,9 @@
             app:layout_constraintTop_toBottomOf="@+id/linearlayout_select_week"
             android:id="@+id/edittext_alarm_set_content"
             android:layout_marginTop="10dp"
-            android:text="     \n 내용"
+            android:lines="8"
+            android:maxLines="10"
+            android:text=""
             android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
