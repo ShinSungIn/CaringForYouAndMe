@@ -120,6 +120,7 @@ public class AlarmListviewAdapter extends BaseAdapter {
         String alarmWeek = stringBuffer.toString();
 
         AlarmListviewItem alarmListviewItem = new AlarmListviewItem();
+        alarmListviewItem.setSeq(alarm.getSeq());
         alarmListviewItem.setHalfTime(halfTime);
         alarmListviewItem.setAlarmTime(time);
         alarmListviewItem.setAlarmWeek(alarmWeek);

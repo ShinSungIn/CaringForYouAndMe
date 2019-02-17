@@ -1,6 +1,7 @@
 package com.example.administrator.caringforyouandme.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -24,6 +25,7 @@ import com.example.administrator.caringforyouandme.PreventionActivity;
 import com.example.administrator.caringforyouandme.R;
 import com.example.administrator.caringforyouandme.RoadmapActivity;
 import com.example.administrator.caringforyouandme.SupportMenuActivity;
+import com.example.administrator.caringforyouandme.service.AlarmService;
 
 public class MainActivity extends AppCompatActivity
 	implements NavigationView.OnNavigationItemSelectedListener {
@@ -48,6 +50,9 @@ public class MainActivity extends AppCompatActivity
 
 		NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 		navigationView.setNavigationItemSelectedListener(this);
+
+		// 알람 서비스 시작
+		_startAlarmService();
 
 		// 1.치매알기 클릭
 		Button knownBuuton1 = (Button) findViewById(R.id.KnownButton1);
@@ -218,5 +223,30 @@ public class MainActivity extends AppCompatActivity
 		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 		drawer.closeDrawer(GravityCompat.START);
 		return true;
+	}
+
+	/**
+	 * Alarm 서비스 시작
+	 */
+	private void _startAlarmService(){
+		if(!isServiceRunning(AlarmService.class)){
+			startService(new Intent(this, AlarmService.class));
+		}
+	}
+
+	/**
+	 * cls 클래스가 실행중인지 여부확인
+	 */
+	private boolean isServiceRunning(Class<?> cls) {
+		if (cls == null) {
+			return false;
+		}
+		android.app.ActivityManager activityManager = (android.app.ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
+		for (android.app.ActivityManager.RunningServiceInfo runningServiceInfo : activityManager.getRunningServices(Integer.MAX_VALUE)) {
+			if (cls.getName().equals(runningServiceInfo.service.getClassName())) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import com.example.administrator.caringforyouandme.DiaryActivity;
 import com.example.administrator.caringforyouandme.R;
+import com.example.administrator.caringforyouandme.activity.DialogActivity;
 import com.example.administrator.caringforyouandme.database.domain.Alarm;
 import com.example.administrator.caringforyouandme.database.query.AlarmQuery;
 
@@ -25,6 +27,7 @@ public class AlarmService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
+        Log.e("AlarmService", "onBind");
         return null;
     }
 
@@ -32,17 +35,20 @@ public class AlarmService extends Service {
     public void onCreate() {
         super.onCreate();
         alarmQuery = new AlarmQuery(this);
+        Log.e("AlarmService", "onCreate");
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId){
         alarmThread.start();
+        Log.e("AlarmService", "onStartCommand");
         return super.onStartCommand(intent, flags, startId);
     }
 
     @Override
     public void onDestroy(){
         super.onDestroy();
+        Log.e("AlarmService", "onDestroy");
         alarmThread.close();
     }
 
@@ -67,10 +73,11 @@ public class AlarmService extends Service {
                     continue;
                 }
 
-                List<Alarm> alarmList = alarmQuery.gets(_getWeek(today), _getFormat(today,"hh:mm"));
+                List<Alarm> alarmList = alarmQuery.gets(_getWeek(today), _getFormat(today,"HH:mm"));
 
                 for(Alarm alarm : alarmList) {
                     _action(alarm.getContent());
+                    Log.e("AlarmService", " alarm time = " + alarm.getTime());
                 }
 
                 try {
@@ -93,7 +100,7 @@ public class AlarmService extends Service {
     private void _action(String content){
 
         // 팝업 띄우기
-        Intent intent = new Intent(getApplicationContext(), DiaryActivity.class);
+        Intent intent = new Intent(getApplicationContext(), DialogActivity.class);
         intent.putExtra("content", content);
         startActivity(intent);
 

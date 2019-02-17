@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Window;
 import android.widget.TextView;
@@ -29,12 +30,7 @@ public class DialogActivity extends Activity {
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.activity_dialog);
 
-        dialogContent = findViewById(R.id.dialog_content);
-
-        Intent intent = getIntent();
-        String content = intent.getStringExtra("content");
-
-        dialogContent.setText(content);
+        dialogContent = dialog.findViewById(R.id.dialog_content);
 
         dialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
             @Override
@@ -52,6 +48,13 @@ public class DialogActivity extends Activity {
                 _setCancel();
             }
         });
+
+        Intent intent = getIntent();
+        String content = intent.getStringExtra("content");
+
+        dialogContent.setText(content);
+
+        dialog.show();
 
     }
 

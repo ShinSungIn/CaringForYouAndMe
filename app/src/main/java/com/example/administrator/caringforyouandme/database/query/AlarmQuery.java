@@ -3,6 +3,7 @@ package com.example.administrator.caringforyouandme.database.query;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.util.Log;
 import com.example.administrator.caringforyouandme.database.Column;
 import com.example.administrator.caringforyouandme.database.DatabaseHelper;
 import com.example.administrator.caringforyouandme.database.Entity;
@@ -118,9 +119,11 @@ public class AlarmQuery {
                 break;
         }
 
-        stringBuffer.append( Column.ALARM_ISUSE + " = ? and "  );
+//        stringBuffer.append( Column.ALARM_ISUSE + " = ? and "  );
         stringBuffer.append( Column.ALARM_TIME + " = ? " );
-        Cursor cursor = databaseHelper.onSelect(Entity.alarm, null, stringBuffer.toString(), new String[]{"true", "true", time}, null, null, null, "1" );
+
+//        Cursor cursor = databaseHelper.onSelect(Entity.alarm, null, stringBuffer.toString(), new String[]{"true", "true", time}, null, null, null, "1" );
+        Cursor cursor = databaseHelper.onSelect(Entity.alarm, null, stringBuffer.toString(), new String[]{"true", time}, null, null, null, "1" );
         return _get(cursor);
     }
 
@@ -171,4 +174,7 @@ public class AlarmQuery {
         return databaseHelper.onUpdate(Entity.alarm, contentValues, whereClause, whereArgs);
     }
 
+    public void remove(String tableName, String whereClause, String[] whereArgs) {
+        databaseHelper.onDelete(tableName, whereClause, whereArgs);
+    }
 }

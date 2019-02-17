@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -206,6 +207,12 @@ public class AlarmSetActivity extends AppCompatActivity implements TimePicker.On
     private void _setAlarmSet(int position){
         if (position > 0) {
             alarm = alarmQuery.get(position);
+
+            if(alarm == null) {
+                Log.e("AlarmSetActivity", "null object reference (seq = " + position + ")");
+                return;
+            }
+
             String time[] = alarm.getTime().split(":");
             timePicker.setHour(Integer.parseInt(time[0]));
             timePicker.setMinute(Integer.parseInt(time[1]));

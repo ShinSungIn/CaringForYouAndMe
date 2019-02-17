@@ -8,41 +8,42 @@
 		tools:context=".AlarmActivity"
 		tools:layout_editor_absoluteY="25dp">
 
-	<android.support.v7.widget.Toolbar
-			android:id="@+id/toolbar"
-			android:layout_width="match_parent"
-			android:layout_height="?attr/actionBarSize"
-			android:background="?attr/colorPrimary"
-			android:theme="@style/AppTheme.AppBarOverlay"
-			android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+	<LinearLayout
 			app:layout_constraintTop_toTopOf="parent"
-	/>
-
-	<android.support.constraint.ConstraintLayout
-			app:layout_constraintTop_toBottomOf="@+id/toolbar"
-			android:id="@+id/constraintLayout_alarmCreate"
+			app:layout_constraintBottom_toBottomOf="parent"
+			android:orientation="vertical"
 			android:layout_width="match_parent"
-			android:layout_height="60dp">
+			android:layout_height="match_parent">
+
+		<android.support.v7.widget.Toolbar
+				android:id="@+id/toolbar"
+				android:layout_width="match_parent"
+				android:layout_height="?attr/actionBarSize"
+				android:background="?attr/colorPrimary"
+				android:theme="@style/AppTheme.AppBarOverlay"
+				android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+				app:layout_constraintTop_toTopOf="parent"
+		/>
 
 		<Button
 				android:id="@+id/button_alarm_create"
 				android:text="생성"
 				android:layout_width="match_parent"
-				android:layout_height="match_parent"/>
+				android:layout_height="60dp"/>
 
-	</android.support.constraint.ConstraintLayout>
+		<View
+				android:id="@+id/view_underline"
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:layout_centerInParent="true"
+				android:background="#d3d3d3"/>
 
-	<View
-			app:layout_constraintTop_toBottomOf="@+id/constraintLayout_alarmCreate"
-			android:layout_width="match_parent"
-			android:layout_height="1dp"
-			android:layout_centerInParent="true"
-			android:background="#d3d3d3"/>
 
-	<ListView
-			app:layout_constraintTop_toBottomOf="@+id/constraintLayout_alarmCreate"
-			android:id="@+id/listview_alarm"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"/>
+		<ListView
+				android:id="@+id/listview_alarm"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"/>
+
+	</LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

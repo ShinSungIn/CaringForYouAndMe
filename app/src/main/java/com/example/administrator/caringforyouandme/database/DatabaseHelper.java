@@ -141,4 +141,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		return 0;
 	}
 
+	/**
+	 * 삭제
+	 */
+	public void onDelete(String tableName, String whereClause, String[] whereArgs) {
+		if (sqLiteDatabase != null) {
+			sqLiteDatabase.delete(tableName, whereClause, whereArgs);
+		}
+	}
+
 }

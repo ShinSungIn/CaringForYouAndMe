@@ -43,9 +43,13 @@
 		<activity android:name=".YoutubePlayerActivity"></activity>
 		<!-- 번외 2.이미지 확대(각 페이지 이미지) -->
 		<activity android:name=".PhotoViewActivity"></activity>
+
 		<!-- 번외 3.알람설정(메인) -->
 		<activity android:name=".AlarmActivity"></activity>
 		<activity android:name=".activity.alarm.AlarmSetActivity"></activity>
+        <activity android:name=".activity.DialogActivity" android:theme="@style/PopupDialogStyle"  android:screenOrientation="portrait"></activity>
+		<service android:name=".service.AlarmService" android:enabled="true" android:exported="true"></service>
+
 	</application>
 
 </manifest>
