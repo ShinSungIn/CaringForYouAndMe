@@ -95,7 +95,7 @@ public class SupportMenuActivity extends AppCompatActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.menu_known, menu);
+		getMenuInflater().inflate(R.menu.menu_supportmenu, menu);
 		return true;
 	}
 
@@ -114,17 +114,9 @@ public class SupportMenuActivity extends AppCompatActivity {
 			case R.id.action_supportmenu1 :
 				AlertDialog.Builder builder1 = new AlertDialog.Builder(SupportMenuActivity.this);
 				builder1.setMessage("" +
-					"치매환자가족들이 시설과 병원에 차이점을 잘 알지 못하며 시설의 종류와 이용에 대해 잘 알지 못함\n" +
-					"치매보호자에게 가장 필요한 정보이며  서비스 이용이 쉽다는 것을 어필\n" +
-					" 제도나 관련법규의 잦은 수정보완으로 인해 장기요양서비스, 산정특례 적용 등 현재 이용 가능한 서비스에 대해서 알고 싶어함 \n" +
-					"재가서비스를 상위로 수정.\n")
-					.setNegativeButton("닫기", null)
-					.create()
-					.show();
-				return true;
-			case R.id.action_supportmenu2 :
-				AlertDialog.Builder builder2 = new AlertDialog.Builder(SupportMenuActivity.this);
-				builder2.setMessage("준비중입니다.")
+					"치매보호자에게 가장 필요한 정보이며  서비스 이용이 간단합니다.\n" +
+					"최근 제도나 관련법규의 수정보완으로 인해 장기요양서비스, 산정특례 적용 등 현재 이용 가능한 서비스에 대해서 알수있습니다.\n" +
+					"치매환자가족들이 시설과 병원에 차이점을 잘 알지 못하며 시설의 종류와 이용에 대해 잘 알지 못함.\n")
 					.setNegativeButton("닫기", null)
 					.create()
 					.show();

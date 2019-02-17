@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
 		xmlns:app="http://schemas.android.com/apk/res-auto"
 		xmlns:tools="http://schemas.android.com/tools"
-		tools:context="com.example.administrator.caringforyouandme.SupportMenuActivity">
+		tools:context="com.example.administrator.caringforyouandme.SupportFirActivity">
 	<item android:id="@+id/action_mainAll" android:title="@string/action_mainAll" android:orderInCategory="100" app:showAsAction="never"/>
-	<item android:id="@+id/action_supportmenu1" android:title="@string/action_supportmenu1" android:orderInCategory="100" app:showAsAction="never"/>
+	<item android:id="@+id/action_supportfir1" android:title="@string/action_supportfir1" android:orderInCategory="100" app:showAsAction="never"/>
 </menu>

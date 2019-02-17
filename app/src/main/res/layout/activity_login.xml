@@ -12,36 +12,41 @@
 		android:orientation="vertical">
 
 	<!-- Login progress start -->
-	<ProgressBar android:id="@+id/login_progress" style="?android:attr/progressBarStyleLarge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:visibility="gone"/>
-
-	<!-- 로그인 이미지 뷰 -->
-	<LinearLayout android:layout_width="match_parent" android:layout_height="380dp" android:orientation="vertical"
-			android:background="@color/colorAllBackground">
-		<android.support.v7.widget.AppCompatImageView
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_gravity="center"
-				android:src="@drawable/intro_img"/>
-
-		<ImageView android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:id="@+id/intro_txt"
-				android:src="@drawable/intro_txt"
-				android:layout_gravity="center_horizontal"
-				android:contentDescription="로그인타이틀"
-		/>
-	</LinearLayout>
+	<ProgressBar
+			android:id="@+id/login_progress"
+			style="?android:attr/progressBarStyleLarge"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:visibility="gone"/>
 
 	<ScrollView android:id="@+id/login_form" android:layout_width="match_parent" android:layout_height="match_parent">
 
 		<LinearLayout android:id="@+id/email_login_form" android:layout_width="match_parent" android:layout_height="wrap_content"
 				android:orientation="vertical"
-				android:layout_marginTop="20dp"
-				android:layout_marginLeft="20dp"
-				android:layout_marginRight="20dp"
-		>
 
-			<android.support.design.widget.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+		>
+			<android.support.v7.widget.AppCompatImageView
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:src="@drawable/intro_img"/>
+
+			<ImageView android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:id="@+id/intro_txt"
+					android:src="@drawable/intro_txt"
+					android:layout_gravity="center_horizontal"
+					android:contentDescription="로그인타이틀"
+					android:layout_marginTop="20dp"
+					android:layout_marginLeft="20dp"
+					android:layout_marginRight="20dp"
+			/>
+
+			<android.support.design.widget.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+					android:layout_marginLeft="20dp"
+					android:layout_marginRight="20dp"
+			>
 
 				<AutoCompleteTextView
 						android:layout_width="match_parent"
@@ -50,25 +55,53 @@
 						android:maxLines="1"
 						android:singleLine="true" android:id="@+id/idText"
 						android:drawableStart="@drawable/id_icon"
-						android:drawableLeft="@drawable/id_icon"/>
+						android:drawableLeft="@drawable/id_icon"
+						android:imeOptions="actionNext"
+				/>
 
 			</android.support.design.widget.TextInputLayout>
 
-			<android.support.design.widget.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+			<android.support.design.widget.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+					android:layout_marginLeft="20dp"
+					android:layout_marginRight="20dp"
+			>
 
-				<EditText android:id="@+id/passwordText" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="비밀번호" android:imeActionId="6" android:imeActionLabel="@string/action_sign_in_short" android:imeOptions="actionUnspecified" android:inputType="textPassword" android:maxLines="1" android:singleLine="true" android:drawableStart="@drawable/pw_icon" android:drawableLeft="@drawable/pw_icon"/>
+				<EditText android:id="@+id/passwordText"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:hint="비밀번호"
+						android:imeActionId="6"
+						android:imeActionLabel="@string/action_sign_in_short"
+						android:imeOptions="actionUnspecified"
+						android:inputType="textPassword"
+						android:maxLines="1"
+						android:singleLine="true"
+						android:drawableStart="@drawable/pw_icon"
+						android:drawableLeft="@drawable/pw_icon"
+				/>
 
 			</android.support.design.widget.TextInputLayout>
 
 			<Button android:id="@+id/loginButton"
 					android:layout_width="match_parent"
-					android:layout_height="60dp"
-					android:layout_marginTop="20dp"
+					android:layout_height="50dp"
+					android:layout_marginTop="10dp"
+					android:layout_marginLeft="20dp"
+					android:layout_marginRight="20dp"
 					android:background="@drawable/login_btn"
 					/>
 
 			<!--TextView android:layout_width="150dp" android:layout_height="wrap_content" android:layout_gravity="left" android:layout_marginTop="10dp" android:text="아직 계정이 없으신가요?"/-->
-			<TextView android:layout_width="60dp" android:layout_height="wrap_content" android:layout_gravity="right" android:layout_marginTop="10dp" android:text="회원가입" android:id="@+id/registerButton"/>
+			<TextView
+					android:layout_width="70dp"
+					android:layout_height="wrap_content"
+					android:layout_gravity="right"
+					android:layout_marginTop="10dp"
+					android:layout_marginLeft="20dp"
+					android:layout_marginRight="20dp"
+					android:text="회원가입"
+					android:id="@+id/registerButton"
+			/>
 
 		</LinearLayout>
 

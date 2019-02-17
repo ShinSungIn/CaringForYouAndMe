@@ -34,7 +34,14 @@
 	<string name="action_prevention1">치매예방</string>
 	<string name="action_prevention2">준비중</string>
 	<string name="action_supportmenu1">치매지원서비스</string>
-	<string name="action_supportmenu2">준비중</string>
+	<string name="action_supportfir1">장기요양서비스</string>
+	<string name="action_supportsec1">장기요양급여지원</string>
+	<string name="action_supportthi1">치매안심센터</string>
+	<string name="action_supportfor1">기타지원서비스</string>
+	<string name="action_diraymenu1">돌봄일기</string>
+	<string name="action_diraymenu2">희망게시판</string>
+	<string name="action_diraymenu3">함께나눠요</string>
+
 	<string name="action_roadmap1">내비게이션</string>
 	<string name="action_roadmap2">치매진단받기</string>
 
@@ -529,7 +536,7 @@
 			1.치매환자를 존중하고 환자의 요구를 파악하여 안전을 지키기 위해 노력합니다.\n
 			2.치매환자에게 남아 있는 감각을 최대한 활용합니다.\n
 			3.신체적 합병증을 예방하고 관리하기 위해 노력합니다.\n
-			4.치매환자에게 편안한 환경을 마련해 줍니다.\n
+			4.치매환자에게 편안한 환경을 마련해 줍니다.\n\n
 
 			* 대화\n\n
 			-관심을 주고 있다는 것을 나타내기 위해 눈맞춤을 유지합니다.\n
@@ -549,7 +556,7 @@
 			-식사 후에는 물을 마실 수 있도록 해서 입안을 헹구어 냅니다.\n\n
 			-식사를 계속 거부하는 경우 식사 전 대상자의 몸 상태를 충분히 살피고 입안의 염증이나 부종, 발적, 통증 등이 발견되면 치료 받도록 합니다.\n\n
 
-			* 식사\n\n
+			* 배뇨 및 배설\n\n
 			-화장실이 아닌 곳에서 대변을 보고 손으로 만지거나 옷, 방바닥, 벽 등에 대변을 묻히는 경우는 변을 스스로 처리하려는 마음이 있지만 제대로 처리하지 못하기 때문이거나 변을 변으로 인식하지 못하기 때문입니다.\n\n
 			-와상상태에 있는 경우 변비가 자주 발생하므로 변비예방을 위하여 신선한 야채, 과일, 수분을 충분히 공급합니다.\n\n
 			-요의나 변의가 없는 상태라도 앉은 자세를 유지할 수 있다면 식사 후에 규칙적으로 이동식 변기 등을 사용하여 배변을 유도하도록 합니다.\n\n
@@ -582,7 +589,7 @@
 			4.증상에 어떻게 대처할지 계획할 때는 증상의 원인과 그 증상에 내재된 치매환자의 요구를 이해하는 것이 가장 우선되어야 합니다.\n
 			5.돌봄제공자인 나의 태도와 행동이 원인이 된 것은 아닌지 되돌아 봅니다.\n
 			6.치매환자에게 남아있는 능력, 힘, 기억, 요구 등이 모두 사용되어 질 수 있도록 합니다.\n
-			7.정신행동증상 대처 시 기본적인 요소인 예방, 편의, 융통성을 항상 고려합니다.\n
+			7.정신행동증상 대처 시 기본적인 요소인 예방, 편의, 융통성을 항상 고려합니다.\n\n
 
 			* 우울증\n\n
 			-치매환자를 위축시키고, 슬프게 만든 상황을 관찰합니다.\n

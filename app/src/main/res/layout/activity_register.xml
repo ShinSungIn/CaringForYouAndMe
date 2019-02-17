@@ -50,6 +50,14 @@
 			<RadioButton android:layout_width="0dp" android:layout_height="wrap_content" android:text="여성" android:id="@+id/female" android:layout_weight="1" android:checked="true"/>
 		</RadioGroup>
 
+		<android.support.v7.widget.AppCompatCheckBox
+				android:id="@+id/agreeYn"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:checked="false"
+				android:text="개인정보 수집에 동의합니다."
+		/>
+
 		<Button android:id="@+id/registerButton" style="?android:textAppearanceSmall" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="가입하기" android:textStyle="bold"/>
 
 	</LinearLayout>

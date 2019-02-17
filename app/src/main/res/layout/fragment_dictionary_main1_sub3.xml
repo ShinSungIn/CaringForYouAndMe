@@ -10,6 +10,14 @@
 
 	<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
 
+		<GridLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+				android:layout_marginLeft="@dimen/text_margin"
+				android:layout_marginRight="@dimen/text_margin"
+				android:columnCount="4" android:rowCount="1">
+			<Button android:text="읽기 시작" android:layout_columnWeight="1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/dic_speak3" android:adjustViewBounds="true" android:scaleType="fitCenter" android:layout_marginTop="@dimen/text_margin"/>
+			<Button android:text="읽기 멈춤" android:layout_columnWeight="1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/dic_speakstop3" android:adjustViewBounds="true" android:scaleType="fitCenter" android:layout_marginTop="@dimen/text_margin"/>
+		</GridLayout>
+
 		<TextView android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:textColor="@color/colorText_Black"
@@ -17,38 +25,6 @@
 				android:textSize="@dimen/textView_fontsize"
 				android:lineSpacingExtra="@dimen/textView_lineheight"
 				android:text="@string/text_dictionary_main1_sub3"/>
-
-		<Button android:text="자세히 알아보기" android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:id="@+id/dic_main1_sub3_linkbutton"
-				android:adjustViewBounds="true"
-				android:scaleType="fitCenter"
-				android:layout_marginTop="@dimen/text_margin"
-				android:layout_marginLeft="@dimen/text_margin"
-				android:layout_marginRight="@dimen/text_margin"
-		/>
-		<Button
-				android:text="읽기 시작"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:id="@+id/dic_speak3"
-				android:adjustViewBounds="true"
-				android:scaleType="fitCenter"
-				android:layout_marginTop="@dimen/text_margin"
-				android:layout_marginLeft="@dimen/text_margin"
-				android:layout_marginRight="@dimen/text_margin"
-		/>
-		<Button
-				android:text="읽기 멈춤"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:id="@+id/dic_speakstop3"
-				android:adjustViewBounds="true"
-				android:scaleType="fitCenter"
-				android:layout_marginTop="@dimen/text_margin"
-				android:layout_marginLeft="@dimen/text_margin"
-				android:layout_marginRight="@dimen/text_margin"
-		/>
 
 	</LinearLayout>
 

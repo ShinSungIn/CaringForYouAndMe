@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -14,6 +15,7 @@ import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.Toast;
 import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1Sub1Fragment1;
 import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1Sub1Fragment2;
 import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1Sub1Fragment3;
@@ -219,25 +221,33 @@ public class SupportFirActivity extends AppCompatActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.menu_known, menu);
+		getMenuInflater().inflate(R.menu.menu_supportfir, menu);
 		return true;
 	}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		TabLayout tabLayout1 = (TabLayout) findViewById(R.id.tabLayout1);
-		TabLayout tabLayout2 = (TabLayout) findViewById(R.id.tabLayout2);
-
 		switch (item.getItemId()) {
 			case android.R.id.home :
 				//toolbar의 back키 눌렀을 때 동작
 				finish();
 				return true;
-		}
 
+			case R.id.action_mainAll :
+				Toast.makeText(this, "도움말 기능입니다. 메뉴를 선택하세요.", Toast.LENGTH_SHORT).show();
+				return true;
+			case R.id.action_supportfir1 :
+				AlertDialog.Builder builder1 = new AlertDialog.Builder(SupportFirActivity.this);
+				builder1.setMessage("" +
+					"고령이나 치매 등으로 6개월 이상 \n" +
+					"다른 사람의 도움 없이는 일상생활이 어려운\n" +
+					"어르신에게 신체활동 및 가사활동, 인지활동 지원\n" +
+					"등의 서비스를 제공합니다.\n")
+					.setNegativeButton("닫기", null)
+					.create()
+					.show();
+				return true;
+		}
 		return super.onOptionsItemSelected(item);
 	}
 
