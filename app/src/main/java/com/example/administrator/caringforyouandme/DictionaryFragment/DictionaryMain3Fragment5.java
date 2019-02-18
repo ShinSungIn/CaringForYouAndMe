@@ -69,7 +69,7 @@ public class DictionaryMain3Fragment5 extends Fragment {
 		View view = inflater.inflate(R.layout.fragment_dictionary_main3_sub5, container, false);
 
 		// 공격적행동
-		ImageButton imagePlayButton1 = (ImageButton) view.findViewById(R.id.dic_main3_sub5_playbutton);
+		ImageButton imagePlayButton1 = (ImageButton) view.findViewById(R.id.dic_main3_sub5_playbutton1);
 		imagePlayButton1.setOnClickListener(new ImageButton.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -79,11 +79,14 @@ public class DictionaryMain3Fragment5 extends Fragment {
 			}
 		});
 
-		Button linkButton = (Button) view.findViewById(R.id.dic_main3_sub5_linkbutton);
-		linkButton.setOnClickListener(new View.OnClickListener() {
+		// 반복행동
+		ImageButton imagePlayButton2 = (ImageButton) view.findViewById(R.id.dic_main3_sub5_playbutton2);
+		imagePlayButton2.setOnClickListener(new ImageButton.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.kimsonline.co.kr/drugcenter/search/totalSearch?Keyword=%EC%95%84%EB%A6%AC%EC%85%89%ED%8A%B8")));
+				Intent intent = new Intent(getActivity(), YoutubePlayerActivity.class);
+				intent.putExtra("videoID","XpVMnhLt7MA");
+				startActivity(intent);
 			}
 		});
 

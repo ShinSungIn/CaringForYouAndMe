@@ -107,7 +107,6 @@ public class KnownActivity extends AppCompatActivity {
 
 		context = this;
 
-		System.out.println("KnownActivity in");
 	}
 
 	private void setTab() {

@@ -26,6 +26,18 @@
 				android:lineSpacingExtra="@dimen/textView_lineheight"
 				android:text="@string/text_dictionary_main3_sub1"/>
 
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="유튜브보기"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/dic_main3_sub2_playbutton1"
+				android:src="@drawable/dictionary_main3_sub1_1"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:background="@color/colorWhite"
+				android:layout_margin="@dimen/text_margin"
+		/>
+
 	</LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

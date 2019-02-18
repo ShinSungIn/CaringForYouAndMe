@@ -16,8 +16,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 import com.example.administrator.caringforyouandme.AlarmActivity;
-import com.example.administrator.caringforyouandme.CrueprogramActivity;
+import com.example.administrator.caringforyouandme.CureprogramActivity;
 import com.example.administrator.caringforyouandme.DiaryActivity;
+import com.example.administrator.caringforyouandme.DiaryMenuActivity;
 import com.example.administrator.caringforyouandme.DictionaryActivity;
 import com.example.administrator.caringforyouandme.FeelingActivity;
 import com.example.administrator.caringforyouandme.KnownActivity;
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity
 		CureProgramButton5.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				Intent registerIntent = new Intent(MainActivity.this, CrueprogramActivity.class);
+				Intent registerIntent = new Intent(MainActivity.this, CureprogramActivity.class);
 				MainActivity.this.startActivity(registerIntent);
 			}
 		});
@@ -109,7 +110,7 @@ public class MainActivity extends AppCompatActivity
 		DiaryButton6.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				Intent registerIntent = new Intent(MainActivity.this, DiaryActivity.class);
+				Intent registerIntent = new Intent(MainActivity.this, DiaryMenuActivity.class);
 				MainActivity.this.startActivity(registerIntent);
 			}
 		});
@@ -140,7 +141,6 @@ public class MainActivity extends AppCompatActivity
 	@Override
 	public void onResume() {
 		super.onResume();
-		System.out.println("MainActivity onResume in");
 		//finish();
 	}
 
@@ -148,7 +148,6 @@ public class MainActivity extends AppCompatActivity
 	@Override
 	public void onPause() {
 		super.onPause();
-		System.out.println("MainActivity onPause in");
 		// Remove the activity when its off the screen
 		//finish();
 	}

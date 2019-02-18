@@ -1,5 +1,6 @@
 package com.example.administrator.caringforyouandme.DictionaryFragment;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -9,8 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 import com.example.administrator.caringforyouandme.R;
+import com.example.administrator.caringforyouandme.YoutubePlayerActivity;
 
 import java.util.Locale;
 
@@ -64,6 +67,17 @@ public class DictionaryMain3Fragment1 extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_dictionary_main3_sub1, container, false);
+
+		// 우울증 영상
+		ImageButton imagePlayButton1 = (ImageButton) view.findViewById(R.id.dic_main3_sub2_playbutton1);
+		imagePlayButton1.setOnClickListener(new ImageButton.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getActivity(), YoutubePlayerActivity.class);
+				intent.putExtra("videoID","3WgCqXNbvz4");
+				startActivity(intent);
+			}
+		});
 
 		tts = new TextToSpeech(getContext(), new TextToSpeech.OnInitListener() {
 			@Override

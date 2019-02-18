@@ -35,7 +35,7 @@ public class DiaryMenuActivity extends AppCompatActivity {
 		DiaryMenuButton1.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				Intent registerIntent = new Intent(DiaryMenuActivity.this, SupportFirActivity.class);
+				Intent registerIntent = new Intent(DiaryMenuActivity.this, DiaryFirActivity.class);
 				DiaryMenuActivity.this.startActivity(registerIntent);
 			}
 		});

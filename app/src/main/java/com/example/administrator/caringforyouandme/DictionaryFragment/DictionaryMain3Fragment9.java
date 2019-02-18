@@ -66,14 +66,6 @@ public class DictionaryMain3Fragment9 extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_dictionary_main3_sub9, container, false);
 
-		Button linkButton = (Button) view.findViewById(R.id.dic_main3_sub9_linkbutton);
-		linkButton.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.kimsonline.co.kr/drugcenter/search/totalSearch?Keyword=%EC%95%84%EB%A6%AC%EC%85%89%ED%8A%B8")));
-			}
-		});
-
 		tts = new TextToSpeech(getContext(), new TextToSpeech.OnInitListener() {
 			@Override
 			public void onInit(int status) {

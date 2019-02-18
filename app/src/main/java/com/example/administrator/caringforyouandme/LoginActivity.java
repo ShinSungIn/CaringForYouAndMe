@@ -119,14 +119,12 @@ public class LoginActivity extends AppCompatActivity {
 	@Override
 	public void onPause() {
 		super.onPause();
-		System.out.println("LoginActivity onPause in");
 		//finish();
 	}
 
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		System.out.println("LoginActivity onDestroy in");
 		finish();
 	}
 

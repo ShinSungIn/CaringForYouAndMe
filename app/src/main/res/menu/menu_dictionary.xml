@@ -4,5 +4,5 @@
 		tools:context="com.example.administrator.caringforyouandme.DictionaryActivity">
 	<item android:id="@+id/action_mainAll" android:title="@string/action_mainAll" android:orderInCategory="100" app:showAsAction="never"/>
 	<item android:id="@+id/action_dictionary1" android:title="@string/action_dictionary1" android:orderInCategory="100" app:showAsAction="never"/>
-	<item android:id="@+id/action_dictionary2" android:title="@string/action_dictionary1" android:orderInCategory="100" app:showAsAction="never"/>
+	<item android:id="@+id/action_dictionary2" android:title="@string/action_dictionary2" android:orderInCategory="100" app:showAsAction="never"/>
 </menu>

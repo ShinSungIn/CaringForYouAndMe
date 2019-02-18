@@ -69,12 +69,23 @@ public class DictionaryMain3Fragment2 extends Fragment {
 		View view = inflater.inflate(R.layout.fragment_dictionary_main3_sub2, container, false);
 
 		// 무감동
-		ImageButton imagePlayButton = (ImageButton) view.findViewById(R.id.dic_main3_sub2_playbutton);
-		imagePlayButton.setOnClickListener(new ImageButton.OnClickListener() {
+		ImageButton imagePlayButton1 = (ImageButton) view.findViewById(R.id.dic_main3_sub2_playbutton1);
+		imagePlayButton1.setOnClickListener(new ImageButton.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(getActivity(), YoutubePlayerActivity.class);
 				intent.putExtra("videoID","dC2yqLz1m6U");
+				startActivity(intent);
+			}
+		});
+
+		// 불안
+		ImageButton imagePlayButton2 = (ImageButton) view.findViewById(R.id.dic_main3_sub2_playbutton2);
+		imagePlayButton2.setOnClickListener(new ImageButton.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getActivity(), YoutubePlayerActivity.class);
+				intent.putExtra("videoID","fLEoJxIHUm0");
 				startActivity(intent);
 			}
 		});

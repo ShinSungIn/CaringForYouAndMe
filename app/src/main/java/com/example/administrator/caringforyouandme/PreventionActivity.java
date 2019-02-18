@@ -90,16 +90,10 @@ public class PreventionActivity extends AppCompatActivity {
 					textViewHeartbeat.setTextColor(getResources().getColor(R.color.colorText_White, null));
 					textViewBreath.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 
-					//setPreventionView();
 					break;
 			}
 
 			}
-			/*
-			private void setPreventionView() {
-				System.out.println("setPreventionView in");
-			}
-			*/
 
 		});
 	}
@@ -111,7 +105,6 @@ public class PreventionActivity extends AppCompatActivity {
 		setSupportActionBar(toolbar);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-		System.out.println("setToolbar in");
 	}
 
 	@Override
@@ -179,7 +172,6 @@ public class PreventionActivity extends AppCompatActivity {
 			int currentTab = tabHost.getCurrentTab();
 
 			if (currentTab == 0) {
-				System.out.println("PagerAdapter Class=Tabhost:0 " + currentTab + " position :" + position);
 				switch (position) {
 					case 0:
 						PreventionFragment1 tab1 = new PreventionFragment1();

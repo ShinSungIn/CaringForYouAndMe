@@ -204,7 +204,6 @@ public class RegisterActivity extends AppCompatActivity {
 	@Override
 	public void onPause() {
 		super.onPause();
-		//System.out.println("LoginActivity onPause in");
 		//finish();
 	}
 }

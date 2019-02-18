@@ -10,8 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 import com.example.administrator.caringforyouandme.R;
+import com.example.administrator.caringforyouandme.YoutubePlayerActivity;
 
 import java.util.Locale;
 
@@ -66,11 +68,14 @@ public class DictionaryMain3Fragment6 extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_dictionary_main3_sub6, container, false);
 
-		Button linkButton = (Button) view.findViewById(R.id.dic_main3_sub6_linkbutton);
-		linkButton.setOnClickListener(new View.OnClickListener() {
+		// 수면장애
+		ImageButton imagePlayButton1 = (ImageButton) view.findViewById(R.id.dic_main3_sub6_playbutton1);
+		imagePlayButton1.setOnClickListener(new ImageButton.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.kimsonline.co.kr/drugcenter/search/totalSearch?Keyword=%EC%95%84%EB%A6%AC%EC%85%89%ED%8A%B8")));
+				Intent intent = new Intent(getActivity(), YoutubePlayerActivity.class);
+				intent.putExtra("videoID","cC1kw3_Us1U");
+				startActivity(intent);
 			}
 		});
 

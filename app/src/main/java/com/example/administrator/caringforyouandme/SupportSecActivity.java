@@ -98,13 +98,11 @@ public class SupportSecActivity extends AppCompatActivity {
 			int index = Integer.parseInt(tabId);
 			switch (index) {
 				case 0:
-					System.out.println("setTab tabHost0: " + tabId);
 					textViewFirContent.setTextColor(getResources().getColor(R.color.colorText_White, null));
 					//textViewSecContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 
 					break;
 				case 1:
-					System.out.println("setTab tabHost1: " + tabId);
 					textViewFirContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 					//textViewSecContent.setTextColor(getResources().getColor(R.color.colorText_White, null));
 
