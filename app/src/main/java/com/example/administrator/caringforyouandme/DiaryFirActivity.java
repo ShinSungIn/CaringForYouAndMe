@@ -12,10 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
-import android.widget.TabHost;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.View;
+import android.widget.*;
 import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1Sub1Fragment1;
 import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1Sub1Fragment2;
 import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1Sub1Fragment3;
@@ -25,6 +23,8 @@ import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1S
 import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1Sub2Fragment1;
 import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1Sub2Fragment2;
 import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1Sub3Fragment1;
+import com.example.administrator.caringforyouandme.database.domain.Diary;
+import com.example.administrator.caringforyouandme.listview.diary.DiaryListviewAdapter;
 
 public class DiaryFirActivity extends AppCompatActivity {
 	private Toolbar toolbar;
@@ -53,6 +53,7 @@ public class DiaryFirActivity extends AppCompatActivity {
 	@Override
 	public void onStart() {
 		super.onStart();
+		_setListView();
 	}
 
 	@Override
@@ -60,5 +61,33 @@ public class DiaryFirActivity extends AppCompatActivity {
 		finish();
 	}
 
+	@SuppressWarnings("Duplicates")
+	private void _setListView(){
+		DiaryListviewAdapter diaryListviewAdapter = new DiaryListviewAdapter(this);
+		ListView listView_diary = findViewById(R.id.listview_diary);
+		listView_diary.setAdapter(diaryListviewAdapter);
+		listView_diary.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+			}
+		});
+
+		listView_diary.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+			@Override
+			public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+				return true;
+			}
+		});
+
+		//TODO: sample
+		Diary diary = new Diary();
+		diary.setSeq(1);
+		diary.setRegDt("2019.02.19");
+		diary.setSubject("오늘 약을 먹는날이 었다...... 하지만 그러지 못했다.....");
+
+		diaryListviewAdapter.addItem(diary);
+		diaryListviewAdapter.addItem(diary);
+	}
 }

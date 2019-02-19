@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="100dp">
+
+	<LinearLayout
+			android:layout_weight="1"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			>
+
+		<TextView
+				android:id="@+id/textview_regist_date"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="10dp"
+				android:layout_marginTop="5dp"
+				android:text = "등록일 : 2019.02.19"
+				android:textSize="15sp"
+				android:textColor="@color/colorText_Black"
+		/>
+
+	</LinearLayout>
+
+	<LinearLayout
+			android:layout_weight="2"
+			android:layout_width="match_parent"
+			android:layout_height="0dp">
+
+		<TextView
+				android:id="@+id/textview_diary_subject"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_marginStart="5dp"
+				android:layout_marginEnd="5dp"
+				android:layout_marginTop="5dp"
+				android:layout_marginBottom="5dp"
+				android:text = "오늘은 약을 먹는날이다. 이번주 연속으로 먹는다."
+				android:textSize="20sp"
+				android:textColor="@color/colorText_Black"
+		/>
+
+	</LinearLayout>
+
+</LinearLayout>
