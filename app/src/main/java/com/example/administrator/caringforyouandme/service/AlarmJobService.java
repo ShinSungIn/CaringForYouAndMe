@@ -1,13 +1,12 @@
 package com.example.administrator.caringforyouandme.service;
 
 import android.annotation.SuppressLint;
-import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.os.IBinder;
-import android.support.annotation.Nullable;
+import android.support.annotation.NonNull;
+import android.support.v4.app.JobIntentService;
 import android.util.Log;
-import com.example.administrator.caringforyouandme.DiaryActivity;
 import com.example.administrator.caringforyouandme.R;
 import com.example.administrator.caringforyouandme.activity.DialogActivity;
 import com.example.administrator.caringforyouandme.database.domain.Alarm;
@@ -18,47 +17,48 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class AlarmService extends Service {
+public class AlarmJobService extends JobIntentService {
 
-    private String TAG = "AlarmService";
+    private String TAG = "AlarmJobService";
 
     private AlarmQuery alarmQuery;
 
-    @Nullable
-    @Override
-    public IBinder onBind(Intent intent) {
-        Log.i(TAG, "onBind");
-        return null;
+    static final int JOB_ID = 1000;
+
+    static public void enqueueWork(Context context, Intent intent) {
+//        enqueueWork(context, ?.class, JOB_ID, intent);
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
         alarmQuery = new AlarmQuery(this);
-        Log.i(TAG, "onCreate");
     }
 
     @Override
-    public int onStartCommand(Intent intent, int flags, int startId){
-        alarmThread.start();
-        Log.i(TAG, "onStartCommand");
-        return super.onStartCommand(intent, flags, startId);
+    protected void onHandleWork(@NonNull Intent intent) {
+        alarmJobThread.start();
     }
+
+//    @Override
+//    public boolean onStopCurrentWork() {
+//        return false;
+//    }
 
     @Override
     public void onDestroy(){
         super.onDestroy();
-        Log.i(TAG, "onDestroy");
-        alarmThread.close();
+        alarmJobThread.close();
     }
+
 
     /**
      * 알림 쓰레드
      */
-    private AlarmThread alarmThread = new AlarmThread();
+    private AlarmJobThread alarmJobThread = new AlarmJobThread();
 
     @SuppressWarnings("Duplicates")
-    class AlarmThread extends Thread{
+    class AlarmJobThread extends Thread{
         private boolean runnable = true;
         @Override
         public void run(){
@@ -93,11 +93,13 @@ public class AlarmService extends Service {
         public void close(){
             runnable = false;
         }
+
     }
 
     /**
      * 알림 동작
      */
+    @SuppressWarnings("Duplicates")
     private void _action(String content){
 
         // 팝업 띄우기
@@ -106,7 +108,7 @@ public class AlarmService extends Service {
         startActivity(intent);
 
         // 알람 소리
-        MediaPlayer mediaPlayer = MediaPlayer.create(AlarmService.this, R.raw.alert );
+        MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.alert );
         mediaPlayer.start();
     }
 
@@ -138,4 +140,6 @@ public class AlarmService extends Service {
         }
         return false;
     }
+
+
 }

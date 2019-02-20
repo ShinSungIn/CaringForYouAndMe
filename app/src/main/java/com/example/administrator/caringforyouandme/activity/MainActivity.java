@@ -3,6 +3,7 @@ package com.example.administrator.caringforyouandme.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,6 +26,7 @@ import com.example.administrator.caringforyouandme.PreventionActivity;
 import com.example.administrator.caringforyouandme.R;
 import com.example.administrator.caringforyouandme.RoadmapActivity;
 import com.example.administrator.caringforyouandme.SupportMenuActivity;
+import com.example.administrator.caringforyouandme.service.AlarmJobService;
 import com.example.administrator.caringforyouandme.service.AlarmService;
 
 public class MainActivity extends AppCompatActivity
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity
 	private long backKeyPressedTime = 0;
 	private Toast toast;
 	private Activity activity;
+	private Context context;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,8 @@ public class MainActivity extends AppCompatActivity
 
 		NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 		navigationView.setNavigationItemSelectedListener(this);
+
+		context = this;
 
 		// 알람 서비스 시작
 		_startAlarmService();
@@ -228,7 +233,12 @@ public class MainActivity extends AppCompatActivity
 	 */
 	private void _startAlarmService(){
 		if(!isServiceRunning(AlarmService.class)){
-			startService(new Intent(this, AlarmService.class));
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+				context.startForegroundService(new Intent(context, AlarmService.class));
+				AlarmJobService.enqueueWork(context, new Intent(context, AlarmService.class));
+			} else {
+				startService(new Intent(this, AlarmService.class));
+			}
 		}
 	}
 
