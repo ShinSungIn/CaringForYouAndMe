@@ -198,8 +198,8 @@ public class KnownActivity extends AppCompatActivity {
 			case R.id.action_known1 :
 				AlertDialog.Builder builder1 = new AlertDialog.Builder(KnownActivity.this);
 				builder1.setMessage("" +
-					" 치매환자가족들이 가족원에 대한 치매원인은 대략 알고 있으나 다른 치매 원인에 대해서도 관심이 있으며 알고 싶어 함\n" +
-					" 링크 연결하여 원하는 치매종류와 약물을 바로 확인할 수 있도록 지원\n")
+					" 치매환자가족들이 가족원에 대한 치매원인은 대략 알고 있으나 다른 치매 원인에 대해서도 관심이 있으며 알고 싶어합니다.\n" +
+					" 링크 연결하여 원하는 치매종류와 약물을 바로 확인할 수 있도록 지원합니다.\n")
 					.setNegativeButton("닫기", null)
 					.create()
 					.show();

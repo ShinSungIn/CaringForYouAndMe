@@ -99,7 +99,7 @@ public class RoadmapActivity extends AppCompatActivity {
 	private void setToolbar() {
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
 		// toolbar 뒤로 버튼 활성화
-		toolbar.setTitle("4-3.치매서비스 로드맵 알아보기");
+		toolbar.setTitle("3.치매서비스 로드맵");
 		setSupportActionBar(toolbar);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 	}
@@ -136,13 +136,7 @@ public class RoadmapActivity extends AppCompatActivity {
 			case R.id.action_roadmap1 :
 				AlertDialog.Builder builder1 = new AlertDialog.Builder(RoadmapActivity.this);
 				builder1.setMessage("" +
-					"치매진단 이후 환자와 보호자들은 혼란스럽고, 현재 상태나 질환의 경과에 대해 궁금하며, 실제로 치매 진단 후 도움이 되는 치매 지원 서비스에 대한 요구도가 높습니다.\n" +
-					"\n" +
-					"이 서비스는 환자의 나이와 거주형태, 소득수준, 치매 진단 여부 등을 입력하며, 이용 가능한 서비스 종류와 각각의 신청방법, 담당센터와 전화번호를 알려줍니다.\n" +
-					"\n" +
-					"이미 장기요양등급은 받은 환자들에게도 각 등급별 이용 가능한 서비스 안내 해주고, 아직 치매를 진단 받지 않는 환자들에게도 치매예방운동법 등을 안내합니다.\n" +
-					"\n" +
-					"환자 및 보호자들이 효율적으로 서비스 이용을 가능케 하고 실제 임상 진료에서 이와 같은 정보를 제공하는 데 많은 도움이 될 것입니다.\n")
+					"치매진단 이후 환자와 보호자들은 혼란스러우므로 효율적인 지원 서비스 이용 정보를 제공하는 데 많은 도움이 될 것입니다.\n")
 					.setNegativeButton("닫기", null)
 					.create()
 					.show();

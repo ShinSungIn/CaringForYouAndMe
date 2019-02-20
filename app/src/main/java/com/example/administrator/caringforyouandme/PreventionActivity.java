@@ -139,7 +139,7 @@ public class PreventionActivity extends AppCompatActivity {
 			case R.id.action_prevention1 :
 				AlertDialog.Builder builder1 = new AlertDialog.Builder(PreventionActivity.this);
 				builder1.setMessage("" +
-					" 치매환자가족들이 본인도 치매에 걸릴 수 있다는 두려움을 가지고 있으므로 실천사항을 제시 함으로써 예방 가능함을 강조\n")
+					" 치매환자가족들이 본인도 치매에 걸릴 수 있다는 두려움을 가지고 있으므로 실천사항을 제시 함으로써 예방 가능함을 강조합니다.\n")
 					.setNegativeButton("닫기", null)
 					.create()
 					.show();

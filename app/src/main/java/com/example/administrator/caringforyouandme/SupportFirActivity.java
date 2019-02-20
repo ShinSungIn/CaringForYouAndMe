@@ -237,9 +237,7 @@ public class SupportFirActivity extends AppCompatActivity {
 				AlertDialog.Builder builder1 = new AlertDialog.Builder(SupportFirActivity.this);
 				builder1.setMessage("" +
 					"고령이나 치매 등으로 6개월 이상 \n" +
-					"다른 사람의 도움 없이는 일상생활이 어려운\n" +
-					"어르신에게 신체활동 및 가사활동, 인지활동 지원\n" +
-					"등의 서비스를 제공합니다.\n")
+					"다른 사람의 도움 없이는 일상생활이 어려운 어르신에게 신체활동 및 가사활동, 인지활동 지원 등의 서비스를 제공합니다.")
 					.setNegativeButton("닫기", null)
 					.create()
 					.show();

@@ -114,9 +114,9 @@ public class SupportMenuActivity extends AppCompatActivity {
 			case R.id.action_supportmenu1 :
 				AlertDialog.Builder builder1 = new AlertDialog.Builder(SupportMenuActivity.this);
 				builder1.setMessage("" +
-					"치매보호자에게 가장 필요한 정보이며  서비스 이용이 간단합니다.\n" +
-					"최근 제도나 관련법규의 수정보완으로 인해 장기요양서비스, 산정특례 적용 등 현재 이용 가능한 서비스에 대해서 알수있습니다.\n" +
-					"치매환자가족들이 시설과 병원에 차이점을 잘 알지 못하며 시설의 종류와 이용에 대해 잘 알지 못함.\n")
+					"치매환자보호자에게 가장 필요한 정보이며 서비스 이용이 간단합니다.\n\n" +
+					"최근 제도나 관련법규의 수정.보완으로 인해 장기요양서비스, 산정특례 적용 등 이용 가능한 서비스에 대해서 알 수 있습니다.\n\n" +
+					"치매환자가족들이 시설과 병원에 차이점을 잘 알지 못하며 시설의 종류와 이용방법에 대해 알고 싶어합니다.")
 					.setNegativeButton("닫기", null)
 					.create()
 					.show();

@@ -76,7 +76,7 @@ public class DictionaryMain1Fragment1 extends Fragment {
 			@Override
 			public void onClick(View v) {
 				// 전달할 이미지 만들기
-				Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dictionary_main1_sub1_1);
+				Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dictionary_main1_sub1_1_1);
 				BitmapHelper.getInstance().setBitmap(sendBitmap);
 
 				Intent intent = new Intent(getActivity(), PhotoViewActivity.class);
@@ -86,6 +86,19 @@ public class DictionaryMain1Fragment1 extends Fragment {
 
 		ImageButton imageButton2 = (ImageButton) view.findViewById(R.id.dic_main1_view2);
 		imageButton2.setOnClickListener(new ImageButton.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// 전달할 이미지 만들기
+				Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dictionary_main1_sub1_1_2);
+				BitmapHelper.getInstance().setBitmap(sendBitmap);
+
+				Intent intent = new Intent(getActivity(), PhotoViewActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		ImageButton imageButton3 = (ImageButton) view.findViewById(R.id.dic_main1_view3);
+		imageButton3.setOnClickListener(new ImageButton.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				// 전달할 이미지 만들기

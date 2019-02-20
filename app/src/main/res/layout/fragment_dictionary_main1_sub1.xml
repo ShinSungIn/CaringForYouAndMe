@@ -18,19 +18,6 @@
 				<Button android:text="읽기 멈춤" android:layout_columnWeight="1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/dic_speakstop1" android:adjustViewBounds="true" android:scaleType="fitCenter" android:layout_marginTop="@dimen/text_margin"/>
 		</GridLayout>
 
-		<android.support.v7.widget.AppCompatImageButton
-				android:text="새창"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:id="@+id/dic_main1_view1"
-				android:src="@drawable/dictionary_main1_sub1_1"
-				android:adjustViewBounds="true"
-				android:scaleType="fitCenter"
-				android:background="@color/colorWhite"
-				android:layout_margin="@dimen/text_margin"
-				android:layout_gravity="center"
-		/>
-
 		<TextView android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_margin="@dimen/text_margin"
@@ -43,7 +30,33 @@
 				android:text="새창"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:id="@+id/dic_main1_view1"
+				android:src="@drawable/dictionary_main1_sub1_1_1"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:background="@color/colorWhite"
+				android:layout_margin="@dimen/text_margin"
+				android:layout_gravity="center"
+		/>
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="새창"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
 				android:id="@+id/dic_main1_view2"
+				android:src="@drawable/dictionary_main1_sub1_1_2"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:background="@color/colorWhite"
+				android:layout_margin="@dimen/text_margin"
+				android:layout_gravity="center"
+		/>
+
+
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="새창"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/dic_main1_view3"
 				android:src="@drawable/dictionary_main1_sub1_2"
 				android:adjustViewBounds="true"
 				android:scaleType="fitCenter"

@@ -16,6 +16,9 @@ import android.widget.TextView;
 import com.example.administrator.caringforyouandme.KnownFragment.KnownKindFragment1;
 import com.example.administrator.caringforyouandme.KnownFragment.KnownKindFragment2;
 import com.example.administrator.caringforyouandme.KnownFragment.KnownKindFragment3;
+import com.example.administrator.caringforyouandme.SupportFragment.SupportMain3Sub1Fragment1;
+import com.example.administrator.caringforyouandme.SupportFragment.SupportMain3Sub1Fragment2;
+import com.example.administrator.caringforyouandme.SupportFragment.SupportMain3Sub1Fragment3;
 
 public class SupportThiActivity extends AppCompatActivity {
 
@@ -153,13 +156,13 @@ public class SupportThiActivity extends AppCompatActivity {
 			if (currentTab == 0) {
 				switch (position) {
 					case 0:
-						KnownKindFragment1 tab1 = new KnownKindFragment1();
+						SupportMain3Sub1Fragment1 tab1 = new SupportMain3Sub1Fragment1();
 						return tab1;
 					case 1:
-						KnownKindFragment2 tab2 = new KnownKindFragment2();
+						SupportMain3Sub1Fragment2 tab2 = new SupportMain3Sub1Fragment2();
 						return tab2;
 					case 2:
-						KnownKindFragment3 tab3 = new KnownKindFragment3();
+						SupportMain3Sub1Fragment3 tab3 = new SupportMain3Sub1Fragment3();
 						return tab3;
 					default:
 						return null;
