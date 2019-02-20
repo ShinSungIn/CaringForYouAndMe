@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_constraintTop_toTopOf="parent"
+    />
+
+    <View
+            app:layout_constraintTop_toBottomOf="@+id/timepicker"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerInParent="true"
+            android:background="#dee0e4"/>
+
+    <TextView
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.05"
+            android:id="@+id/textview_label_regdt"
+            android:text="등록일"
+            android:layout_marginTop="8dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <View
+            app:layout_constraintTop_toBottomOf="@+id/textview_label_regdt"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerInParent="true"
+            android:background="#dee0e4"/>
+
+    <EditText
+            app:layout_constraintTop_toBottomOf="@+id/textview_label_regdt"
+            android:id="@+id/edittext_alarm_set_content"
+            android:layout_marginTop="10dp"
+            android:lines="17"
+            android:maxLines="30"
+            android:text=""
+            android:textSize="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <LinearLayout
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+        <Button
+                android:layout_weight="1"
+                android:text="취소"
+                android:onClick="onCancel"
+                android:id="@+id/button_diary_set_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+        />
+
+        <Button
+                android:layout_weight="1"
+                android:text="저장"
+                android:textColor="@android:color/background_dark"
+                android:id="@+id/button_diary_set_save"
+                android:onClick="onSave"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

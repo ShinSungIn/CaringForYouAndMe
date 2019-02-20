@@ -1,28 +1,14 @@
 package com.example.administrator.caringforyouandme;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
-import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1Sub1Fragment1;
-import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1Sub1Fragment2;
-import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1Sub1Fragment3;
-import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1Sub1Fragment4;
-import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1Sub1Fragment5;
-import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1Sub1Fragment6;
-import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1Sub2Fragment1;
-import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1Sub2Fragment2;
-import com.example.administrator.caringforyouandme.SupportFragment.SupportMain1Sub3Fragment1;
+import com.example.administrator.caringforyouandme.activity.diary.DiaryFirSetActivity;
 import com.example.administrator.caringforyouandme.database.domain.Diary;
 import com.example.administrator.caringforyouandme.listview.diary.DiaryListviewAdapter;
 
@@ -31,10 +17,20 @@ public class DiaryFirActivity extends AppCompatActivity {
 
 	Context context;
 
+	private FloatingActionButton button;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_diary_fir);
+
+		button = findViewById(R.id.floatingactionbutton_diary_create);
+		button.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(context, DiaryFirSetActivity.class));
+			}
+		});
 
 		setToolbar();
 

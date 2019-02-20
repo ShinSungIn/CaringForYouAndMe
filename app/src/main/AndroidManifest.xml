@@ -39,6 +39,7 @@
 		<activity android:name=".DiaryActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".DiaryMenuActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".DiaryFirActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
+		<activity android:name=".activity.diary.DiaryFirSetActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".DictionaryActivity" android:label="@string/title_activity_dictionary" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".FeelingActivity" android:label="@string/title_activity_feeling" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<!-- 번외 1.유튜브 동영상 보기(각 페이지 동영상) -->
