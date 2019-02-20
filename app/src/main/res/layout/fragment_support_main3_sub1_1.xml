@@ -9,18 +9,24 @@
 		tools:context=".SupportThiActivity">
 
 	<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
-		<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="새창"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
 				android:id="@+id/support_main3_sub1_view1"
-				android:src="@drawable/support_main2_sub1_1"
+				android:src="@drawable/support_main3_sub1_1"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:background="@color/colorWhite"
 				android:layout_margin="@dimen/text_margin"
-				android:layout_gravity="center_horizontal"
 		/>
 
 		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/text_margin"
 				android:textColor="@color/colorText_Black"
 				android:textSize="@dimen/textView_fontsize"
 				android:lineSpacingExtra="@dimen/textView_lineheight"
-				android:text="@string/text_support_main1_sub1_1"/>
+				android:text="@string/text_support_main3_sub1_1"/>
 
 	</LinearLayout>
 

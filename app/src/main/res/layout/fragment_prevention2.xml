@@ -27,9 +27,8 @@
 				android:layout_height="wrap_content"
 				android:layout_marginLeft="@dimen/text_margin"
 				android:layout_marginRight="@dimen/text_margin"
-				android:textColor="@color/colorText_Black"
+				android:textColor="@color/colorText_Gray"
 				android:textSize="@dimen/textView_fontsize"
-				android:lineSpacingExtra="@dimen/textView_lineheight"
 				android:layout_gravity="center"
 				android:text="(사진 클릭시 확대)"/>
 
