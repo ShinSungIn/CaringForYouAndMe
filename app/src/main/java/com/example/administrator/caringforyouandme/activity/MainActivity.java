@@ -17,9 +17,8 @@ import android.widget.Button;
 import android.widget.Toast;
 import com.example.administrator.caringforyouandme.AlarmActivity;
 import com.example.administrator.caringforyouandme.CureprogramActivity;
-import com.example.administrator.caringforyouandme.DiaryActivity;
 import com.example.administrator.caringforyouandme.DiaryMenuActivity;
-import com.example.administrator.caringforyouandme.DictionaryActivity;
+import com.example.administrator.caringforyouandme.DictionaryMenuActivity;
 import com.example.administrator.caringforyouandme.FeelingActivity;
 import com.example.administrator.caringforyouandme.KnownActivity;
 import com.example.administrator.caringforyouandme.PreventionActivity;
@@ -120,7 +119,7 @@ public class MainActivity extends AppCompatActivity
 		DictionaryButton7.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				Intent registerIntent = new Intent(MainActivity.this, DictionaryActivity.class);
+				Intent registerIntent = new Intent(MainActivity.this, DictionaryMenuActivity.class);
 				MainActivity.this.startActivity(registerIntent);
 			}
 		});

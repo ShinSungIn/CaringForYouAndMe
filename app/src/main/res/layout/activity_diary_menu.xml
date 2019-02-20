@@ -35,8 +35,7 @@
 				android:layout_weight="4"
 		/>
 
-
-		<Button android:text="돌봄일기"
+		<Button
 				android:layout_width="match_parent"
 				android:layout_height="0dp"
 				android:layout_marginLeft="@dimen/_8dp"
@@ -44,8 +43,8 @@
 				android:layout_marginBottom="@dimen/_8dp"
 				android:id="@+id/DiaryMenuButton1"
 				android:layout_weight="1"
-				android:background="@drawable/submenu_btn01"/>
-		<Button android:text="희망게시판"
+				android:background="@drawable/submenu6_btn01"/>
+		<Button
 				android:layout_width="match_parent"
 				android:layout_height="0dp"
 				android:layout_marginLeft="@dimen/_8dp"
@@ -53,16 +52,7 @@
 				android:layout_marginBottom="@dimen/_8dp"
 				android:id="@+id/DiaryMenuButton2"
 				android:layout_weight="1"
-				android:background="@drawable/submenu_btn02"/>
-		<Button android:text="함께나눠요"
-				android:layout_width="match_parent"
-				android:layout_height="0dp"
-				android:layout_marginLeft="@dimen/_8dp"
-				android:layout_marginRight="@dimen/_8dp"
-				android:layout_marginBottom="@dimen/_8dp"
-				android:id="@+id/DiaryMenuButton3"
-				android:layout_weight="1"
-				android:background="@drawable/submenu_btn03"/>
+				android:background="@drawable/submenu6_btn02"/>
 
 	</LinearLayout>
 

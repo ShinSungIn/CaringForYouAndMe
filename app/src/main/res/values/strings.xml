@@ -1,11 +1,5 @@
 <resources>
-	<string name="app_name">CaringForYouAndMe</string>
-	<!-- 유튜브 테스트 -->
-	<string name="play_button">Play button</string>
-	<string name="null_time">0:00</string>
-	<string name="open_video_in_youtube">Open video in YouTube</string>
-	<string name="full_screen_button">Full screen button</string>
-	<string name="live">LIVE</string>
+	<string name="app_name">치매돌봄</string>
 
 	<!-- Strings related to login -->
 	<string name="prompt_id">ID</string>
@@ -41,7 +35,6 @@
 	<string name="action_cure1">인지향상프로그램</string>
 	<string name="action_diraymenu1">돌봄일기</string>
 	<string name="action_diraymenu2">희망게시판</string>
-	<string name="action_diraymenu3">함께나눠요</string>
 
 	<string name="action_roadmap1">내비게이션</string>
 	<string name="action_roadmap2">치매진단받기</string>
@@ -72,6 +65,10 @@
 	<string name="title_activity_cureprogram">5.치료프로그램</string>
 	<string name="title_activity_diary">6.우리들의 돌봄일기</string>
 	<string name="title_activity_dictionary">7.돌봄사전</string>
+	<string name="title_activity_dicmain1">7-1.초기치매</string>
+	<string name="title_activity_dicmain2">7-2.중고도치매환자</string>
+	<string name="title_activity_dicmain3">7-3.정신행동증상</string>
+	<string name="title_activity_dicmain4">7-4.안전관리</string>
 	<string name="title_activity_feeling">8.나의감정살피기</string>
 		<string name="text_feeling_main1">
 			우울증 검사(GDS-K): 노인의 우울증상을 선별하기 위한 검사\n
@@ -80,7 +77,6 @@
 		<string name="text_feeling_main2">
 			자살생각 척도 검사(BSSI): 자살과 관련되는 생각과 행동을 측정하는 검사\n
 			(출처:노인병학)
-
 		</string>
 		<string name="text_feeling_main3">
 			부양스트레스검사: 주부양자의 총체적 스트레스 검사\n

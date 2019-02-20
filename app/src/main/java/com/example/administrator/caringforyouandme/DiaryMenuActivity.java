@@ -50,16 +50,6 @@ public class DiaryMenuActivity extends AppCompatActivity {
 			}
 		});
 
-		// 3.함께나눠요
-		Button DiaryMenuButton3 = (Button) findViewById(R.id.DiaryMenuButton3);
-		DiaryMenuButton3.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View view) {
-				Intent registerIntent = new Intent(DiaryMenuActivity.this, SupportThiActivity.class);
-				DiaryMenuActivity.this.startActivity(registerIntent);
-			}
-		});
-
 		context = this;
 	}
 
@@ -111,15 +101,8 @@ public class DiaryMenuActivity extends AppCompatActivity {
 			case R.id.action_diraymenu2 :
 				AlertDialog.Builder builder2 = new AlertDialog.Builder(DiaryMenuActivity.this);
 				builder2.setMessage("" +
-					"사용자들이 자유롭게 글을 쓰고 공감하며 서로 위로하고 표현할 수 있는 공간을 제공함으로써 억압된 감정을 표출하여 돌봄으로 인한 스트레스 감소를 도움\n")
-					.setNegativeButton("닫기", null)
-					.create()
-					.show();
-				return true;
-			case R.id.action_diraymenu3 :
-				AlertDialog.Builder builder3 = new AlertDialog.Builder(DiaryMenuActivity.this);
-				builder3.setMessage("" +
-					"SNS계정처럼 사진도 올리고 좋은 글, 좋은 책, 좋은 음악, 치매에 관한 새로운 정보 공유함으로써 혼자라는 생각은 잊고 함께하는 사람들이 곁에 있음으로 심리적, 정서적 지지를 느끼도록 함\n")
+					"사용자들이 자유롭게 글을 쓰고 공감하며 서로 위로하고 표현할 수 있는 공간을 제공함으로써 억압된 감정을 표출하여 돌봄으로 인한 스트레스 감소를 도움\n" +
+					"새로운 정보 공유함으로써 혼자라는 생각은 잊고 함께하는 사람들이 곁에 있음으로 심리적, 정서적 지지를 느끼도록 함")
 					.setNegativeButton("닫기", null)
 					.create()
 					.show();

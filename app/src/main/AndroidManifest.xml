@@ -40,7 +40,12 @@
 		<activity android:name=".DiaryMenuActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".DiaryFirActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".activity.diary.DiaryFirSetActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
-		<activity android:name=".DictionaryActivity" android:label="@string/title_activity_dictionary" android:theme="@style/AppTheme.NoActionbar"></activity>
+		<!--activity android:name=".DictionaryActivity" android:label="@string/title_activity_dictionary" android:theme="@style/AppTheme.NoActionbar"></activity-->
+		<activity android:name=".DictionaryMenuActivity" android:label="@string/title_activity_dictionary" android:theme="@style/AppTheme.NoActionbar"></activity>
+		<activity android:name=".DictionaryFirActivity" android:label="@string/title_activity_dicmain1" android:theme="@style/AppTheme.NoActionbar"></activity>
+		<activity android:name=".DictionarySecActivity" android:label="@string/title_activity_dicmain2" android:theme="@style/AppTheme.NoActionbar"></activity>
+		<activity android:name=".DictionaryThiActivity" android:label="@string/title_activity_dicmain3" android:theme="@style/AppTheme.NoActionbar"></activity>
+		<activity android:name=".DictionaryForActivity" android:label="@string/title_activity_dicmain4" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".FeelingActivity" android:label="@string/title_activity_feeling" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<!-- 번외 1.유튜브 동영상 보기(각 페이지 동영상) -->
 		<activity android:name=".YoutubePlayerActivity"></activity>
