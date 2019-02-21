@@ -10,19 +10,6 @@
 
 	<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
 
-		<android.support.v7.widget.AppCompatImageButton
-				android:text="새창"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:id="@+id/cure_main1_sub5_playbutton"
-				android:src="@drawable/dictionary_main1_sub1_1_1"
-				android:adjustViewBounds="true"
-				android:scaleType="fitCenter"
-				android:background="@color/colorWhite"
-				android:layout_margin="@dimen/text_margin"
-				android:layout_gravity="center"
-		/>
-
 		<TextView android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_margin="@dimen/text_margin"

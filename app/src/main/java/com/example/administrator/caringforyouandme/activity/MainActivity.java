@@ -234,8 +234,9 @@ public class MainActivity extends AppCompatActivity
 	private void _startAlarmService(){
 		if(!isServiceRunning(AlarmService.class)){
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-				context.startForegroundService(new Intent(context, AlarmService.class));
-				AlarmJobService.enqueueWork(context, new Intent(context, AlarmService.class));
+				// 오류나서 주석처리함
+//				context.startForegroundService(new Intent(context, AlarmService.class));
+//				AlarmJobService.enqueueWork(context, new Intent(context, AlarmService.class));
 			} else {
 				startService(new Intent(this, AlarmService.class));
 			}

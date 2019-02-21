@@ -50,16 +50,6 @@ public class CureMain1Fragment8 extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_cure_main1_sub8, container, false);
 
-		ImageButton imagePlayButton1 = (ImageButton) view.findViewById(R.id.cure_main1_sub8_playbutton);
-		imagePlayButton1.setOnClickListener(new ImageButton.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent intent = new Intent(getActivity(), YoutubePlayerActivity.class);
-				intent.putExtra("videoID","dC2yqLz1m6U");
-				startActivity(intent);
-			}
-		});
-
 		return view;
 	}
 

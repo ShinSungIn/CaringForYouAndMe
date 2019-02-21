@@ -283,17 +283,17 @@ public class DictionaryActivity extends AppCompatActivity {
 			case R.id.action_dictionary1 :
 				AlertDialog.Builder builder1 = new AlertDialog.Builder(DictionaryActivity.this);
 				builder1.setMessage("" +
-					"이 글을 통해 치매 어르신도 아름다운 추억의 단면들을 지니고 있는 한 사람임을 잊지 않도록 함, 돌봄 지식의 필요성을 깨닫고, 돌보는 사람 또한 자신감을 갖고 돌봄을 시행하며  돌봄의 질 향상을 위해 게시.\n")
+					"이 글을 통해 치매 어르신도 아름다운 추억의 단면들을 지니고 있는 한 사람임을 잊지 않도록 함, 돌봄 지식의 필요성을 깨닫고, 돌보는 사람 또한 자신감을 갖고 돌봄을 시행하며  돌봄의 질 향상을 위해 게시\n")
 					.setNegativeButton("닫기", null)
 					.create()
 					.show();
 				return true;
 			case R.id.action_dictionary2:
 				AlertDialog.Builder builder2 = new AlertDialog.Builder(DictionaryActivity.this);
-				builder2.setMessage("치매환자가족들이 환자와 함께하는 일상생활의 어려움에 대해 가장 힘들어 함\n\n" +
-					"현재 돌봄 실천사항이 적절한지에 대한 평가를 원하며, 가장 어렵고 힘들며도움이 필요한 교육으로 식사, 배설, 목욕이나 이닦기와 같은 개인위생, 운동 영역이었음\n\n" +
-					"특히 경도치매환자가족들의 돌봄교육 요구도가  높음\n\n" +
-					"글의 목적상 지문이 길어 읽기 부담스러울 수 있으나 앱 디자이너와 기획자와 함께 의논하여 삽화나 그림을 첨부하고, 음성지원을 통하여 노인들도 부담없이 이용 가능하도록 제작\n\n" +
+				builder2.setMessage("치매환자가족들이 환자와 함께하는 일상생활의 어려움에 대해 가장 힘들어 합니다.\n\n" +
+					"현재 돌봄 실천사항이 적절한지에 대한 평가를 원하며, 가장 어렵고 힘들며도움이 필요한 교육으로 식사, 배설, 목욕이나 이닦기와 같은 개인위생, 운동 영역이였습니다.\n\n" +
+					"특히 경도치매환자가족들의 돌봄교육 요구도가 높았습니다.\n\n" +
+					"글의 목적상 지문이 길어 읽기 부담스러울 수 있으나 앱 디자이너와 기획자와 함께 의논하여 삽화나 그림을 첨부하고, 음성지원을 통하여 노인들도 부담없이 이용 가능하도록 제작하였습니다.\n\n" +
 					"치매의 특징적인 증상이며, 치매환자가족의 환자 돌봄 실천사항 중 가장 힘들어하며 도움을 필요로 하는 부분입니다.\n.")
 					.setNegativeButton("닫기", null)
 					.create()

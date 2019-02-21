@@ -24,9 +24,9 @@
 	<string name="action_alarm">알람설정</string>
 	<string name="action_mainAll">도움말</string>
 	<string name="action_known1">치매종류 및 원인</string>
-	<string name="action_known2">준비중</string>
+
 	<string name="action_prevention1">치매예방</string>
-	<string name="action_prevention2">준비중</string>
+
 	<string name="action_supportmenu1">치매지원서비스</string>
 	<string name="action_supportfir1">장기요양서비스</string>
 	<string name="action_supportsec1">장기요양급여지원</string>

@@ -93,7 +93,7 @@ public class DiaryMenuActivity extends AppCompatActivity {
 			case R.id.action_diraymenu1 :
 				AlertDialog.Builder builder1 = new AlertDialog.Builder(DiaryMenuActivity.this);
 				builder1.setMessage("" +
-					"치매환자의 돌봄 일상, 환자의 상태변화나 반응에 대해 기록하여 남김으로써 힘든 일상에 의미를 부여하고 환자가족의 긍정적 경험의 기회가 되도록 함\n")
+					"치매환자의 돌봄 일상, 환자의 상태변화나 반응에 대해 기록하여 남김으로써 힘든 일상에 의미를 부여하고 환자가족의 긍정적 경험의 기회가 되도록 하고싶었습니다.\n")
 					.setNegativeButton("닫기", null)
 					.create()
 					.show();
@@ -102,7 +102,7 @@ public class DiaryMenuActivity extends AppCompatActivity {
 				AlertDialog.Builder builder2 = new AlertDialog.Builder(DiaryMenuActivity.this);
 				builder2.setMessage("" +
 					"사용자들이 자유롭게 글을 쓰고 공감하며 서로 위로하고 표현할 수 있는 공간을 제공함으로써 억압된 감정을 표출하여 돌봄으로 인한 스트레스 감소를 도움\n" +
-					"새로운 정보 공유함으로써 혼자라는 생각은 잊고 함께하는 사람들이 곁에 있음으로 심리적, 정서적 지지를 느끼도록 함")
+					"새로운 정보 공유함으로써 혼자라는 생각은 잊고 함께하는 사람들이 곁에 있음으로 심리적, 정서적 지지를 느끼도록 만들고 싶었습니다.")
 					.setNegativeButton("닫기", null)
 					.create()
 					.show();

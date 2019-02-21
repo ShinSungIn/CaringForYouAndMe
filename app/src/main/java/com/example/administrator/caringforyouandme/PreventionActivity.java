@@ -144,13 +144,6 @@ public class PreventionActivity extends AppCompatActivity {
 					.create()
 					.show();
 				return true;
-			case R.id.action_prevention2 :
-				AlertDialog.Builder builder2 = new AlertDialog.Builder(PreventionActivity.this);
-				builder2.setMessage("준비중입니다.")
-					.setNegativeButton("닫기", null)
-					.create()
-					.show();
-				return true;
 		}
 
 

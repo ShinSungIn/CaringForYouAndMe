@@ -204,13 +204,6 @@ public class KnownActivity extends AppCompatActivity {
 					.create()
 					.show();
 				return true;
-			case R.id.action_known2 :
-				AlertDialog.Builder builder2 = new AlertDialog.Builder(KnownActivity.this);
-				builder2.setMessage("준비중입니다.")
-					.setNegativeButton("닫기", null)
-					.create()
-					.show();
-				return true;
 		}
 
 
