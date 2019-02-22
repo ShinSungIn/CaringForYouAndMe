@@ -57,7 +57,7 @@ public class FeelingActivity extends AppCompatActivity {
 		linkButton3.setOnClickListener(new ImageButton.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://goo.gl/forms/aLV3UnK3AXYAt9SM2")));
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://goo.gl/forms/wCB0UQqoRFp4oIYt1")));
 			}
 		});
 
