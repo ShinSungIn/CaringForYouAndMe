@@ -78,7 +78,7 @@ public class RoadmapActivity extends AppCompatActivity {
 
 		// 초기셋팅
 		textViewFirContent.setTextColor(getResources().getColor(R.color.colorText_White, null));
-		tabHost.getTabWidget().getChildAt(0).setBackgroundColor(getResources().getColor(R.color.colorBackground_Tap, null));
+		//tabHost.getTabWidget().getChildAt(0).setBackgroundColor(getResources().getColor(R.color.colorBackground_Tap, null));
 
 		tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
 			@Override
@@ -87,7 +87,7 @@ public class RoadmapActivity extends AppCompatActivity {
 				switch (index) {
 					case 0:
 						textViewFirContent.setTextColor(getResources().getColor(R.color.colorText_White, null));
-						tabHost.getTabWidget().getChildAt(0).setBackgroundColor(getResources().getColor(R.color.colorBackground_Tap, null));
+						//tabHost.getTabWidget().getChildAt(0).setBackgroundColor(getResources().getColor(R.color.colorBackground_Tap, null));
 
 						break;
 				}

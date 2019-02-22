@@ -12,13 +12,15 @@
 		<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
 				android:id="@+id/support_main4_sub1_view1"
 				android:src="@drawable/support_main4_sub1_1"
-				android:layout_margin="@dimen/text_margin"
+				android:layout_marginLeft="@dimen/text_margin"
+				android:layout_marginRight="@dimen/text_margin"
 				android:layout_gravity="center_horizontal"
 				android:contentDescription="@string/support_main4_sub1_1"
 		/>
 
 		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-				android:layout_margin="@dimen/text_margin"
+				android:layout_marginLeft="@dimen/text_margin"
+				android:layout_marginRight="@dimen/text_margin"
 				android:textColor="@color/colorText_Black"
 				android:textSize="@dimen/textView_fontsize"
 				android:lineSpacingExtra="@dimen/textView_lineheight"

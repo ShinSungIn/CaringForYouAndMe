@@ -32,7 +32,7 @@
 
 			<TabWidget
 					android:id="@android:id/tabs"
-					android:background="@color/colorGray"
+					android:background="@color/colorBackground_Tap"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content" />
 

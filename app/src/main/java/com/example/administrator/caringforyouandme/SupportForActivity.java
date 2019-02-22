@@ -156,10 +156,10 @@ public class SupportForActivity extends AppCompatActivity {
 		tabHost = findViewById(R.id.tabHost);
 		tabHost.setup();
 
-		TabHost.TabSpec tabSupportMain1Sub1 = tabHost.newTabSpec("0").setContent(R.id.tabHostFirContent).setIndicator("치매가족\n휴가제", null);
-		TabHost.TabSpec tabSupportMain1Sub2 = tabHost.newTabSpec("1").setContent(R.id.tabHostSecContent).setIndicator("치료관리비\n지원사업", null);
-		TabHost.TabSpec tabSupportMain1Sub3 = tabHost.newTabSpec("2").setContent(R.id.tabHostThiContent).setIndicator("실종노인\n서비스지원", null);
-		TabHost.TabSpec tabSupportMain1Sub4 = tabHost.newTabSpec("3").setContent(R.id.tabHostForContent).setIndicator("성년\n후견제도", null);
+		TabHost.TabSpec tabSupportMain1Sub1 = tabHost.newTabSpec("0").setContent(R.id.tabHostFirContent).setIndicator("치매가족휴가제", null);
+		TabHost.TabSpec tabSupportMain1Sub2 = tabHost.newTabSpec("1").setContent(R.id.tabHostSecContent).setIndicator("치료관리비지원사업", null);
+		TabHost.TabSpec tabSupportMain1Sub3 = tabHost.newTabSpec("2").setContent(R.id.tabHostThiContent).setIndicator("실종노인서비스지원", null);
+		TabHost.TabSpec tabSupportMain1Sub4 = tabHost.newTabSpec("3").setContent(R.id.tabHostForContent).setIndicator("성년후견제도", null);
 
 		// 상단 탭 추가
 		tabHost.addTab(tabSupportMain1Sub1);
