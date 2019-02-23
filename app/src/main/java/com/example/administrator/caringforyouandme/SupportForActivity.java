@@ -183,6 +183,9 @@ public class SupportForActivity extends AppCompatActivity {
 		textViewThiContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 		textViewForContent.setTextColor(getResources().getColor(R.color.colorText_Gray, null));
 		tabHost.getTabWidget().getChildAt(0).setBackgroundColor(getResources().getColor(R.color.colorBackground_Tap, null));
+		tabHost.getTabWidget().getChildAt(1).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+		tabHost.getTabWidget().getChildAt(2).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
+		tabHost.getTabWidget().getChildAt(3).setBackgroundColor(getResources().getColor(R.color.colorGray, null));
 
 		tabHost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
 			@Override

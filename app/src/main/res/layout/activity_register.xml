@@ -11,9 +11,9 @@
 
 	<LinearLayout android:id="@+id/email_login_form" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="20dp">
 
-		<RadioGroup android:layout_width="280dp" android:layout_height="wrap_content" android:id="@+id/userType" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_marginTop="10dp">
-			<RadioButton android:layout_width="0dp" android:layout_height="wrap_content" android:text="일반" android:id="@+id/userTypeGuardian" android:layout_weight="1" android:checked="true"/>
-			<RadioButton android:layout_width="0dp" android:layout_height="wrap_content" android:text="보호자" android:id="@+id/userTypeNormal" android:layout_weight="1" android:checked="false"/>
+		<RadioGroup android:layout_width="280dp" android:layout_height="wrap_content" android:id="@+id/UserType" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_marginTop="10dp">
+			<RadioButton android:layout_width="0dp" android:layout_height="wrap_content" android:text="일반" android:id="@+id/userTypeNormal" android:layout_weight="1" android:checked="true"/>
+			<RadioButton android:layout_width="0dp" android:layout_height="wrap_content" android:text="보호자" android:id="@+id/userTypeGuardian" android:layout_weight="1" android:checked="false"/>
 			<RadioButton android:layout_width="0dp" android:layout_height="wrap_content" android:text="환자" android:id="@+id/userTypePatient" android:layout_weight="1" android:checked="false"/>
 		</RadioGroup>
 
