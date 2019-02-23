@@ -10,13 +10,27 @@
 
 	<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
 
-		<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
-				   android:id="@+id/cure_main1_sub1_view3"
-				   android:src="@drawable/cure_main1_sub1_3"
-				   android:layout_marginTop="@dimen/text_margin"
-				   android:layout_gravity="center_horizontal"
-				   android:contentDescription="@string/cure_main1_sub3"
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="새창"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/cure_main1_sub1_view3"
+				android:src="@drawable/cure_main1_sub1_3"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:background="@color/colorWhite"
+				android:layout_marginTop="@dimen/text_margin"
+				android:layout_marginLeft="@dimen/text_margin"
+				android:layout_marginRight="@dimen/text_margin"
 		/>
+
+		<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="@dimen/text_margin"
+				android:textColor="@color/colorText_Blue"
+				android:textSize="@dimen/textView_fontsize"
+				android:lineSpacingExtra="@dimen/textView_lineheight"
+				android:text="위 이미지를 클릭하시어 같이 체조하셔요^^"/>
 
 		<TextView android:layout_width="wrap_content"
 				android:layout_height="wrap_content"

@@ -70,6 +70,16 @@ public class DictionaryMenuActivity extends AppCompatActivity {
 			}
 		});
 
+		// 5.치매환자와의 일상생활 동영상
+		Button DicMenuButton5 = (Button) findViewById(R.id.DicMenuButton5);
+		DicMenuButton5.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent registerIntent = new Intent(DictionaryMenuActivity.this, DictionaryFivActivity.class);
+				DictionaryMenuActivity.this.startActivity(registerIntent);
+			}
+		});
+
 		context = this;
 	}
 

@@ -1,6 +1,8 @@
 package com.example.administrator.caringforyouandme.CureProgramFragment;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -9,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import com.example.administrator.caringforyouandme.BitmapHelper;
+import com.example.administrator.caringforyouandme.PhotoViewActivity;
 import com.example.administrator.caringforyouandme.R;
 import com.example.administrator.caringforyouandme.YoutubePlayerActivity;
 
@@ -49,6 +53,17 @@ public class CureMain1Fragment3 extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_cure_main1_sub3, container, false);
+
+		// 식사 영상
+		ImageButton imagePlayButton1 = (ImageButton) view.findViewById(R.id.cure_main1_sub1_view3);
+		imagePlayButton1.setOnClickListener(new ImageButton.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getActivity(), YoutubePlayerActivity.class);
+				intent.putExtra("videoID","BX4NhDzc9Ec");
+				startActivity(intent);
+			}
+		});
 
 		return view;
 	}

@@ -5,5 +5,7 @@
 			android:title="@string/action_alarm"
 			android:icon="@drawable/ic_access_alarm_black_24dp"
 			app:showAsAction="always"/>
-	<item android:id="@+id/action_settings" android:title="@string/action_settings" android:orderInCategory="100" app:showAsAction="never"/>
+	<item android:id="@+id/action_main1" android:title="@string/action_main1" android:orderInCategory="100" app:showAsAction="never"/>
+	<item android:id="@+id/action_main2" android:title="@string/action_main2" android:orderInCategory="100" app:showAsAction="never"/>
+	<item android:id="@+id/action_main3" android:title="@string/action_main3" android:orderInCategory="100" app:showAsAction="never"/>
 </menu>

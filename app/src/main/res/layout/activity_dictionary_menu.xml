@@ -72,6 +72,15 @@
 				android:id="@+id/DicMenuButton4"
 				android:layout_weight="1"
 				android:background="@drawable/submenu7_btn04"/>
+		<Button android:text=""
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:layout_marginLeft="@dimen/_8dp"
+				android:layout_marginRight="@dimen/_8dp"
+				android:layout_marginBottom="@dimen/_8dp"
+				android:id="@+id/DicMenuButton5"
+				android:layout_weight="1"
+				android:background="@drawable/submenu7_btn05"/>
 	</LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

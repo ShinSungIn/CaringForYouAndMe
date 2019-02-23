@@ -9,6 +9,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -19,6 +20,7 @@ import android.widget.Toast;
 import com.example.administrator.caringforyouandme.AlarmActivity;
 import com.example.administrator.caringforyouandme.CureprogramActivity;
 import com.example.administrator.caringforyouandme.DiaryMenuActivity;
+import com.example.administrator.caringforyouandme.DictionaryActivity;
 import com.example.administrator.caringforyouandme.DictionaryMenuActivity;
 import com.example.administrator.caringforyouandme.FeelingActivity;
 import com.example.administrator.caringforyouandme.KnownActivity;
@@ -51,8 +53,8 @@ public class MainActivity extends AppCompatActivity
 		drawer.addDrawerListener(toggle);
 		toggle.syncState();
 
-		NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-		navigationView.setNavigationItemSelectedListener(this);
+		//NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+		//navigationView.setNavigationItemSelectedListener(this);
 
 		context = this;
 
@@ -190,8 +192,19 @@ public class MainActivity extends AppCompatActivity
 		int id = item.getItemId();
 
 		//noinspection SimplifiableIfStatement
-		if (id == R.id.action_settings) {
-			Toast.makeText(this, "action_settings", Toast.LENGTH_SHORT).show();
+		if (id == R.id.action_main1) {
+			Toast.makeText(this, "도움말 기능입니다. 메뉴를 선택하세요.", Toast.LENGTH_SHORT).show();
+			return true;
+		} else if (id == R.id.action_main2) {
+			AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this);
+			builder1.setMessage("" +
+				"이 글을 통해 치매 어르신도 아름다운 추억의 단면들을 지니고 있는 한 사람임을 잊지 않도록 함, 돌봄 지식의 필요성을 깨닫고, 돌보는 사람 또한 자신감을 갖고 돌봄을 시행하며  돌봄의 질 향상을 위해 게시\n")
+				.setNegativeButton("닫기", null)
+				.create()
+				.show();
+			return true;
+		} else if (id == R.id.action_main3) {
+			Toast.makeText(this, "앱정보 준비중", Toast.LENGTH_SHORT).show();
 			return true;
 		} else if (id == R.id.action_alarm) {
 			// 알람설정 클릭
