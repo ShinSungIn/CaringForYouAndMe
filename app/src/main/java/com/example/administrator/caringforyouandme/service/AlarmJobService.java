@@ -23,77 +23,65 @@ public class AlarmJobService extends JobIntentService {
 
     private AlarmQuery alarmQuery;
 
-    static final int JOB_ID = 1000;
+    static final int JOB_ID = 0x1000;
+
+    private boolean runnable = true;
 
     static public void enqueueWork(Context context, Intent intent) {
-//        enqueueWork(context, ?.class, JOB_ID, intent);
+        enqueueWork(context, AlarmJobService.class, JOB_ID, intent);
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
-        alarmQuery = new AlarmQuery(this);
     }
 
     @Override
     protected void onHandleWork(@NonNull Intent intent) {
-        alarmJobThread.start();
+        _startFunction();
     }
-
-//    @Override
-//    public boolean onStopCurrentWork() {
-//        return false;
-//    }
 
     @Override
     public void onDestroy(){
         super.onDestroy();
-        alarmJobThread.close();
+        _stopFunction();
     }
 
-
-    /**
-     * 알림 쓰레드
-     */
-    private AlarmJobThread alarmJobThread = new AlarmJobThread();
-
     @SuppressWarnings("Duplicates")
-    class AlarmJobThread extends Thread{
-        private boolean runnable = true;
-        @Override
-        public void run(){
-            while (runnable){
+    private void _startFunction() {
+        AlarmQuery alarmQuery = new AlarmQuery(this);
 
-                Date today = new Date();
-                if( !_isZeroSecond(today)){
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    continue;
-                }
+        while (runnable) {
+            Date today = new Date();
+            Log.i(TAG, " ~~~~~~~~~~~~~~~~~ second time pass 1.... !! (" + runnable + ")");
 
-                List<Alarm> alarmList = alarmQuery.gets(_getWeek(today), _getFormat(today,"HH:mm"));
-
-                for(Alarm alarm : alarmList) {
-                    _action(alarm.getContent());
-                    Log.i(TAG, " alarm time = " + alarm.getTime());
-                }
-
+            if (!_isZeroSecond(today)) {
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
+                continue;
             }
-        }
 
-        public void close(){
-            runnable = false;
-        }
+            List<Alarm> alarmList = alarmQuery.gets(_getWeek(today), _getFormat(today, "HH:mm"));
 
+            for (Alarm alarm : alarmList) {
+                _action(alarm.getContent());
+                Log.i(TAG, " alarm time = " + alarm.getTime());
+            }
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
+
+    private void _stopFunction(){
+        runnable = false;
     }
 
     /**
@@ -105,6 +93,7 @@ public class AlarmJobService extends JobIntentService {
         // 팝업 띄우기
         Intent intent = new Intent(getApplicationContext(), DialogActivity.class);
         intent.putExtra("content", content);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
 
         // 알람 소리
