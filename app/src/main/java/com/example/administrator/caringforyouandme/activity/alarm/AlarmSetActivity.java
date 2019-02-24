@@ -76,7 +76,8 @@ public class AlarmSetActivity extends AppCompatActivity implements TimePicker.On
     private void _setToolbar() {
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("알람설정");
-        setSupportActionBar(toolbar);
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -86,6 +87,7 @@ public class AlarmSetActivity extends AppCompatActivity implements TimePicker.On
 
     @Override
     public void onBackPressed() {
+        super.onBackPressed();
         finish();
     }
 

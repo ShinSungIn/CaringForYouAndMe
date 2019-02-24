@@ -23,8 +23,8 @@
         />
 
         <LinearLayout
-                android:layout_marginTop="10dp"
                 android:layout_weight="1"
+                android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="0dp">
@@ -33,7 +33,7 @@
                     android:layout_weight="3"
                     android:id="@+id/textview_label_content"
                     android:text="제 목 : "
-                    android:layout_marginTop="2dp"
+                    android:layout_marginTop="4dp"
                     android:layout_marginBottom="2dp"
                     android:gravity="right"
                     android:textSize="20sp"
@@ -43,7 +43,9 @@
             <EditText
                     android:layout_weight="8"
                     android:id="@+id/edittext_diary_set_subject"
+                    android:gravity="top"
                     android:textSize="20sp"
+                    android:singleLine="true"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"/>
 
@@ -61,7 +63,7 @@
                     android:layout_weight="3"
                     android:id="@+id/textview_label_regdt"
                     android:text="등록일 : "
-                    android:layout_marginTop="2dp"
+                    android:layout_marginTop="4dp"
                     android:layout_marginBottom="2dp"
                     android:gravity="right"
                     android:textSize="20sp"
@@ -72,8 +74,11 @@
                     android:layout_weight="8"
                     android:id="@+id/edittext_diary_set_regdt"
                     android:textSize="20sp"
+                    android:gravity="top"
+                    android:focusable="false"
+                    android:clickable="true"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent" />
 
         </LinearLayout>
 
@@ -88,13 +93,18 @@
                 android:id="@+id/edittext_diary_set_content"
                 android:layout_weight="10"
                 android:layout_marginTop="10dp"
-                android:lines="17"
                 android:maxLines="30"
-                android:text="adf"
                 android:gravity="top"
                 android:textSize="20sp"
+                android:background="@android:color/transparent"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"/>
+
+        <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerInParent="true"
+                android:background="#dee0e4"/>
 
         <LinearLayout
                 android:layout_weight="1"

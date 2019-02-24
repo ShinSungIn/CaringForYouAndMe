@@ -20,9 +20,10 @@ public class Column {
 	public static String ALARM_ISSAT = "isSat";			// 토요일 체크 여부
 
 	// Diary
+	public static String DIARY_SEQ = "seq";				// 순번
 	public static String DIARY_SUBJECT = "subject";		// 제목
 	public static String DIARY_CONTENT = "content";		// 내용
-	public static String DIARY_POSTDT = "postDt";		// 포스팅 일자
+//	public static String DIARY_POSTDT = "postDt";		// 포스팅 일자
 	public static String DIARY_REGDT = "regDt";			// 등록 일자
 
 }

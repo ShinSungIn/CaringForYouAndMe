@@ -8,14 +8,18 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
 import com.example.administrator.caringforyouandme.activity.diary.DiaryFirSetActivity;
 import com.example.administrator.caringforyouandme.database.Column;
 import com.example.administrator.caringforyouandme.database.Entity;
 import com.example.administrator.caringforyouandme.database.domain.Diary;
+import com.example.administrator.caringforyouandme.database.query.DiaryQuery;
 import com.example.administrator.caringforyouandme.listview.diary.DiaryListviewAdapter;
 import com.example.administrator.caringforyouandme.listview.diary.DiaryListviewItem;
+
+import java.util.List;
 
 public class DiaryFirActivity extends AppCompatActivity {
 	private Toolbar toolbar;
@@ -23,6 +27,8 @@ public class DiaryFirActivity extends AppCompatActivity {
 	Context context;
 
 	private FloatingActionButton button;
+
+	private DiaryQuery diaryQuery;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +42,8 @@ public class DiaryFirActivity extends AppCompatActivity {
 				startActivity(new Intent(context, DiaryFirSetActivity.class));
 			}
 		});
+
+		diaryQuery = new DiaryQuery(this);
 
 		setToolbar();
 
@@ -59,7 +67,21 @@ public class DiaryFirActivity extends AppCompatActivity {
 
 	@Override
 	public void onBackPressed() {
+		super.onBackPressed();
 		finish();
+	}
+
+	@SuppressWarnings("Duplicates")
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case android.R.id.home:
+				//toolbar의 back키 눌렀을 때 동작
+				finish();
+				return true;
+		}
+
+		return super.onOptionsItemSelected(item);
 	}
 
 	@SuppressWarnings("Duplicates")
@@ -71,16 +93,9 @@ public class DiaryFirActivity extends AppCompatActivity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				DiaryListviewItem diaryListviewItem = (DiaryListviewItem) diaryListviewAdapter.getItem(position);
-
 				Intent intent = new Intent(getApplicationContext(), DiaryFirSetActivity.class);
 				intent.putExtra("seq", diaryListviewItem.getSeq());
-
-				// TODO : 테스트용
-				intent.putExtra("subject", diaryListviewItem.getSubject());
-				intent.putExtra("regdt", diaryListviewItem.getRegDate());
-
 				startActivity(intent);
-
 			}
 		});
 
@@ -93,16 +108,11 @@ public class DiaryFirActivity extends AppCompatActivity {
 			}
 		});
 
-		//TODO: sample
-		Diary diary = new Diary();
-		diary.setSeq(1);
-		diary.setRegDt("2019.02.19");
-		diary.setSubject("오늘 약을 먹는날이 었다...... 하지만 그러지 못했다.....");
+		List<Diary> diaryList = diaryQuery.gets();
 
-		diaryListviewAdapter.addItem(diary);
-
-		diary.setSeq(2);
-		diaryListviewAdapter.addItem(diary);
+		for(Diary diary : diaryList) {
+			diaryListviewAdapter.addItem(diary);
+		}
 	}
 
 	/**
@@ -117,7 +127,9 @@ public class DiaryFirActivity extends AppCompatActivity {
 			.setPositiveButton("삭제", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int id) {
 					// TODO : 다이어리 삭제 알리고리즘 삽입
-
+					String whereClause = Column.DIARY_SEQ + " = ? ";
+					String[] whereArgs = new String[]{Integer.toString(seq)};
+					diaryQuery.remove(Entity.diary, whereClause, whereArgs);
 
 					_setListView();
 

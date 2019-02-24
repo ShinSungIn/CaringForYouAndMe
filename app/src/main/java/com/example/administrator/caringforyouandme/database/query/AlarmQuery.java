@@ -61,7 +61,7 @@ public class AlarmQuery {
         Cursor cursor = databaseHelper.onSelect(Entity.alarm, null, stringBuffer.toString(), new String[]{Integer.toString(seq)}, null, null, null, null );
 
         Alarm alarm = null;
-        if ( cursor.moveToFirst() ){
+        if ( cursor.moveToNext() ){
             alarm = new Alarm();
 
             alarm.setSeq(cursor.getInt(cursor.getColumnIndex(Column.ALARM_SEQ)));
@@ -174,6 +174,9 @@ public class AlarmQuery {
         return databaseHelper.onUpdate(Entity.alarm, contentValues, whereClause, whereArgs);
     }
 
+    /**
+     * 알람 삭제
+     */
     public void remove(String tableName, String whereClause, String[] whereArgs) {
         databaseHelper.onDelete(tableName, whereClause, whereArgs);
     }

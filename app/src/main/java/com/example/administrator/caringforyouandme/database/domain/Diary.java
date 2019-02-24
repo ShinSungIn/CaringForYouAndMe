@@ -7,6 +7,6 @@ public class Diary {
     private Integer seq;
     private String subject;
     private String content;
-    private String postDt;
+//    private String postDt;
     private String regDt;
 }

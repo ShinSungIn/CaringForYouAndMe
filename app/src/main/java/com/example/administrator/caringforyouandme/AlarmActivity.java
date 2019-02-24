@@ -7,12 +7,11 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import com.example.administrator.caringforyouandme.activity.DialogActivity;
 import com.example.administrator.caringforyouandme.activity.alarm.AlarmSetActivity;
 import com.example.administrator.caringforyouandme.database.Column;
 import com.example.administrator.caringforyouandme.database.Entity;
@@ -50,14 +49,8 @@ public class AlarmActivity extends AppCompatActivity {
 
 		alarmQuery = new AlarmQuery(context);
 
-		setToolbar();
+		_setToolbar();
 
-	}
-
-	private void setToolbar() {
-		toolbar = findViewById(R.id.toolbar);
-		toolbar.setTitle("알람설정");
-		setSupportActionBar(toolbar);
 	}
 
 	@Override
@@ -68,10 +61,32 @@ public class AlarmActivity extends AppCompatActivity {
 
 	@Override
 	public void onBackPressed() {
+		super.onBackPressed();
 		finish();
 	}
 
-    private void _setListView(){
+	@SuppressWarnings("Duplicates")
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case android.R.id.home:
+				//toolbar의 back키 눌렀을 때 동작
+				finish();
+				return true;
+		}
+
+		return super.onOptionsItemSelected(item);
+	}
+
+
+	private void _setToolbar() {
+		toolbar = findViewById(R.id.toolbar);
+		toolbar.setTitle("알람설정");
+		setSupportActionBar(toolbar);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+	}
+
+	private void _setListView(){
         AlarmListviewAdapter alarmListviewAdapter = new AlarmListviewAdapter(this);
         ListView listView_Alarm = findViewById(R.id.listview_alarm);
         listView_Alarm.setAdapter(alarmListviewAdapter);
