@@ -33,7 +33,7 @@ public class DictionaryFivActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_dictionary_for);
+		setContentView(R.layout.activity_dictionary_fiv);
 
 		setToolbar();
 		setTab();
@@ -67,7 +67,7 @@ public class DictionaryFivActivity extends AppCompatActivity {
 		tabHost = findViewById(R.id.tabHost);
 		tabHost.setup();
 
-		TabHost.TabSpec tabDictionaryMain1 = tabHost.newTabSpec("0").setContent(R.id.tabHostFirContent).setIndicator("4.안전관리", null);
+		TabHost.TabSpec tabDictionaryMain1 = tabHost.newTabSpec("0").setContent(R.id.tabHostFirContent).setIndicator("5.치매환자의 일상생활 동영상", null);
 		// 상단 탭 추가
 		tabHost.addTab(tabDictionaryMain1);
 

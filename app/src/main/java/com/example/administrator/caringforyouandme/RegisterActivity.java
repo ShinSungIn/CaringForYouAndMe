@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -19,6 +20,8 @@ import org.json.JSONObject;
 public class RegisterActivity extends AppCompatActivity {
 
 	private ArrayAdapter adapter;
+
+	// 각 사용자 정보를 담을 변수 그릇을 선언
 	private String userType;
 	private String userID;
 	private String userPassword;
@@ -27,14 +30,16 @@ public class RegisterActivity extends AppCompatActivity {
 	private String userTel;
 	private String userEmail;
 	private String userGender;
+	private boolean agreeYn = false;
 	private AlertDialog dialog;
-	private boolean validate = false;
+	private boolean validate = false;	// 사용할수 있는 아이디인지 체크
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_register);
 
+		// 변수 초기화
 		final EditText idText = (EditText) findViewById(R.id.idText);
 		final EditText nameText = (EditText) findViewById(R.id.nameText);
 		final EditText passwordText = (EditText) findViewById(R.id.passwordText);
@@ -43,9 +48,9 @@ public class RegisterActivity extends AppCompatActivity {
 		final EditText emailText = (EditText) findViewById(R.id.emailText);
 
 		// 사용자 구분
-		RadioGroup userTypeGroup = (RadioGroup) findViewById(R.id.userType);
+		RadioGroup userTypeGroup = (RadioGroup) findViewById(R.id.UserType);
 		int userTypeGroupID = userTypeGroup.getCheckedRadioButtonId();
-		userType = ((RadioButton) findViewById(userTypeGroupID)).getText().toString();
+		userType = ((RadioButton) findViewById(userTypeGroupID)).getText().toString();	// 현재 선택되어있는 값
 
 		userTypeGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 			@Override
@@ -62,10 +67,13 @@ public class RegisterActivity extends AppCompatActivity {
 		genderGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
-				RadioButton typeButton = (RadioButton) findViewById(checkedId);
-				userGender = typeButton.getText().toString();
+				RadioButton genderButton = (RadioButton) findViewById(checkedId);
+				userGender = genderButton.getText().toString();
 			}
 		});
+
+		// 동의여부
+		CheckBox agreeYn = (CheckBox) findViewById(R.id.agreeYn);
 
 		// 중복 체크
 		final Button validateButton  = (Button) findViewById(R.id.validateButton);
@@ -85,10 +93,12 @@ public class RegisterActivity extends AppCompatActivity {
 					return;
 				}
 
+				// 정상적인 경우라면 중복체크한다
 				Response.Listener<String> responseListener = new Response.Listener<String>() {
 					@Override
 					public void onResponse(String response) {
 						try {
+							//json 값 받아오기
 							JSONObject jsonResponse = new JSONObject(response);
 							boolean success = jsonResponse.getBoolean("success");
 							if (success) {
@@ -97,7 +107,8 @@ public class RegisterActivity extends AppCompatActivity {
 									.setPositiveButton("확인", null)
 									.create()
 									.show();
-								idText.setEnabled(false);
+
+								idText.setEnabled(false);	// 비활성화
 								validate = true;
 								idText.setBackgroundColor(getResources().getColor(R.color.colorGray));
 							} else {
@@ -112,7 +123,9 @@ public class RegisterActivity extends AppCompatActivity {
 						}
 					}
 				};
+				// 접속 할 수 있도록 생성자를 통해 객체를 만들어준다
 				ValidateRequest validateRequest = new ValidateRequest(userID, responseListener);
+				// request를 보냄
 				RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
 				queue.add(validateRequest);
 			}
@@ -123,7 +136,8 @@ public class RegisterActivity extends AppCompatActivity {
 		Button registButton = (Button) findViewById(R.id.registerButton);
 		registButton.setOnClickListener(new View.OnClickListener() {	// 이벤트 처리
 			@Override
-			public void onClick(View v) {
+			public void onClick(View view) {
+				// 폼에 있는 값 가져오기
 				String userID = idText.getText().toString();
 				String userPassword = passwordText.getText().toString();
 				String userName = nameText.getText().toString();
@@ -155,36 +169,57 @@ public class RegisterActivity extends AppCompatActivity {
 						.show();
 					return;
 				}
+				if (!agreeYn.isChecked()) {
+					AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+					builder.setMessage("개인정보수집 동의여부를 체크해주십시오.")
+						.setNegativeButton("확인", null)
+						.create()
+						.show();
+					return;
+				}
 
 				Response.Listener<String> responseListener = new Response.Listener<String>() {
 					@Override
 					public void onResponse(String response) {
 						try {
 							JSONObject jsonResponse = new JSONObject(response);
-							boolean success = jsonResponse.getBoolean("success");
+							boolean success = false;
+							success= jsonResponse.getBoolean("success");
+
 							if (success) {
+								/*
 								AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
 								builder.setMessage("회원 등록에 성공하였습니다.")
 									.setPositiveButton("확인", null)
 									.create()
 									.show();
-								finish();	// 회원가입창 닫기
+
+								//finish();	// 회원가입창 닫기
+								Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+								RegisterActivity.this.startActivity(intent);
+								*/
 							} else {
 								AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
 								builder.setMessage("회원 등록에 실패하였습니다.")
 									.setNegativeButton("다시시도", null)
 									.create()
 									.show();
-								Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-								RegisterActivity.this.startActivity(intent);
+
+								//Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+								//RegisterActivity.this.startActivity(intent);
 							}
+
+							//finish();
 
 						} catch (JSONException e) {
 							e.printStackTrace();
 						}
 					}
 				};
-				RegisterRequest registerRequest = new RegisterRequest(userType, userID, userPassword, userName, userAge, userTel, userEmail, userGender, responseListener);
+
+				//System.out.println(userType + " / " + userID+ " / " + userPassword+ " / " + userName+ " / " + userAge+ " / " + userTel+ " / " + userEmail+ " / " + userGender + " / " + String.valueOf(agreeYn.isChecked()));
+
+				RegisterRequest registerRequest = new RegisterRequest(userType, userID, userPassword, userName, userAge, userTel, userEmail, userGender, String.valueOf(agreeYn.isChecked()), responseListener);
 				RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
 				queue.add(registerRequest);
 			}

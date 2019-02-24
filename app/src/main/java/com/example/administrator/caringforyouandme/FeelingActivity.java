@@ -43,15 +43,6 @@ public class FeelingActivity extends AppCompatActivity {
 			}
 		});
 
-		// 2.자살생각 척도검사
-		Button linkButton2 = (Button) findViewById(R.id.feeling_main2_linkbutton);
-		linkButton2.setOnClickListener(new ImageButton.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://goo.gl/forms/aLV3UnK3AXYAt9SM2")));
-			}
-		});
-
 		// 3.부양스트레스검사
 		Button linkButton3 = (Button) findViewById(R.id.feeling_main3_linkbutton);
 		linkButton3.setOnClickListener(new ImageButton.OnClickListener() {
