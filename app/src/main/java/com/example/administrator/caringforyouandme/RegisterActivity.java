@@ -1,9 +1,11 @@
 package com.example.administrator.caringforyouandme;
 
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -33,6 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
 	private boolean agreeYn = false;
 	private AlertDialog dialog;
 	private boolean validate = false;	// 사용할수 있는 아이디인지 체크
+	private RequestQueue queue;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -126,7 +129,7 @@ public class RegisterActivity extends AppCompatActivity {
 				// 접속 할 수 있도록 생성자를 통해 객체를 만들어준다
 				ValidateRequest validateRequest = new ValidateRequest(userID, responseListener);
 				// request를 보냄
-				RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
+				queue = Volley.newRequestQueue(RegisterActivity.this);
 				queue.add(validateRequest);
 			}
 
@@ -187,7 +190,7 @@ public class RegisterActivity extends AppCompatActivity {
 							success= jsonResponse.getBoolean("success");
 
 							if (success) {
-								/*
+
 								AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
 								builder.setMessage("회원 등록에 성공하였습니다.")
 									.setPositiveButton("확인", null)
@@ -195,9 +198,9 @@ public class RegisterActivity extends AppCompatActivity {
 									.show();
 
 								//finish();	// 회원가입창 닫기
-								Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-								RegisterActivity.this.startActivity(intent);
-								*/
+								//Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+								//RegisterActivity.this.startActivity(intent);
+
 							} else {
 								AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
 								builder.setMessage("회원 등록에 실패하였습니다.")
@@ -220,7 +223,7 @@ public class RegisterActivity extends AppCompatActivity {
 				//System.out.println(userType + " / " + userID+ " / " + userPassword+ " / " + userName+ " / " + userAge+ " / " + userTel+ " / " + userEmail+ " / " + userGender + " / " + String.valueOf(agreeYn.isChecked()));
 
 				RegisterRequest registerRequest = new RegisterRequest(userType, userID, userPassword, userName, userAge, userTel, userEmail, userGender, String.valueOf(agreeYn.isChecked()), responseListener);
-				RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
+				queue = Volley.newRequestQueue(RegisterActivity.this);
 				queue.add(registerRequest);
 			}
 		});

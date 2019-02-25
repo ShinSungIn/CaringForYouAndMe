@@ -220,13 +220,12 @@ public class LoginActivity extends AppCompatActivity {
 	}
 
 	private boolean isIdValid(String id) {
-		//TODO: Replace this with your own logic
-		return id.contains("@");
+		return true;
 	}
 
 	private boolean isPasswordValid(String password) {
 		//TODO: Replace this with your own logic
-		return password.length() > 4;
+		return true;
 	}
 
 	/**
@@ -266,7 +265,7 @@ public class LoginActivity extends AppCompatActivity {
 	}
 
 	/**
-	 * Represents an asynchronous login/registration task used to authenticate the user.
+	 * 로그인 통신
 	 */
 	public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 

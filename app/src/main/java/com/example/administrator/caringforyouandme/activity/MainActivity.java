@@ -30,9 +30,8 @@ import com.example.administrator.caringforyouandme.RoadmapActivity;
 import com.example.administrator.caringforyouandme.SupportMenuActivity;
 import com.example.administrator.caringforyouandme.service.AlarmJobService;
 import com.example.administrator.caringforyouandme.service.AlarmService;
-
-public class MainActivity extends AppCompatActivity
-	implements NavigationView.OnNavigationItemSelectedListener {
+//implements NavigationView.OnNavigationItemSelectedListener
+public class MainActivity extends AppCompatActivity {
 
 	private long backKeyPressedTime = 0;
 	private Toast toast;
@@ -46,18 +45,19 @@ public class MainActivity extends AppCompatActivity
 
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
-
+/*
 		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
 			this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 		drawer.addDrawerListener(toggle);
 		toggle.syncState();
-
+*/
 		//NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 		//navigationView.setNavigationItemSelectedListener(this);
 
 		context = this;
 
+		// TODO : 임시 주석처리
 		// 알람 서비스 시작
 		_startAlarmService();
 
@@ -216,7 +216,7 @@ public class MainActivity extends AppCompatActivity
 
 		return super.onOptionsItemSelected(item);
 	}
-
+/*
 	@Override
 	public boolean onNavigationItemSelected(MenuItem item) {
 		// Handle navigation view item clicks here.
@@ -240,7 +240,7 @@ public class MainActivity extends AppCompatActivity
 		drawer.closeDrawer(GravityCompat.START);
 		return true;
 	}
-
+*/
 	/**
 	 * Alarm 서비스 시작
 	 */
