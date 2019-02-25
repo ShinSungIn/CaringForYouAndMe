@@ -3,6 +3,7 @@ package com.example.administrator.caringforyouandme.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
 	private Toast toast;
 	private Activity activity;
 	private Context context;
+	private String loginID;	// 로그인 ID
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -141,6 +143,9 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 
+		Intent intent = getIntent();
+		loginID = intent.getExtras().getString("ID");
+
 		this.activity = this;
 	}
 
@@ -173,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	private void showGuide() {
-		toast = Toast.makeText(activity, "뒤로버튼을 한번 더 누르면 로그인화면으로 이동합니다", Toast.LENGTH_LONG);
+		toast = Toast.makeText(activity, "뒤로버튼을 한번 더 누르면 앱을 종료합니다.", Toast.LENGTH_LONG);
 		toast.show();
 	}
 
@@ -198,17 +203,29 @@ public class MainActivity extends AppCompatActivity {
 		} else if (id == R.id.action_main2) {
 			AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this);
 			builder1.setMessage("" +
-				"이 글을 통해 치매 어르신도 아름다운 추억의 단면들을 지니고 있는 한 사람임을 잊지 않도록 함, 돌봄 지식의 필요성을 깨닫고, 돌보는 사람 또한 자신감을 갖고 돌봄을 시행하며  돌봄의 질 향상을 위해 게시\n")
+				"로그인 앱: 치매돌봄\n" +
+				"로그인 아이디: " + loginID + "\n")
 				.setNegativeButton("닫기", null)
 				.create()
 				.show();
 			return true;
 		} else if (id == R.id.action_main3) {
-			Toast.makeText(this, "앱정보 준비중", Toast.LENGTH_SHORT).show();
+			// 앱정보
+			AlertDialog.Builder builder2 = new AlertDialog.Builder(MainActivity.this);
+			builder2.setMessage("" +
+				"앱 정보\n\n" +
+				"치매돌봄 앱은 치매환자와 보호자를 위한 유용한 어플입니다.\n\n" +
+				"안드로이드폰 기종이 너무 오래되었거나 또는 최신 안드로이드 폰에서는 사용시 제약사항이 발생 할 수 있습니다.")
+				.setNegativeButton("닫기", null)
+				.create()
+				.show();
+			return true;
+		} else if (id == R.id.action_main4) {
+			//앱 평가하기
+			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://goo.gl/forms/ZNWt0XMUlzAH3zIx2")));
 			return true;
 		} else if (id == R.id.action_alarm) {
 			// 알람설정 클릭
-			// 엑티비티만 만들어둔 것
 			Intent alarmIntent = new Intent(MainActivity.this, AlarmActivity.class);
 			MainActivity.this.startActivity(alarmIntent);
 			return true;

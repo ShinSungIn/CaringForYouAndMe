@@ -46,6 +46,7 @@
 		<activity android:name=".DictionarySecActivity" android:label="@string/title_activity_dicmain2" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".DictionaryThiActivity" android:label="@string/title_activity_dicmain3" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".DictionaryForActivity" android:label="@string/title_activity_dicmain4" android:theme="@style/AppTheme.NoActionbar"></activity>
+		<activity android:name=".DictionaryFivActivity" android:label="@string/title_activity_dicmain5" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".FeelingActivity" android:label="@string/title_activity_feeling" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<!-- 번외 1.유튜브 동영상 보기(각 페이지 동영상) -->
 		<activity android:name=".YoutubePlayerActivity"></activity>

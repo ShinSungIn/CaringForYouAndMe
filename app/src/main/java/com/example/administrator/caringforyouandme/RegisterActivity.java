@@ -116,7 +116,7 @@ public class RegisterActivity extends AppCompatActivity {
 								idText.setBackgroundColor(getResources().getColor(R.color.colorGray));
 							} else {
 								AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-								builder.setMessage("사용할 수 없는 아이디입니다.")
+								builder.setMessage("이미 회원가입된 아이디입니다.")
 									.setNegativeButton("확인", null)
 									.create()
 									.show();
@@ -156,6 +156,7 @@ public class RegisterActivity extends AppCompatActivity {
 						.show();
 					return;
 				}
+
 				if (userID.equals("") || userPassword.equals("")) {
 					AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
 					builder.setMessage("아이디 또는 비밀번호를 입력해주세요.")
@@ -186,8 +187,7 @@ public class RegisterActivity extends AppCompatActivity {
 					public void onResponse(String response) {
 						try {
 							JSONObject jsonResponse = new JSONObject(response);
-							boolean success = false;
-							success= jsonResponse.getBoolean("success");
+							boolean success = jsonResponse.getBoolean("success");
 
 							if (success) {
 
@@ -197,7 +197,7 @@ public class RegisterActivity extends AppCompatActivity {
 									.create()
 									.show();
 
-								//finish();	// 회원가입창 닫기
+								finish();	// 회원가입창 닫기
 								//Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
 								//RegisterActivity.this.startActivity(intent);
 
@@ -208,8 +208,8 @@ public class RegisterActivity extends AppCompatActivity {
 									.create()
 									.show();
 
-								//Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-								//RegisterActivity.this.startActivity(intent);
+								Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+								RegisterActivity.this.startActivity(intent);
 							}
 
 							//finish();
@@ -221,7 +221,6 @@ public class RegisterActivity extends AppCompatActivity {
 				};
 
 				//System.out.println(userType + " / " + userID+ " / " + userPassword+ " / " + userName+ " / " + userAge+ " / " + userTel+ " / " + userEmail+ " / " + userGender + " / " + String.valueOf(agreeYn.isChecked()));
-
 				RegisterRequest registerRequest = new RegisterRequest(userType, userID, userPassword, userName, userAge, userTel, userEmail, userGender, String.valueOf(agreeYn.isChecked()), responseListener);
 				queue = Volley.newRequestQueue(RegisterActivity.this);
 				queue.add(registerRequest);

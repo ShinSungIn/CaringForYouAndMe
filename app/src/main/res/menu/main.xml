@@ -7,5 +7,6 @@
 			app:showAsAction="always"/>
 	<item android:id="@+id/action_main1" android:title="@string/action_main1" android:orderInCategory="100" app:showAsAction="never"/>
 	<item android:id="@+id/action_main2" android:title="@string/action_main2" android:orderInCategory="100" app:showAsAction="never"/>
+	<item android:id="@+id/action_main4" android:title="@string/action_main4" android:orderInCategory="100" app:showAsAction="never"/>
 	<item android:id="@+id/action_main3" android:title="@string/action_main3" android:orderInCategory="100" app:showAsAction="never"/>
 </menu>

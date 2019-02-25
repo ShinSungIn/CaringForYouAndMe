@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -23,7 +24,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
 import com.example.administrator.caringforyouandme.activity.MainActivity;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -38,13 +44,6 @@ public class LoginActivity extends AppCompatActivity {
 	 */
 	private static final int REQUEST_READ_CONTACTS = 0;
 
-	/**
-	 * A dummy authentication store containing known user names and passwords. TODO: remove after connecting to a real authentication system.
-	 */
-	private static final String[] DUMMY_CREDENTIALS = new String[]{
-		"foo@example.com:hello", "bar@example.com:world"
-	};
-
 	private long backKeyPressedTime = 0;
 	private Toast toast;
 	private Activity activity;
@@ -57,22 +56,30 @@ public class LoginActivity extends AppCompatActivity {
 	private View mProgressView;
 	private View mLoginFormView;
 
+	private AlertDialog dialog;
+	private RequestQueue queue;
+	private boolean result = false;
+
 	public boolean isNetworkConnected() {
-		ConnectivityManager cm = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 
 		return cm.getActiveNetworkInfo() != null;
 	}
-
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 
+		if (!isNetworkConnected()) {
+			toast = Toast.makeText(activity, "네트워크 연결 상태 확인 후 다시 시도해 주십시오.", Toast.LENGTH_LONG);
+			toast.show();
+		}
+
 		// Set up the login form.
 		mIdView = (AutoCompleteTextView) findViewById(R.id.idText);
-
 		mPasswordView = (EditText) findViewById(R.id.passwordText);
+
 		mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 			@Override
 			public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
@@ -89,8 +96,11 @@ public class LoginActivity extends AppCompatActivity {
 		loginButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				//attemptLogin();
-				CompleteAttemptLogin();
+				String userID = mIdView.getText().toString();
+				String userPassword = mPasswordView.getText().toString();
+
+				attemptLogin();
+				//CompleteAttemptLogin();	// 단순 로그인
 			}
 
 			private void CompleteAttemptLogin() {
@@ -169,9 +179,6 @@ public class LoginActivity extends AppCompatActivity {
 		return false;
 	}
 
-	/**
-	 * Attempts to sign in or register the account specified by the login form. If there are form errors (invalid email, missing fields, etc.), the errors are presented and no actual login attempt is made.
-	 */
 	private void attemptLogin() {
 		if (mAuthTask != null) {
 			return;
@@ -212,10 +219,42 @@ public class LoginActivity extends AppCompatActivity {
 			focusView.requestFocus();
 		} else {
 			// Show a progress spinner, and kick off a background task to
-			// perform the user login attempt.
+			// perform the user login attempt.onPostExcuted
 			showProgress(true);
+
+			Response.Listener<String> responseListener = new Response.Listener<String>() {
+				@Override
+				public void onResponse(String response) {
+					try {
+						JSONObject jsonResponse = new JSONObject(response);
+						boolean success = jsonResponse.getBoolean("success");
+						if (success) {
+							finish();
+
+							Intent loginButtonIntent = new Intent(LoginActivity.this, MainActivity.class);
+							loginButtonIntent.putExtra("ID", id);
+							LoginActivity.this.startActivity(loginButtonIntent);
+
+						} else {
+							AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+							builder.setMessage("아이디 또는 비밀번호를 확인하십시오.")
+								.setNegativeButton("다시시도", null)
+								.create()
+								.show();
+						}
+
+					} catch (JSONException e) {
+						e.printStackTrace();
+					}
+				}
+			};
+
+			LoginRequest loginRequest = new LoginRequest(id, password, responseListener);
+			queue = Volley.newRequestQueue(LoginActivity.this);
+			queue.add(loginRequest);
+
 			mAuthTask = new UserLoginTask(id, password);
-			mAuthTask.execute((Void) null);
+			mAuthTask.execute((Void) null);	// AsyncTask 실행
 		}
 	}
 
@@ -224,18 +263,11 @@ public class LoginActivity extends AppCompatActivity {
 	}
 
 	private boolean isPasswordValid(String password) {
-		//TODO: Replace this with your own logic
 		return true;
 	}
 
-	/**
-	 * Shows the progress UI and hides the login form.
-	 */
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 	private void showProgress(final boolean show) {
-		// On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
-		// for very easy animations. If available, use these APIs to fade-in
-		// the progress spinner.
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
 			int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
 
@@ -257,16 +289,11 @@ public class LoginActivity extends AppCompatActivity {
 				}
 			});
 		} else {
-			// The ViewPropertyAnimator APIs are not available, so simply show
-			// and hide the relevant UI components.
 			mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
 			mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
 		}
 	}
 
-	/**
-	 * 로그인 통신
-	 */
 	public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
 		private final String mID;
@@ -279,38 +306,14 @@ public class LoginActivity extends AppCompatActivity {
 
 		@Override
 		protected Boolean doInBackground(Void... params) {
-			// TODO: attempt authentication against a network service.
-
-			try {
-				// Simulate network access.
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				return false;
-			}
-
-			for (String credential : DUMMY_CREDENTIALS) {
-				String[] pieces = credential.split(":");
-				if (pieces[0].equals(mID)) {
-					// Account exists, return true if the password matches.
-					return pieces[1].equals(mPassword);
-				}
-			}
-
-			// TODO: register the new account here.
-			return true;
+			return null;
 		}
 
 		@Override
 		protected void onPostExecute(final Boolean success) {
+			// 로그인 마지막 실행 부분
 			mAuthTask = null;
 			showProgress(false);
-
-			if (success) {
-				finish();
-			} else {
-				mPasswordView.setError(getString(R.string.error_incorrect_password));
-				mPasswordView.requestFocus();
-			}
 		}
 
 		@Override
