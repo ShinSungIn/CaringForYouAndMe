@@ -35,8 +35,8 @@ public class DiaryMenuActivity extends AppCompatActivity {
 		DiaryMenuButton1.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				Intent registerIntent = new Intent(DiaryMenuActivity.this, DiaryFirActivity.class);
-				DiaryMenuActivity.this.startActivity(registerIntent);
+				Intent intent = new Intent(DiaryMenuActivity.this, DiaryFirActivity.class);
+				DiaryMenuActivity.this.startActivity(intent);
 			}
 		});
 
@@ -45,8 +45,8 @@ public class DiaryMenuActivity extends AppCompatActivity {
 		DiaryMenuButton2.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				Intent registerIntent = new Intent(DiaryMenuActivity.this, SupportSecActivity.class);
-				DiaryMenuActivity.this.startActivity(registerIntent);
+				Intent intent = new Intent(DiaryMenuActivity.this, DiarySecActivity.class);
+				DiaryMenuActivity.this.startActivity(intent);
 			}
 		});
 

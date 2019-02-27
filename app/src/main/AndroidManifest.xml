@@ -36,10 +36,11 @@
 		<activity android:name=".SupportThiActivity" android:label="@string/title_activity_supportmain3" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".SupportForActivity" android:label="@string/title_activity_supportmain4" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".CureprogramActivity" android:label="@string/title_activity_cureprogram" android:theme="@style/AppTheme.NoActionbar"></activity>
-		<activity android:name=".DiaryActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
+		<activity android:name=".DiarySecActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".DiaryMenuActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".DiaryFirActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".activity.diary.DiaryFirSetActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
+		<activity android:name=".activity.diary.DiarySecSetActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<!--activity android:name=".DictionaryActivity" android:label="@string/title_activity_dictionary" android:theme="@style/AppTheme.NoActionbar"></activity-->
 		<activity android:name=".DictionaryMenuActivity" android:label="@string/title_activity_dictionary" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name=".DictionaryFirActivity" android:label="@string/title_activity_dicmain1" android:theme="@style/AppTheme.NoActionbar"></activity>

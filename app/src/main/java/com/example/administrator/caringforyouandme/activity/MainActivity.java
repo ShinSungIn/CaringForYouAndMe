@@ -2,7 +2,9 @@ package com.example.administrator.caringforyouandme.activity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -25,12 +27,15 @@ import com.example.administrator.caringforyouandme.DictionaryActivity;
 import com.example.administrator.caringforyouandme.DictionaryMenuActivity;
 import com.example.administrator.caringforyouandme.FeelingActivity;
 import com.example.administrator.caringforyouandme.KnownActivity;
+import com.example.administrator.caringforyouandme.LoginActivity;
 import com.example.administrator.caringforyouandme.PreventionActivity;
 import com.example.administrator.caringforyouandme.R;
 import com.example.administrator.caringforyouandme.RoadmapActivity;
 import com.example.administrator.caringforyouandme.SupportMenuActivity;
 import com.example.administrator.caringforyouandme.service.AlarmJobService;
 import com.example.administrator.caringforyouandme.service.AlarmService;
+import lombok.core.Main;
+
 //implements NavigationView.OnNavigationItemSelectedListener
 public class MainActivity extends AppCompatActivity {
 
@@ -223,6 +228,31 @@ public class MainActivity extends AppCompatActivity {
 		} else if (id == R.id.action_main4) {
 			//앱 평가하기
 			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://goo.gl/forms/ZNWt0XMUlzAH3zIx2")));
+			return true;
+		} else if (id == R.id.action_main5) {
+			//로그아웃
+			new AlertDialog.Builder(this)
+				.setTitle("로그아웃").setMessage("로그아웃 하시겠습니까?\n\n주의:\n로그인 아이디와 비밀번호를 기억하고 계신가요? 로그아웃하시면 다시 입력하셔야합니다.")
+				.setPositiveButton("로그아웃", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						SharedPreferences appData = getSharedPreferences("appData", MODE_PRIVATE);
+						SharedPreferences.Editor editor = appData.edit();
+
+						editor.clear();	// 로그인 정보 삭제
+						editor.apply();
+
+						Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+						intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
+						startActivity(intent);
+					}
+				})
+				.setNegativeButton("취소", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+
+					}
+				})
+				.show();
+
 			return true;
 		} else if (id == R.id.action_alarm) {
 			// 알람설정 클릭

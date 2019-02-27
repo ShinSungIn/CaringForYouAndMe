@@ -7,7 +7,6 @@ import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
-import com.example.administrator.caringforyouandme.DiaryActivity;
 import com.example.administrator.caringforyouandme.R;
 import com.example.administrator.caringforyouandme.activity.DialogActivity;
 import com.example.administrator.caringforyouandme.database.domain.Alarm;

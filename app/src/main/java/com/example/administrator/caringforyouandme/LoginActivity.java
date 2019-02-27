@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
@@ -21,6 +22,7 @@ import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,16 +50,21 @@ public class LoginActivity extends AppCompatActivity {
 	private Toast toast;
 	private Activity activity;
 
-	private UserLoginTask mAuthTask = null;
+	//private UserLoginTask mAuthTask = null;
 
 	// UI references.
-	private AutoCompleteTextView mIdView;
+	private EditText mIdView;
 	private EditText mPasswordView;
 	private View mProgressView;
 	private View mLoginFormView;
 
+	private String autoID, autoPWD;	// 자동로그인 비교 변수
+	private boolean saveLoginData;
+	SharedPreferences appData;
+	private CheckBox checkBox;
+
 	private AlertDialog dialog;
-	private RequestQueue queue;
+
 	private boolean result = false;
 
 	public boolean isNetworkConnected() {
@@ -76,20 +83,23 @@ public class LoginActivity extends AppCompatActivity {
 			toast.show();
 		}
 
-		// Set up the login form.
-		mIdView = (AutoCompleteTextView) findViewById(R.id.idText);
-		mPasswordView = (EditText) findViewById(R.id.passwordText);
+		// 쿠기값 저장 참조: https://codeman77.tistory.com/29
+		appData = getSharedPreferences("appData", MODE_PRIVATE);
+		// 설정값을 불러오기
+		saveLoginData = appData.getBoolean("CARING_LOGIN_DATA", false);
+		autoID = appData.getString("autoID", "");
+		autoPWD = appData.getString("autoPWD", "");
 
-		mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-			@Override
-			public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-				if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
-					attemptLogin();
-					return true;
-				}
-				return false;
-			}
-		});
+		mIdView = (EditText) findViewById(R.id.idText);
+		mPasswordView = (EditText) findViewById(R.id.passwordText);
+		checkBox = (CheckBox) findViewById(R.id.checkBox);
+
+		// CARING_LOGIN_DATA 설정값 있을 때 없으면 false
+		if (saveLoginData) {
+			mIdView.setText(autoID);
+			mPasswordView.setText(autoPWD);
+			checkBox.setChecked(saveLoginData);
+		}
 
 		// 로그인 클릭
 		Button loginButton = (Button) findViewById(R.id.loginButton);
@@ -99,7 +109,50 @@ public class LoginActivity extends AppCompatActivity {
 				String userID = mIdView.getText().toString();
 				String userPassword = mPasswordView.getText().toString();
 
-				attemptLogin();
+				Response.Listener<String> responseListener = new Response.Listener<String>() {
+					@Override
+					public void onResponse(String response) {
+						try {
+							JSONObject jsonResponse = new JSONObject(response);
+							boolean success = jsonResponse.getBoolean("success");
+							if (success) {
+								Toast.makeText(LoginActivity.this, userID +"님 로그인되었습니다.", Toast.LENGTH_SHORT).show();
+
+								// 메인 페이지로 이동
+								Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+								intent.putExtra("ID", userID);
+								LoginActivity.this.startActivity(intent);
+
+								finish();	// 로그인 페이지 종료 시키고
+
+							} else {
+								AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+								builder.setMessage("아이디 또는 비밀번호를 확인하십시오.")
+									.setNegativeButton("다시시도", null)
+									.create()
+									.show();
+							}
+
+						} catch (JSONException e) {
+							e.printStackTrace();
+						}
+					}
+				};
+
+				LoginRequest loginRequest = new LoginRequest(userID, userPassword, responseListener);
+				RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
+				queue.add(loginRequest);
+
+				// 로그인 정보 저장
+				SharedPreferences.Editor editor = appData.edit();
+
+				editor.putBoolean("CARING_LOGIN_DATA", checkBox.isChecked());
+				editor.putString("autoID", userID);
+				editor.putString("autoPWD", userPassword);
+
+				editor.apply();
+
+				//attemptLogin();
 				//CompleteAttemptLogin();	// 단순 로그인
 			}
 
@@ -133,6 +186,15 @@ public class LoginActivity extends AppCompatActivity {
 	}
 
 	@Override
+	public void onStop() {
+		super.onStop();
+		if (dialog != null) {
+			dialog.dismiss();
+			dialog = null;
+		}
+	}
+
+	@Override
 	public void onDestroy() {
 		super.onDestroy();
 		finish();
@@ -157,32 +219,10 @@ public class LoginActivity extends AppCompatActivity {
 		toast.show();
 	}
 
-	private boolean mayRequestContacts() {
-		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-			return true;
-		}
-		if (checkSelfPermission(READ_CONTACTS) == PackageManager.PERMISSION_GRANTED) {
-			return true;
-		}
-		if (shouldShowRequestPermissionRationale(READ_CONTACTS)) {
-			Snackbar.make(mIdView, R.string.permission_rationale, Snackbar.LENGTH_INDEFINITE)
-				.setAction(android.R.string.ok, new View.OnClickListener() {
-					@Override
-					@TargetApi(Build.VERSION_CODES.M)
-					public void onClick(View v) {
-						requestPermissions(new String[]{READ_CONTACTS}, REQUEST_READ_CONTACTS);
-					}
-				});
-		} else {
-			requestPermissions(new String[]{READ_CONTACTS}, REQUEST_READ_CONTACTS);
-		}
-		return false;
-	}
-
 	private void attemptLogin() {
-		if (mAuthTask != null) {
-			return;
-		}
+		//if (mAuthTask != null) {
+		//	return;
+		//}
 
 		// Reset errors.
 		mIdView.setError(null);
@@ -196,14 +236,14 @@ public class LoginActivity extends AppCompatActivity {
 		View focusView = null;
 
 		// Check for a valid password, if the user entered one.
-		if (!TextUtils.isEmpty(password) && !isPasswordValid(password)) {
+		if (password.equals("")) {
 			mPasswordView.setError(getString(R.string.error_invalid_password));
 			focusView = mPasswordView;
 			cancel = true;
 		}
 
 		// Check for a valid email address.
-		if (TextUtils.isEmpty(id)) {
+		if (id.equals("")) {
 			mIdView.setError(getString(R.string.error_field_required));
 			focusView = mIdView;
 			cancel = true;
@@ -214,47 +254,12 @@ public class LoginActivity extends AppCompatActivity {
 		}
 
 		if (cancel) {
-			// There was an error; don't attempt login and focus the first
-			// form field with an error.
 			focusView.requestFocus();
 		} else {
-			// Show a progress spinner, and kick off a background task to
-			// perform the user login attempt.onPostExcuted
-			showProgress(true);
 
-			Response.Listener<String> responseListener = new Response.Listener<String>() {
-				@Override
-				public void onResponse(String response) {
-					try {
-						JSONObject jsonResponse = new JSONObject(response);
-						boolean success = jsonResponse.getBoolean("success");
-						if (success) {
-							finish();
-
-							Intent loginButtonIntent = new Intent(LoginActivity.this, MainActivity.class);
-							loginButtonIntent.putExtra("ID", id);
-							LoginActivity.this.startActivity(loginButtonIntent);
-
-						} else {
-							AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-							builder.setMessage("아이디 또는 비밀번호를 확인하십시오.")
-								.setNegativeButton("다시시도", null)
-								.create()
-								.show();
-						}
-
-					} catch (JSONException e) {
-						e.printStackTrace();
-					}
-				}
-			};
-
-			LoginRequest loginRequest = new LoginRequest(id, password, responseListener);
-			queue = Volley.newRequestQueue(LoginActivity.this);
-			queue.add(loginRequest);
-
-			mAuthTask = new UserLoginTask(id, password);
-			mAuthTask.execute((Void) null);	// AsyncTask 실행
+			//mAuthTask = new UserLoginTask(id, password);
+			//mAuthTask.execute((Void) null);	// AsyncTask 실행
+			//showProgress(true);
 		}
 	}
 
@@ -293,7 +298,7 @@ public class LoginActivity extends AppCompatActivity {
 			mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
 		}
 	}
-
+	/*
 	public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
 		private final String mID;
@@ -306,12 +311,25 @@ public class LoginActivity extends AppCompatActivity {
 
 		@Override
 		protected Boolean doInBackground(Void... params) {
-			return null;
+
+			// 키보드 상에서 완료 눌렀을 때
+			SharedPreferences.Editor editor = appData.edit();
+
+			editor.putBoolean("CARING_LOGIN_DATA", checkBox.isChecked());
+			editor.putString("autoID", mIdView.getText().toString());
+			editor.putString("autoPWD", mPasswordView.getText().toString());
+
+			editor.apply();
+
+			return true;
 		}
 
 		@Override
 		protected void onPostExecute(final Boolean success) {
 			// 로그인 마지막 실행 부분
+
+
+
 			mAuthTask = null;
 			showProgress(false);
 		}
@@ -322,5 +340,6 @@ public class LoginActivity extends AppCompatActivity {
 			showProgress(false);
 		}
 	}
+	*/
 }
 

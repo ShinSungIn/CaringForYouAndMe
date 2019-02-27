@@ -24,6 +24,7 @@
 	<string name="action_main2">로그인정보</string>
 	<string name="action_main4">앱 평가하기</string>
 	<string name="action_main3">앱정보</string>
+	<string name="action_main5">로그아웃</string>
 	<string name="action_alarm">알람설정</string>
 	<string name="action_mainAll">도움말</string>
 	<string name="action_known1">치매종류 및 원인</string>

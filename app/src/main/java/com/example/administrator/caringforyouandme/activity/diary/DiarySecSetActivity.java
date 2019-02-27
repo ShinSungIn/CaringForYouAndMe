@@ -17,11 +17,11 @@ import java.util.Calendar;
 import java.util.Locale;
 
 /**
- * 돌봄일기 작성하기
- * @author 곽우영
- * @since 2019-02-20
+ * 희망게시판 작성하기
+ * @author 신성인
+ * @since 2019-02-26
  */
-public class DiaryFirSetActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, View.OnClickListener{
+public class DiarySecSetActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, View.OnClickListener{
 
 	private Toolbar toolbar;
 
@@ -81,7 +81,7 @@ public class DiaryFirSetActivity extends AppCompatActivity implements DatePicker
 
     @Override
     public void onClick(View v) {
-        new DatePickerDialog(DiaryFirSetActivity.this, this, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),	myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+        new DatePickerDialog(DiarySecSetActivity.this, this, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),	myCalendar.get(Calendar.DAY_OF_MONTH)).show();
     }
 
     /**
