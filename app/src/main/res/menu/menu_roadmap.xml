@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
 		xmlns:app="http://schemas.android.com/apk/res-auto"
 		xmlns:tools="http://schemas.android.com/tools"
-		tools:context="com.example.administrator.caringforyouandme.RoadmapActivity">
+		tools:context="com.edenranch.administrator.caringforyouandme.RoadmapActivity">
 	<item android:id="@+id/action_mainAll" android:title="@string/action_mainAll" android:orderInCategory="100" app:showAsAction="never"/>
 	<item android:id="@+id/action_roadmap1" android:title="@string/action_roadmap1" android:orderInCategory="100" app:showAsAction="never"/>
 	<item android:id="@+id/action_roadmap2" android:title="@string/action_roadmap2" android:orderInCategory="100" app:showAsAction="never"/>
