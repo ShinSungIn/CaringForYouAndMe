@@ -53,7 +53,6 @@ public class AlarmJobService extends JobIntentService {
 
         while (runnable) {
             Date today = new Date();
-            Log.i(TAG, " ~~~~~~~~~~~~~~~~~ second time pass 1.... !! (" + runnable + ")");
 
             if (!_isZeroSecond(today)) {
                 try {
