@@ -103,6 +103,30 @@ public class SupportMain3Sub1Fragment2 extends Fragment {
 			}
 		});
 
+		ImageButton imageButton6 = (ImageButton) view.findViewById(R.id.support_main3_sub2_view6);
+		imageButton6.setOnClickListener(new ImageButton.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.support_main3_sub2_6);
+				BitmapHelper.getInstance().setBitmap(sendBitmap);
+
+				Intent intent = new Intent(getActivity(), PhotoViewActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		ImageButton imageButton7 = (ImageButton) view.findViewById(R.id.support_main3_sub2_view7);
+		imageButton7.setOnClickListener(new ImageButton.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.support_main3_sub2_7);
+				BitmapHelper.getInstance().setBitmap(sendBitmap);
+
+				Intent intent = new Intent(getActivity(), PhotoViewActivity.class);
+				startActivity(intent);
+			}
+		});
+
 		return view;
 	}
 

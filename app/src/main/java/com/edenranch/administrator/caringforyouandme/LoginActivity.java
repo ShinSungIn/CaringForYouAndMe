@@ -24,6 +24,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.android.volley.RequestQueue;
@@ -163,6 +164,15 @@ public class LoginActivity extends AppCompatActivity {
 		});
 
 		// 회원가입 클릭
+		ImageButton imageButton = (ImageButton) findViewById(R.id.registerButton);
+		imageButton.setOnClickListener(new ImageButton.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
+				LoginActivity.this.startActivity(registerIntent);
+			}
+		});
+		/*
 		TextView registerButton = (TextView) findViewById(R.id.registerButton);
 		registerButton.setOnClickListener(new View.OnClickListener() {
 
@@ -172,7 +182,7 @@ public class LoginActivity extends AppCompatActivity {
 				LoginActivity.this.startActivity(registerIntent);
 			}
 		});
-
+		*/
 		mLoginFormView = findViewById(R.id.login_form);
 		mProgressView = findViewById(R.id.login_progress);
 

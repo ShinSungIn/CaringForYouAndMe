@@ -51,12 +51,71 @@ public class SupportMain3Sub1Fragment3 extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_support_main3_sub1_3, container, false);
 
-		ImageButton imageButton = (ImageButton) view.findViewById(R.id.support_main3_sub3_view1);
-		imageButton.setOnClickListener(new ImageButton.OnClickListener() {
+		ImageButton imageButton1 = (ImageButton) view.findViewById(R.id.support_main3_sub3_view1);
+		imageButton1.setOnClickListener(new ImageButton.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// 전달할 이미지 만들기
 				Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.support_main3_sub3_1);
+				BitmapHelper.getInstance().setBitmap(sendBitmap);
+
+				Intent intent = new Intent(getActivity(), PhotoViewActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		ImageButton imageButton2 = (ImageButton) view.findViewById(R.id.support_main3_sub3_view2);
+		imageButton2.setOnClickListener(new ImageButton.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.support_main3_sub3_2);
+				BitmapHelper.getInstance().setBitmap(sendBitmap);
+
+				Intent intent = new Intent(getActivity(), PhotoViewActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		ImageButton imageButton3 = (ImageButton) view.findViewById(R.id.support_main3_sub3_view3);
+		imageButton3.setOnClickListener(new ImageButton.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.support_main3_sub3_3);
+				BitmapHelper.getInstance().setBitmap(sendBitmap);
+
+				Intent intent = new Intent(getActivity(), PhotoViewActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		ImageButton imageButton4 = (ImageButton) view.findViewById(R.id.support_main3_sub3_view4);
+		imageButton4.setOnClickListener(new ImageButton.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.support_main3_sub3_4);
+				BitmapHelper.getInstance().setBitmap(sendBitmap);
+
+				Intent intent = new Intent(getActivity(), PhotoViewActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		ImageButton imageButton5 = (ImageButton) view.findViewById(R.id.support_main3_sub3_view5);
+		imageButton5.setOnClickListener(new ImageButton.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.support_main3_sub3_5);
+				BitmapHelper.getInstance().setBitmap(sendBitmap);
+
+				Intent intent = new Intent(getActivity(), PhotoViewActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		ImageButton imageButton6 = (ImageButton) view.findViewById(R.id.support_main3_sub3_view6);
+		imageButton6.setOnClickListener(new ImageButton.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.support_main3_sub3_6);
 				BitmapHelper.getInstance().setBitmap(sendBitmap);
 
 				Intent intent = new Intent(getActivity(), PhotoViewActivity.class);

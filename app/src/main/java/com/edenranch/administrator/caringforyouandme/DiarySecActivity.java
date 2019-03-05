@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import com.edenranch.administrator.caringforyouandme.activity.diary.DiaryFirSetActivity;
 import com.edenranch.administrator.caringforyouandme.activity.diary.DiarySecSetActivity;
 import com.edenranch.administrator.caringforyouandme.activity.diary.Item;
@@ -21,10 +22,14 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DiarySecActivity extends AppCompatActivity {
 
@@ -33,6 +38,7 @@ public class DiarySecActivity extends AppCompatActivity {
 	private List<Item> items = new ArrayList<Item>();
 	private RecyclerView recyclerView;
 	private FloatingActionButton button;
+	private EditText diarySearchStr;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +52,14 @@ public class DiarySecActivity extends AppCompatActivity {
 		recyclerView.setHasFixedSize(true);
 		recyclerView.setLayoutManager(layoutManager);
 
+		Button diarySearchButton = (Button) findViewById(R.id.diarySearchButton);
+		diarySearchButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				new BackgroundTask().execute();
+			}
+		});
+
 		button = (FloatingActionButton) findViewById(R.id.floatingactionbutton_diarysec_create);
 		button.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -53,6 +67,8 @@ public class DiarySecActivity extends AppCompatActivity {
 				startActivity(new Intent(context, DiarySecSetActivity.class));
 			}
 		});
+
+		diarySearchStr = (EditText) findViewById(R.id.diarySearchStr);
 
 		context = this;
 
@@ -77,14 +93,20 @@ public class DiarySecActivity extends AppCompatActivity {
 
 		String target;
 
+
 		@Override
 		protected void onPreExecute() {
-			target = "http://sungin0605.cafe24.com/BoardList.php";
+			try {
+				target = "http://sungin0605.cafe24.com/BoardList.php?str=" + URLEncoder.encode(diarySearchStr.getText().toString(), "UTF-8");
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
 		}
 
 		@Override
 		protected String doInBackground(Void... voids) {
 			try {
+
 				URL url = new URL(target);
 
 				HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -126,13 +148,14 @@ public class DiarySecActivity extends AppCompatActivity {
 					Subject = object.getString("Subject");
 					Content = object.getString("Content");
 					ID = object.getString("ID");
-					insertDT = object.getString("insertDT");
+					insertDT = object.getString("insertDT").substring(0, 10);
 					Item item = new Item(R.drawable.menu_01, Subject, Content, ID, insertDT);
 
 					items.add(item);
 					count++;
 				}
 
+				recyclerView.removeAllViews();
 				recyclerView.setAdapter(new RecyclerAdapter(getApplicationContext(), items, R.layout.activity_diary_sec));
 
 			} catch (Exception e) {

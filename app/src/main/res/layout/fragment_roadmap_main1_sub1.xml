@@ -10,23 +10,15 @@
 
 	<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
 
-		<ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
-				android:id="@+id/roadmap_main1_sub1_view1"
-				android:src="@drawable/roadmap_main1_sub1"
-				android:layout_marginTop="@dimen/text_margin"
-				android:layout_marginLeft="@dimen/text_margin"
-				android:layout_marginRight="@dimen/text_margin"
-				android:layout_gravity="center_horizontal"
-				android:contentDescription="@string/support_main4_sub3_1"
-		/>
-
-		<Button
-				android:text="중앙치매지원센터 바로가기"
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="새창"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:id="@+id/roadmap_main1_sub1_linkbutton"
+				android:src="@drawable/roadmap_main1_sub1"
 				android:adjustViewBounds="true"
 				android:scaleType="fitCenter"
+				android:background="@color/colorWhite"
 				android:layout_margin="@dimen/text_margin"
 		/>
 
@@ -38,6 +30,30 @@
 				android:textSize="@dimen/textView_fontsize"
 				android:lineSpacingExtra="@dimen/textView_lineheight"
 				android:text="@string/text_roadmap_main1_sub1"/>
+
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="새창"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/roadmap_main1_sub1_button1"
+				android:src="@drawable/roadmap_main1_sub1_2"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:background="@color/colorWhite"
+				android:layout_margin="@dimen/text_margin"
+		/>
+
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="새창"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/roadmap_main1_sub1_button2"
+				android:src="@drawable/roadmap_main1_sub1_3"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:background="@color/colorWhite"
+				android:layout_margin="@dimen/text_margin"
+		/>
 
 	</LinearLayout>
 

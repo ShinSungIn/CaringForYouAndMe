@@ -85,6 +85,24 @@
 				android:layout_gravity="left"
 		/>
 
+		<Button android:text="복지용구 자세히보기" android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/support_main1_sub1_button1"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:layout_marginLeft="@dimen/text_margin"
+				android:layout_marginRight="@dimen/text_margin"
+		/>
+
+		<Button android:text="복지용구 이용절차 자세히보기" android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/support_main1_sub1_button2"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:layout_marginLeft="@dimen/text_margin"
+				android:layout_marginRight="@dimen/text_margin"
+				android:layout_marginBottom="@dimen/text_margin"
+		/>
 
 	</LinearLayout>
 

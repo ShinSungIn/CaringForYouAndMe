@@ -20,7 +20,7 @@ import com.edenranch.administrator.caringforyouandme.R;
 import java.io.IOException;
 
 /**
- * 7.돌봄사전 - 부탁말씀...
+ * 7.돌봄사전 - 치매환자편지...
  */
 public class DictionaryMain1Fragment0 extends Fragment {
 	private static final String ARG_PARAM1 = "param1";

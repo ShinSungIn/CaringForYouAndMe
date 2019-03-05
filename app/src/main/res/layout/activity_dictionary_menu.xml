@@ -31,11 +31,19 @@
 				android:id="@+id/imageView"
 				android:layout_marginBottom="24dp"
 				app:layout_constraintHorizontal_bias="0.0"
-				android:background="@drawable/sub_img"
+				android:background="@drawable/sub_img_7"
 				android:layout_weight="4"
 		/>
 
-
+		<Button android:text=""
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:layout_marginLeft="@dimen/_8dp"
+				android:layout_marginRight="@dimen/_8dp"
+				android:layout_marginBottom="@dimen/_8dp"
+				android:id="@+id/DicMenuButton0"
+				android:layout_weight="1"
+				android:background="@drawable/submenu7_btn00"/>
 		<Button android:text=""
 				android:layout_width="match_parent"
 				android:layout_height="0dp"

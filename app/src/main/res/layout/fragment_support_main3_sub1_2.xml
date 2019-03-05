@@ -47,6 +47,30 @@
 				android:text="새창"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
+				android:id="@+id/support_main3_sub2_view6"
+				android:src="@drawable/support_main3_sub2_6"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:background="@color/colorWhite"
+				android:layout_margin="@dimen/text_margin"
+		/>
+
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="새창"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/support_main3_sub2_view7"
+				android:src="@drawable/support_main3_sub2_7"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:background="@color/colorWhite"
+				android:layout_margin="@dimen/text_margin"
+		/>
+
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="새창"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
 				android:id="@+id/support_main3_sub2_view2"
 				android:src="@drawable/support_main3_sub2_2"
 				android:adjustViewBounds="true"

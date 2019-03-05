@@ -36,13 +36,14 @@
 		<activity android:name="com.edenranch.administrator.caringforyouandme.SupportThiActivity" android:label="@string/title_activity_supportmain3" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name="com.edenranch.administrator.caringforyouandme.SupportForActivity" android:label="@string/title_activity_supportmain4" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name="com.edenranch.administrator.caringforyouandme.CureprogramActivity" android:label="@string/title_activity_cureprogram" android:theme="@style/AppTheme.NoActionbar"></activity>
-		<activity android:name="com.edenranch.administrator.caringforyouandme.DiarySecActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
+		<!--<activity android:name="com.edenranch.administrator.caringforyouandme.DiarySecActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>-->
 		<activity android:name="com.edenranch.administrator.caringforyouandme.DiaryMenuActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name="com.edenranch.administrator.caringforyouandme.DiaryFirActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name="com.edenranch.administrator.caringforyouandme.activity.diary.DiaryFirSetActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name="com.edenranch.administrator.caringforyouandme.activity.diary.DiarySecSetActivity" android:label="@string/title_activity_diary" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<!--activity android:name=".DictionaryActivity" android:label="@string/title_activity_dictionary" android:theme="@style/AppTheme.NoActionbar"></activity-->
 		<activity android:name="com.edenranch.administrator.caringforyouandme.DictionaryMenuActivity" android:label="@string/title_activity_dictionary" android:theme="@style/AppTheme.NoActionbar"></activity>
+		<activity android:name="com.edenranch.administrator.caringforyouandme.DictionaryZerActivity" android:label="@string/title_activity_dicmain1" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name="com.edenranch.administrator.caringforyouandme.DictionaryFirActivity" android:label="@string/title_activity_dicmain1" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name="com.edenranch.administrator.caringforyouandme.DictionarySecActivity" android:label="@string/title_activity_dicmain2" android:theme="@style/AppTheme.NoActionbar"></activity>
 		<activity android:name="com.edenranch.administrator.caringforyouandme.DictionaryThiActivity" android:label="@string/title_activity_dicmain3" android:theme="@style/AppTheme.NoActionbar"></activity>

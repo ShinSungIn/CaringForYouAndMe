@@ -76,8 +76,8 @@
 			<Button android:text=""
 					android:layout_width="0dp"
 					android:layout_height="match_parent"
-					android:id="@+id/DiaryButton6"
-					android:background="@drawable/menu_04"
+					android:id="@+id/DictionaryButton7"
+					android:background="@drawable/menu_06"
 					android:layout_weight="1"
 					android:layout_marginLeft="4dp"
 			/>
@@ -101,8 +101,8 @@
 			<Button android:text=""
 					android:layout_width="0dp"
 					android:layout_height="match_parent"
-					android:id="@+id/DictionaryButton7"
-					android:background="@drawable/menu_06"
+					android:id="@+id/DiaryButton6"
+					android:background="@drawable/menu_04"
 					android:layout_weight="1"
 					android:layout_marginLeft="4dp"
 			/>

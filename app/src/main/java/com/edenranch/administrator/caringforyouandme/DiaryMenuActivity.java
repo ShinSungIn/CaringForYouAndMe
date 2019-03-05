@@ -93,17 +93,7 @@ public class DiaryMenuActivity extends AppCompatActivity {
 			case R.id.action_diraymenu1 :
 				AlertDialog.Builder builder1 = new AlertDialog.Builder(DiaryMenuActivity.this);
 				builder1.setMessage("" +
-					"돌봄일기: 치매환자의 돌봄 일상, 환자의 상태변화나 반응에 대해 기록하여 남김으로써 힘든 일상에 의미를 부여하고 환자가족의 긍정적 경험의 기회가 되도록 합니다.\n\n" +
-					"주의: 어플 삭제시 돌봄일기 내용도 삭제됩니다.")
-					.setNegativeButton("닫기", null)
-					.create()
-					.show();
-				return true;
-			case R.id.action_diraymenu2 :
-				AlertDialog.Builder builder2 = new AlertDialog.Builder(DiaryMenuActivity.this);
-				builder2.setMessage("" +
-					"희망게시판: 사용자들이 자유롭게 글을 쓰고 공감하며 서로 위로하고 표현할 수 있는 공간으로 억압된 감정을 표출하여 돌봄으로 인한 스트레스 감소를 돕습니다.\n" +
-					"새로운 정보 공유함으로써 혼자라는 생각은 잊고 함께하는 사람들이 곁에 있음으로 심리적, 정서적 지지를 느끼도록 만들고 싶었습니다.")
+					"주의:\n\n어플 삭제시 돌봄일기 내용도 삭제됩니다.")
 					.setNegativeButton("닫기", null)
 					.create()
 					.show();

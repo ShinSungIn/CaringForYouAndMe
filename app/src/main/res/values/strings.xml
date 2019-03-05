@@ -19,7 +19,6 @@
 	<string name="nav_header_subtitle">android.studio@android.com</string>
 	<string name="nav_header_desc">Navigation header</string>
 
-	<string name="action_main1">도움말</string>
 	<string name="action_main2">로그인정보</string>
 	<string name="action_main4">앱 평가하기</string>
 	<string name="action_main3">앱정보</string>
@@ -37,13 +36,12 @@
 	<string name="action_supportfor1">기타지원서비스</string>
 	<string name="action_cure1">인지향상프로그램</string>
 	<string name="action_diraymenu1">돌봄일기</string>
-	<string name="action_diraymenu2">희망게시판</string>
 
 	<string name="action_roadmap1">내비게이션</string>
 	<string name="action_roadmap2">치매진단받기</string>
 
 	<string name="action_dictionary1">치매환자의부탁말씀</string>
-	<string name="action_dictionary2">돌봄사전</string>
+	<string name="action_dictionary2">치매환자돌봄방법</string>
 	<string name="action_feelingmenu1">나의감정살피기</string>
 
 	<!-- 메뉴 타이틀 정의 --><!-- 메뉴 타이틀 정의 --><!-- 메뉴 타이틀 정의 --><!-- 메뉴 타이틀 정의 --><!-- 메뉴 타이틀 정의 --><!-- 메뉴 타이틀 정의 --><!-- 메뉴 타이틀 정의 -->
@@ -75,8 +73,8 @@
 	<string name="title_activity_dicmain5">7-5.치매환자와의 일상생활</string>
 	<string name="title_activity_feeling">8.나의감정살피기</string>
 		<string name="text_feeling_main1">
-			우울증 검사(GDS-K): 노인의 우울증상을 선별하기 위한 검사\n
-			(출처:한국치매협회)
+			<!--우울증 검사(GDS-K): 노인의 우울증상을 선별하기 위한 검사\n
+			(출처:한국치매협회)-->
 		</string>
 		<!-- 사용안함 -->
 		<string name="text_feeling_main2">
@@ -84,8 +82,8 @@
 			(출처:노인병학)
 		</string>
 		<string name="text_feeling_main3">
-			부양스트레스검사: 주부양자의 총체적 스트레스 검사\n
-			(출처: 김양이, 1999)
+			<!--부양스트레스검사: 주부양자의 총체적 스트레스 검사\n
+			(출처: 김양이, 1999)-->
 		</string>
 
 	<!-- 1.치매알기 --><!-- 1.치매알기 --><!-- 1.치매알기 --><!-- 1.치매알기 --><!-- 1.치매알기 --><!-- 1.치매알기 --><!-- 1.치매알기 --><!-- 1.치매알기 --><!-- 1.치매알기 --><!-- 1.치매알기 -->
@@ -304,8 +302,8 @@
 	<!-- 4.치매지원서비스 --><!-- 4-2.장기요양급여 신청방법 -->
 	<string name="support_main2">신청방법</string>
 		<string name="text_support_main2_sub1_1">
-			-장기요양보험공단 홈페이지 서비스이용가이드 참고\n
-			-노인장기요양보험 문의전화 1577-1000
+			-장기요양보험공단 홈페이지\n서비스이용가이드 참고\n
+			-노인장기요양보험 문의전화\n1577-1000
 		</string>
 	<!-- 4.치매지원서비스 --><!-- 4-3.치매안심센터 -->
 	<string name="support_main3">치매안심센터</string>
@@ -323,6 +321,13 @@
 			6.치매친화적 지역사회
 		</string>
 	<string name="support_main3_sub1_3">가족지원</string>
+		<string name="text_support_main3_sub1_3">
+			치매가족지원?\n\n
+			치매어르신을 섬기기 위해 애쓰는 모든 가족들에게 치매어르신과 함께 잘 지내기 위한 올바른 지식과 돌보는 지혜를 제공합니다.\n
+		</string>
+		<string name="text_support_main3_sub1_4">
+			치매상담콜센터 ☎ 1899-9988
+		</string>
 	<!-- 4.치매지원서비스 --><!-- 4-4.기타 지원서비스 -->
 	<string name="support_main4">기타 지원서비스</string>
 		<string name="support_main4_sub1_1">치매가족휴가제</string>
@@ -487,7 +492,7 @@
 	<!-- 6.우리들의 돌봄일기 -->
 	<!-- 7.돌봄사전 -->
 	<string name="dictionary_main1">초기치매</string>
-		<string name="dictionary_main1_sub0">부탁말씀...</string>
+		<string name="dictionary_main1_sub0">치매환자편지</string>
 		<string name="dictionary_main1_sub1">돌봄원칙 및 대화</string>
 		<string name="text_dictionary_main1_sub1">
 			* 초기 치매환자의 돌봄원칙\n\n

@@ -201,13 +201,10 @@ public class MainActivity extends AppCompatActivity {
 		int id = item.getItemId();
 
 		//noinspection SimplifiableIfStatement
-		if (id == R.id.action_main1) {
-			Toast.makeText(this, "도움말 기능입니다. 메뉴를 선택하세요.", Toast.LENGTH_SHORT).show();
-			return true;
-		} else if (id == R.id.action_main2) {
+		if (id == R.id.action_main2) {
 			AlertDialog.Builder builder1 = new AlertDialog.Builder(MainActivity.this);
 			builder1.setMessage("" +
-				"로그인 앱: 치매돌봄\n" +
+				"로그인 앱: 치매돌봄톡\n" +
 				"로그인 아이디: " + loginID + "\n")
 				.setNegativeButton("닫기", null)
 				.create()

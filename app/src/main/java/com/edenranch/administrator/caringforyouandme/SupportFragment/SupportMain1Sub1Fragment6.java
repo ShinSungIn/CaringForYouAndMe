@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import com.edenranch.administrator.caringforyouandme.BitmapHelper;
 import com.edenranch.administrator.caringforyouandme.PhotoViewActivity;
@@ -89,6 +90,24 @@ public class SupportMain1Sub1Fragment6 extends Fragment {
 				startActivity(intent);
 			}
 		});
+
+		//support_main1_sub1_button1
+		Button linkButton1 = (Button) view.findViewById(R.id.support_main1_sub1_button1);
+		linkButton1.setOnClickListener(new Button.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://m.nhis.or.kr/comWeb/wo/e/wceo00.html")));
+			}
+		});
+
+		Button linkButton2 = (Button) view.findViewById(R.id.support_main1_sub1_button2);
+		linkButton2.setOnClickListener(new Button.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://m.nhis.or.kr/comWeb/wo/e/wcep00.html")));
+			}
+		});
+
 		return view;
 	}
 

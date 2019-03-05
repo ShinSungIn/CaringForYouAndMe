@@ -156,12 +156,9 @@ public class SupportThiActivity extends AppCompatActivity {
 			if (currentTab == 0) {
 				switch (position) {
 					case 0:
-						SupportMain3Sub1Fragment1 tab1 = new SupportMain3Sub1Fragment1();
-						return tab1;
-					case 1:
 						SupportMain3Sub1Fragment2 tab2 = new SupportMain3Sub1Fragment2();
 						return tab2;
-					case 2:
+					case 1:
 						SupportMain3Sub1Fragment3 tab3 = new SupportMain3Sub1Fragment3();
 						return tab3;
 					default:

@@ -52,11 +52,35 @@ public class RoadmapMain1Sub1Fragment1 extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_roadmap_main1_sub1, container, false);
 
-		Button linkButton = (Button) view.findViewById(R.id.roadmap_main1_sub1_linkbutton);
+		ImageButton linkButton = (ImageButton) view.findViewById(R.id.roadmap_main1_sub1_linkbutton);
 		linkButton.setOnClickListener(new ImageButton.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.nid.or.kr/support/c_service.aspx")));
+			}
+		});
+
+		ImageButton imageButton1 = (ImageButton) view.findViewById(R.id.roadmap_main1_sub1_button1);
+		imageButton1.setOnClickListener(new ImageButton.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.roadmap_main1_sub1_2);
+				BitmapHelper.getInstance().setBitmap(sendBitmap);
+
+				Intent intent = new Intent(getActivity(), PhotoViewActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		ImageButton imageButton2 = (ImageButton) view.findViewById(R.id.roadmap_main1_sub1_button2);
+		imageButton2.setOnClickListener(new ImageButton.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Bitmap sendBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.roadmap_main1_sub1_3);
+				BitmapHelper.getInstance().setBitmap(sendBitmap);
+
+				Intent intent = new Intent(getActivity(), PhotoViewActivity.class);
+				startActivity(intent);
 			}
 		});
 

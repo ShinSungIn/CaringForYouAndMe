@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import com.edenranch.administrator.caringforyouandme.BitmapHelper;
 import com.edenranch.administrator.caringforyouandme.PhotoViewActivity;
@@ -50,7 +51,7 @@ public class SupportMain2Sub1Fragment1 extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_support_main2_sub1_1, container, false);
-
+		/*
 		ImageButton imageButton = (ImageButton) view.findViewById(R.id.support_main2_sub1_view1);
 		imageButton.setOnClickListener(new ImageButton.OnClickListener() {
 			@Override
@@ -61,6 +62,23 @@ public class SupportMain2Sub1Fragment1 extends Fragment {
 
 				Intent intent = new Intent(getActivity(), PhotoViewActivity.class);
 				startActivity(intent);
+			}
+		});
+		*/
+		// 링크 이미지로 수정
+		ImageButton imageButton = (ImageButton) view.findViewById(R.id.support_main2_sub1_view1);
+		imageButton.setOnClickListener(new ImageButton.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://m.nhis.or.kr/comWeb/wo/e/wcej00.html")));
+			}
+		});
+
+		Button button = (Button) view.findViewById(R.id.support_main2_sub1_button);
+		button.setOnClickListener(new Button.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://m.nhis.or.kr/comWeb/wo/e/wce02.html")));
 			}
 		});
 

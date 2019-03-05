@@ -14,13 +14,39 @@
 			android:background="?attr/colorPrimary"
 			android:theme="@style/AppTheme.AppBarOverlay"
 			android:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+		<android.support.v7.widget.SearchView
+				android:id="@+id/search_view"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"/>
+
 	</android.support.v7.widget.Toolbar>
+
+	<EditText
+			android:id="@+id/diarySearchStr"
+			android:layout_width="200dp"
+			android:layout_height="wrap_content"
+			android:hint="내용입력"
+			android:layout_marginTop="58dp"
+			android:layout_gravity="left"
+			android:layout_marginLeft="@dimen/text_margin"
+	/>
+	<Button android:text="검색"
+			android:layout_width="60dp"
+			android:layout_height="wrap_content"
+			android:id="@+id/diarySearchButton"
+			android:adjustViewBounds="true"
+			android:scaleType="fitCenter"
+			android:layout_marginTop="58dp"
+			android:layout_gravity="right"
+			android:layout_marginRight="@dimen/text_margin"
+	/>
 
 	<android.support.v7.widget.RecyclerView
 			android:id="@+id/recyclerview"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:layout_marginTop="55dp"
+			android:layout_marginTop="100dp"
 	/>
 
 	<android.support.design.widget.FloatingActionButton

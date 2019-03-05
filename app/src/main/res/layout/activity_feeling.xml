@@ -56,7 +56,7 @@
 					android:lineSpacingExtra="@dimen/textView_lineheight"
 					android:text="@string/text_feeling_main3"/>
 
-			<Button android:text="부양스트레스 검사 해보기"
+			<Button android:text="마음건강 검사 해보기"
 					android:layout_width="match_parent"
 					android:layout_height="wrap_content"
 					android:layout_marginLeft="@dimen/_8dp"

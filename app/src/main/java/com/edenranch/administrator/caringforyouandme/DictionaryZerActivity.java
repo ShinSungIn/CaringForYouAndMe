@@ -16,11 +16,9 @@ import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.edenranch.administrator.caringforyouandme.DictionaryFragment.DictionaryMain1Fragment1;
-import com.edenranch.administrator.caringforyouandme.DictionaryFragment.DictionaryMain1Fragment2;
-import com.edenranch.administrator.caringforyouandme.DictionaryFragment.DictionaryMain1Fragment3;
+import com.edenranch.administrator.caringforyouandme.DictionaryFragment.DictionaryMain1Fragment0;
 
-public class DictionaryFirActivity extends AppCompatActivity {
+public class DictionaryZerActivity extends AppCompatActivity {
 
 	private PagerAdapter mPagerAdapter1;
 	private ViewPager mViewPager1;
@@ -35,7 +33,7 @@ public class DictionaryFirActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_dictionary_fir);
+		setContentView(R.layout.activity_dictionary_zer);
 
 		setToolbar();
 		setTab();
@@ -69,7 +67,7 @@ public class DictionaryFirActivity extends AppCompatActivity {
 		tabHost = findViewById(R.id.tabHost);
 		tabHost.setup();
 
-		TabHost.TabSpec tabDictionaryMain1 = tabHost.newTabSpec("0").setContent(R.id.tabHostFirContent).setIndicator("1.초기치매", null);
+		TabHost.TabSpec tabDictionaryMain1 = tabHost.newTabSpec("0").setContent(R.id.tabHostZerContent).setIndicator("치매환자편지", null);
 		// 상단 탭 추가
 		tabHost.addTab(tabDictionaryMain1);
 
@@ -137,7 +135,7 @@ public class DictionaryFirActivity extends AppCompatActivity {
 				Toast.makeText(this, "도움말 기능입니다. 메뉴를 선택하세요.", Toast.LENGTH_SHORT).show();
 				return true;
 			case R.id.action_dictionary1 :
-				AlertDialog.Builder builder1 = new AlertDialog.Builder(DictionaryFirActivity.this);
+				AlertDialog.Builder builder1 = new AlertDialog.Builder(DictionaryZerActivity.this);
 				builder1.setMessage("" +
 					"이 글을 통해\n" +
 					"치매 어르신도 아름다운 추억의 단면들을 지니고 있는 한 사람임을 잊지 않도록 합니다.\n" +
@@ -147,7 +145,7 @@ public class DictionaryFirActivity extends AppCompatActivity {
 					.show();
 				return true;
 			case R.id.action_dictionary2:
-				AlertDialog.Builder builder2 = new AlertDialog.Builder(DictionaryFirActivity.this);
+				AlertDialog.Builder builder2 = new AlertDialog.Builder(DictionaryZerActivity.this);
 				builder2.setMessage("치매환자가족들이 환자와 함께하는 일상의 어려움에 대해 가장 힘들어 합니다.\n\n" +
 					"동영상과 음성지원, 삽화와 그림을 통해 부담없이 이용 가능하도록 제작하였습니다.\n")
 					.setNegativeButton("닫기", null)
@@ -175,14 +173,8 @@ public class DictionaryFirActivity extends AppCompatActivity {
 			if (currentTab == 0) {
 				switch (position) {
 					case 0:
-						DictionaryMain1Fragment1 tab2 = new DictionaryMain1Fragment1();
-						return tab2;
-					case 1:
-						DictionaryMain1Fragment2 tab3 = new DictionaryMain1Fragment2();
-						return tab3;
-					case 2:
-						DictionaryMain1Fragment3 tab4 = new DictionaryMain1Fragment3();
-						return tab4;
+						DictionaryMain1Fragment0 tab1 = new DictionaryMain1Fragment0();
+						return tab1;
 					default:
 						return null;
 				}

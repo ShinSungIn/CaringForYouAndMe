@@ -4,5 +4,4 @@
 		tools:context="com.edenranch.administrator.caringforyouandme.DiaryMenuActivity">
 	<item android:id="@+id/action_mainAll" android:title="@string/action_mainAll" android:orderInCategory="100" app:showAsAction="never"/>
 	<item android:id="@+id/action_diraymenu1" android:title="@string/action_diraymenu1" android:orderInCategory="100" app:showAsAction="never"/>
-	<item android:id="@+id/action_diraymenu2" android:title="@string/action_diraymenu2" android:orderInCategory="100" app:showAsAction="never"/>
 </menu>

@@ -10,6 +10,15 @@
 
 	<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical">
 
+		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_marginTop="@dimen/text_margin"
+				android:layout_marginLeft="@dimen/text_margin"
+				android:layout_marginRight="@dimen/text_margin"
+				android:textColor="@color/colorText_Black"
+				android:textSize="@dimen/textView_fontsize"
+				android:lineSpacingExtra="@dimen/textView_lineheight"
+				android:text="@string/text_support_main3_sub1_3"/>
+
 		<android.support.v7.widget.AppCompatImageButton
 				android:text="새창"
 				android:layout_width="wrap_content"
@@ -21,6 +30,91 @@
 				android:background="@color/colorWhite"
 				android:layout_margin="@dimen/text_margin"
 		/>
+
+		<TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_marginLeft="@dimen/text_margin"
+				android:layout_marginRight="@dimen/text_margin"
+				android:textColor="@color/colorText_Black"
+				android:textSize="@dimen/textView_fontsize"
+				android:lineSpacingExtra="@dimen/textView_lineheight"
+				android:text="@string/text_support_main3_sub1_4"/>
+
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="새창"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/support_main3_sub3_view2"
+				android:src="@drawable/support_main3_sub3_2"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:background="@color/colorWhite"
+				android:layout_marginLeft="@dimen/text_margin"
+				android:layout_marginRight="@dimen/text_margin"
+				android:layout_marginBottom="@dimen/text_margin"
+				android:layout_gravity="center"
+		/>
+
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="새창"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/support_main3_sub3_view3"
+				android:src="@drawable/support_main3_sub3_3"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:background="@color/colorWhite"
+				android:layout_marginLeft="@dimen/text_margin"
+				android:layout_marginRight="@dimen/text_margin"
+				android:layout_marginBottom="@dimen/text_margin"
+				android:layout_gravity="center"
+		/>
+
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="새창"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/support_main3_sub3_view4"
+				android:src="@drawable/support_main3_sub3_4"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:background="@color/colorWhite"
+				android:layout_marginLeft="@dimen/text_margin"
+				android:layout_marginRight="@dimen/text_margin"
+				android:layout_marginBottom="@dimen/text_margin"
+				android:layout_gravity="center"
+		/>
+
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="새창"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/support_main3_sub3_view5"
+				android:src="@drawable/support_main3_sub3_5"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:background="@color/colorWhite"
+				android:layout_marginLeft="@dimen/text_margin"
+				android:layout_marginRight="@dimen/text_margin"
+				android:layout_marginBottom="@dimen/text_margin"
+				android:layout_gravity="center"
+		/>
+
+		<android.support.v7.widget.AppCompatImageButton
+				android:text="새창"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/support_main3_sub3_view6"
+				android:src="@drawable/support_main3_sub3_6"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:background="@color/colorWhite"
+				android:layout_marginLeft="@dimen/text_margin"
+				android:layout_marginRight="@dimen/text_margin"
+				android:layout_marginBottom="@dimen/text_margin"
+				android:layout_gravity="center"
+		/>
+
+
 
 	</LinearLayout>
 
