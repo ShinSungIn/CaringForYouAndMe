@@ -31,6 +31,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 6. 우리들의 돌봄일기 - 희망게시판 리스트
+ */
 public class DiarySecActivity extends AppCompatActivity {
 
 	private Toolbar toolbar;
@@ -39,6 +42,7 @@ public class DiarySecActivity extends AppCompatActivity {
 	private RecyclerView recyclerView;
 	private FloatingActionButton button;
 	private EditText diarySearchStr;
+	private RecyclerAdapter recyclerAdapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,7 @@ public class DiarySecActivity extends AppCompatActivity {
 		LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
 		recyclerView.setHasFixedSize(true);
 		recyclerView.setLayoutManager(layoutManager);
+
 
 		Button diarySearchButton = (Button) findViewById(R.id.diarySearchButton);
 		diarySearchButton.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +92,12 @@ public class DiarySecActivity extends AppCompatActivity {
 	public void onBackPressed() {
 		super.onBackPressed();
 		finish();
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+
 	}
 
 	class BackgroundTask extends AsyncTask<Void, Void, String> {
@@ -143,6 +154,7 @@ public class DiarySecActivity extends AppCompatActivity {
 				int count = 0;
 				//Subject"=>$row[0], "Content"=>$row[1], "ID"=>$row[2], "insertDT"=>
 				String Subject, Content, ID, insertDT;
+				items.clear();
 				while(count < jsonArray.length()) {
 					JSONObject object = jsonArray.getJSONObject(count);
 					Subject = object.getString("Subject");
@@ -155,8 +167,9 @@ public class DiarySecActivity extends AppCompatActivity {
 					count++;
 				}
 
-				recyclerView.removeAllViews();
-				recyclerView.setAdapter(new RecyclerAdapter(getApplicationContext(), items, R.layout.activity_diary_sec));
+
+				recyclerAdapter = new RecyclerAdapter(getApplicationContext(), items, R.layout.activity_diary_sec);
+				recyclerView.setAdapter(recyclerAdapter);
 
 			} catch (Exception e) {
 				e.printStackTrace();

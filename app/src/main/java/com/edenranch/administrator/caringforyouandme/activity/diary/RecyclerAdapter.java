@@ -1,6 +1,7 @@
 package com.edenranch.administrator.caringforyouandme.activity.diary;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
@@ -11,7 +12,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.edenranch.administrator.caringforyouandme.LoginActivity;
 import com.edenranch.administrator.caringforyouandme.R;
+import com.edenranch.administrator.caringforyouandme.activity.MainActivity;
 
 import java.util.List;
 
@@ -37,6 +40,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 		final Item item = items.get(position);
 		//Drawable drawable = ContextCompat.getDrawable(context, item.getImage());
 		//holder.image.setBackground(drawable);
+		holder.Seq.setText(position);
 		holder.ID.setText(item.getID());
 		holder.subject.setText(item.getSubject());
 		holder.content.setText(item.getContent());
@@ -45,6 +49,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 			@Override
 			public void onClick(View v) {
 				Toast.makeText(context, item.getSubject(), Toast.LENGTH_SHORT).show();
+				/*
+				Intent intent = new Intent(RecyclerAdapter.this, DiarySecSetActivity.class);
+				intent.putExtra("Seq", position);
+				RecyclerAdapter.this.startActivity(intent);
+				*/
 			}
 		});
 	}
@@ -55,6 +64,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 	}
 
 	public class ViewHolder extends RecyclerView.ViewHolder {
+		TextView Seq;
 		TextView ID;
 		TextView subject;
 		TextView content;
@@ -63,6 +73,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
 		public ViewHolder(View itemView) {
 			super(itemView);
+
+			Seq = (TextView) itemView.findViewById(R.id.Seq);
 			ID = (TextView) itemView.findViewById(R.id.ID);
 			subject = (TextView) itemView.findViewById(R.id.Subject);
 			content = (TextView) itemView.findViewById(R.id.Content);

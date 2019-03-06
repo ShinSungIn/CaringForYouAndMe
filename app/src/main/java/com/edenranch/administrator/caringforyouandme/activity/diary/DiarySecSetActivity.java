@@ -1,56 +1,59 @@
 package com.edenranch.administrator.caringforyouandme.activity.diary;
 
-import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import com.edenranch.administrator.caringforyouandme.R;
-import com.edenranch.administrator.caringforyouandme.database.domain.Diary;
 import com.edenranch.administrator.caringforyouandme.database.query.DiaryQuery;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.Calendar;
-import java.util.Locale;
+
 
 /**
- * 희망게시판 작성하기
+ * 희망게시판 작성하기 뷰
  * @author 신성인
  * @since 2019-02-26
  */
-public class DiarySecSetActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, View.OnClickListener{
+public class DiarySecSetActivity extends AppCompatActivity {
 
 	private Toolbar toolbar;
 
 	private EditText subject;
-	private EditText regDt;
 	private EditText content;
 
 	private DiaryQuery diaryQuery;
 
-	private Diary diary;
+	private Item item;
+	private int seq;
+	String target;
 
 	final Calendar myCalendar = Calendar.getInstance();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_diary_fir_set);
+		setContentView(R.layout.activity_diary_sec_set);
 
 		diaryQuery = new DiaryQuery(this);
 
-		subject = findViewById(R.id.edittext_diary_set_subject);
-		regDt = findViewById(R.id.edittext_diary_set_regdt);
-        regDt.setOnClickListener(this);
-        content = findViewById(R.id.edittext_diary_set_content);
+		subject = findViewById(R.id.subject_edit);
+        content = findViewById(R.id.content_edit);
 
 		Intent intent = getIntent();
-		int seq = intent.getIntExtra("seq", 0);
-
-		_setDiarySet(seq);
+		seq = intent.getIntExtra("seq", 0);
 
 		_setToolbar();
 
@@ -68,28 +71,12 @@ public class DiarySecSetActivity extends AppCompatActivity implements DatePicker
 		finish();
 	}
 
-    @Override
-    public void onDateSet(DatePicker view, int year, int monthOfYear,  int dayOfMonth) {
-        myCalendar.set(Calendar.YEAR, year);
-        myCalendar.set(Calendar.MONTH, monthOfYear);
-        myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-
-        String myFormat = "yyyy-MM-dd"; //In which you need put here
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.KOREAN);
-        regDt.setText(sdf.format(myCalendar.getTime()));
-    }
-
-    @Override
-    public void onClick(View v) {
-        new DatePickerDialog(DiarySecSetActivity.this, this, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),	myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-    }
-
     /**
      * 툴바 설정
      */
 	private void _setToolbar() {
 		toolbar = findViewById(R.id.toolbar);
-		toolbar.setTitle("6.우리들의 돌봄일기");
+		toolbar.setTitle("6-2.희망게시판");
 	}
 
 	/**
@@ -102,30 +89,84 @@ public class DiarySecSetActivity extends AppCompatActivity implements DatePicker
 	/**
 	 * 저장
 	 */
-	public void onSave(View view){
-		if (diary == null ) {
-			diary = new Diary();
+	public void onSaveBoard(View view){
+
+		try {
+			target = "http://sungin0605.cafe24.com/SetBoardContent.php?subject="
+				+ URLEncoder.encode(subject.getText().toString(), "UTF-8")
+				+ "&content=" + URLEncoder.encode(content.getText().toString(), "UTF-8");
+
+
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
 		}
-		diary.setSubject(subject.getText().toString());
-		diary.setRegDt(regDt.getText().toString());
-		diary.setContent(content.getText().toString());
-		if (diary.getSeq() == null ) {
-			diaryQuery.set(diary);
-		} else {
-			diaryQuery.modify(diary);
-		}
+
 		finish();
 	}
 
-	/**
-	 * 기본 값 설정
-	 */
-	private void _setDiarySet(int seq){
-		if(seq > 0) {
-			diary = diaryQuery.get(seq);
-			subject.setText(diary.getSubject());
-			regDt.setText(diary.getRegDt());
-			content.setText(diary.getContent());
+	class BackgroundTask extends AsyncTask<Void, Void, String> {
+
+		@Override
+		protected void onPreExecute() {
+			target = "http://sungin0605.cafe24.com/GetBoardContent.php?seq=" + seq;
+		}
+
+		@Override
+		protected String doInBackground(Void... voids) {
+			try {
+
+				URL url = new URL(target);
+
+				HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+				InputStream inputStream = httpURLConnection.getInputStream();
+				BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+				String temp;
+				StringBuilder stringBuilder = new StringBuilder();
+
+				while ((temp = bufferedReader.readLine()) != null) {
+					stringBuilder.append(temp + "\n");
+				}
+
+				bufferedReader.close();
+				inputStream.close();
+				httpURLConnection.disconnect();
+				return stringBuilder.toString().trim();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		@Override
+		public void onProgressUpdate(Void... values) {
+			super.onProgressUpdate();
+		}
+
+		@Override
+		public void onPostExecute(String result) {
+			try {
+				JSONObject jsonObject = new JSONObject(result);
+				JSONArray jsonArray = jsonObject.getJSONArray("response");
+				int count = 0;
+				String Subject, Content, ID, insertDT;
+
+				if (jsonArray.length() > 0) {
+					JSONObject object = jsonArray.getJSONObject(count);
+					Subject = object.getString("Subject");
+					Content = object.getString("Content");
+					ID = object.getString("ID");
+					insertDT = object.getString("insertDT").substring(0, 10);
+					Item item = new Item(R.drawable.menu_01, Subject, Content, ID, insertDT);
+
+					subject.setText(item.getSubject());
+					content.setText(item.getContent());
+				}
+
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 	}
 

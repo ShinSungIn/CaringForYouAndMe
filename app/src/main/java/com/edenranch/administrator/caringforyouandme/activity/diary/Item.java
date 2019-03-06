@@ -25,6 +25,7 @@ public class Item {
 		return this.insertDT;
 	}
 
+	// 저장
 	public Item(int image, String Subject, String Content, String ID, String insertDT) {
 		this.image = image;
 		this.Subject = Subject;
@@ -32,4 +33,5 @@ public class Item {
 		this.ID = ID;
 		this.insertDT = insertDT;
 	}
+
 }
