@@ -153,15 +153,17 @@ public class DiarySecActivity extends AppCompatActivity {
 				JSONArray jsonArray = jsonObject.getJSONArray("response");
 				int count = 0;
 				//Subject"=>$row[0], "Content"=>$row[1], "ID"=>$row[2], "insertDT"=>
+				int Seq;
 				String Subject, Content, ID, insertDT;
 				items.clear();
 				while(count < jsonArray.length()) {
 					JSONObject object = jsonArray.getJSONObject(count);
+					Seq = Integer.parseInt(object.getString("Seq"));
 					Subject = object.getString("Subject");
 					Content = object.getString("Content");
 					ID = object.getString("ID");
 					insertDT = object.getString("insertDT").substring(0, 10);
-					Item item = new Item(R.drawable.menu_01, Subject, Content, ID, insertDT);
+					Item item = new Item(R.drawable.menu_01, Seq, Subject, Content, ID, insertDT);
 
 					items.add(item);
 					count++;

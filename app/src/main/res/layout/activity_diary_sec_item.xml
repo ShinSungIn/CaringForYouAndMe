@@ -29,6 +29,13 @@
 				android:weightSum="3">
 
 			<TextView
+					android:id="@+id/Seq"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="3dp"
+					android:visibility="gone"
+			/>
+			<TextView
 					android:id="@+id/ID"
 					android:textColor="#106897"
 					android:textSize="18dp"

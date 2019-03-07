@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 import com.edenranch.administrator.caringforyouandme.R;
 import com.edenranch.administrator.caringforyouandme.database.query.DiaryQuery;
 import org.json.JSONArray;
@@ -90,85 +91,19 @@ public class DiarySecSetActivity extends AppCompatActivity {
 	 * 저장
 	 */
 	public void onSaveBoard(View view){
-
+		Toast.makeText(this, "작업중입니다.", Toast.LENGTH_SHORT).show();
+		/*
 		try {
 			target = "http://sungin0605.cafe24.com/SetBoardContent.php?subject="
 				+ URLEncoder.encode(subject.getText().toString(), "UTF-8")
 				+ "&content=" + URLEncoder.encode(content.getText().toString(), "UTF-8");
-
 
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 
 		finish();
+		*/
 	}
-
-	class BackgroundTask extends AsyncTask<Void, Void, String> {
-
-		@Override
-		protected void onPreExecute() {
-			target = "http://sungin0605.cafe24.com/GetBoardContent.php?seq=" + seq;
-		}
-
-		@Override
-		protected String doInBackground(Void... voids) {
-			try {
-
-				URL url = new URL(target);
-
-				HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-				InputStream inputStream = httpURLConnection.getInputStream();
-				BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-				String temp;
-				StringBuilder stringBuilder = new StringBuilder();
-
-				while ((temp = bufferedReader.readLine()) != null) {
-					stringBuilder.append(temp + "\n");
-				}
-
-				bufferedReader.close();
-				inputStream.close();
-				httpURLConnection.disconnect();
-				return stringBuilder.toString().trim();
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			return null;
-		}
-
-		@Override
-		public void onProgressUpdate(Void... values) {
-			super.onProgressUpdate();
-		}
-
-		@Override
-		public void onPostExecute(String result) {
-			try {
-				JSONObject jsonObject = new JSONObject(result);
-				JSONArray jsonArray = jsonObject.getJSONArray("response");
-				int count = 0;
-				String Subject, Content, ID, insertDT;
-
-				if (jsonArray.length() > 0) {
-					JSONObject object = jsonArray.getJSONObject(count);
-					Subject = object.getString("Subject");
-					Content = object.getString("Content");
-					ID = object.getString("ID");
-					insertDT = object.getString("insertDT").substring(0, 10);
-					Item item = new Item(R.drawable.menu_01, Subject, Content, ID, insertDT);
-
-					subject.setText(item.getSubject());
-					content.setText(item.getContent());
-				}
-
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
-
 
 }

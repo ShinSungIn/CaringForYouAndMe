@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 public class Item {
 	int image;
+	int Seq;
 	String Subject;
 	String Content;
 	String ID;
@@ -11,6 +12,9 @@ public class Item {
 
 	int getImage() {
 		return this.image;
+	}
+	int getSeq() {
+		return this.Seq;
 	}
 	String getSubject() {
 		return this.Subject;
@@ -26,8 +30,9 @@ public class Item {
 	}
 
 	// 저장
-	public Item(int image, String Subject, String Content, String ID, String insertDT) {
+	public Item(int image, int Seq, String Subject, String Content, String ID, String insertDT) {
 		this.image = image;
+		this.Seq = Seq;
 		this.Subject = Subject;
 		this.Content = Content;
 		this.ID = ID;
