@@ -54,10 +54,66 @@ public class DiarySecSetActivity extends AppCompatActivity {
         content = findViewById(R.id.content_edit);
 
 		Intent intent = getIntent();
-		seq = intent.getIntExtra("seq", 0);
+		seq = intent.getIntExtra("Seq", 0);
+
+		_setDiarySet(seq);
 
 		_setToolbar();
 
+	}
+
+	/**
+	 * 기본 값 설정
+	 */
+	private void _setDiarySet(int Seq){
+		if(Seq > 0) {
+			// Seq에 해당하는 게시판 글 가져오기
+			target = "http://sungin0605.cafe24.com/GetBoardContent.php?seq=" + Seq;
+
+			try {
+
+				URL url = new URL(target);
+
+				HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+				InputStream inputStream = httpURLConnection.getInputStream();
+				BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+				String temp;
+				StringBuilder stringBuilder = new StringBuilder();
+
+				while ((temp = bufferedReader.readLine()) != null) {
+					stringBuilder.append(temp + "\n");
+				}
+
+				bufferedReader.close();
+				inputStream.close();
+				httpURLConnection.disconnect();
+				//return stringBuilder.toString().trim();
+
+				JSONObject jsonObject = new JSONObject(stringBuilder.toString().trim());
+				JSONArray jsonArray = jsonObject.getJSONArray("response");
+				String Subject, Content, ID, insertDT;
+				// 가져온 값이 있을 경우엔
+				if (jsonArray.length() > 0) {
+
+					JSONObject object = jsonArray.getJSONObject(0);
+					// Seq visible 시켜주고 값 넣고
+					//Seq = Integer.parseInt(object.getString("Seq"));
+					Subject = object.getString("Subject");
+					Content = object.getString("Content");
+					ID = object.getString("ID");
+					insertDT = object.getString("insertDT").substring(0, 10);
+
+					// 제목, 내용 값 넣어주기
+					subject.setText(Subject);
+					content.setText(Content);
+
+					//Item item = new Item(R.drawable.menu_01, Seq, Subject, Content, ID, insertDT);
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 	@Override

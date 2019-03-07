@@ -40,7 +40,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 		final Item item = items.get(position);
 		//Drawable drawable = ContextCompat.getDrawable(context, item.getImage());
 		//holder.image.setBackground(drawable);
-		holder.Seq.setText(item.getSeq());
 		holder.ID.setText(item.getID());
 		holder.subject.setText(item.getSubject());
 		holder.content.setText(item.getContent());
@@ -48,12 +47,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 		holder.cardview.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(context, item.getSeq(), Toast.LENGTH_SHORT).show();
-				/*
-				Intent intent = new Intent(RecyclerAdapter.this, DiarySecSetActivity.class);
-				intent.putExtra("Seq", position);
-				RecyclerAdapter.this.startActivity(intent);
-				*/
+				//Toast.makeText(context, String.valueOf(item.getSeq()), Toast.LENGTH_SHORT).show();
+
+				Intent intent = new Intent(context, DiarySecSetActivity.class);
+				intent.putExtra("Seq", item.getSeq());
+				context.startActivity(intent);
+
 			}
 		});
 	}
@@ -64,7 +63,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 	}
 
 	public class ViewHolder extends RecyclerView.ViewHolder {
-		TextView Seq;
 		TextView ID;
 		TextView subject;
 		TextView content;
@@ -74,7 +72,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 		public ViewHolder(View itemView) {
 			super(itemView);
 
-			Seq = (TextView) itemView.findViewById(R.id.Seq);
 			ID = (TextView) itemView.findViewById(R.id.ID);
 			subject = (TextView) itemView.findViewById(R.id.Subject);
 			content = (TextView) itemView.findViewById(R.id.Content);
