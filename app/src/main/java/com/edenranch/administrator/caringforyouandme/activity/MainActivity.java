@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 
-		// 5.치료프로그램
+		// 5.인지향상프로그램
 		Button CureProgramButton5 = (Button) findViewById(R.id.CureProgramButton5);
 		CureProgramButton5.setOnClickListener(new View.OnClickListener() {
 			@Override
