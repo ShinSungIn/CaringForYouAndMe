@@ -21,7 +21,7 @@ import com.edenranch.administrator.caringforyouandme.R;
 import java.util.Locale;
 
 /**
- * 돌봄사전1-1
+ * 치매환자돌봄방법-1
  */
 public class DictionaryMain1Fragment1 extends Fragment {
 	private static final String ARG_PARAM1 = "param1";

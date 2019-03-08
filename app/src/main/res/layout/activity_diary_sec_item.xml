@@ -37,6 +37,7 @@
 					android:padding="3dp"
 					android:layout_weight="1"
 					android:gravity="left"
+					android:ellipsize="middle"
 			/>
 			<TextView
 					android:id="@+id/insertDT"
@@ -63,6 +64,8 @@
 					android:layout_width="match_parent"
 					android:layout_height="0dp"
 					android:layout_weight="1"
+					android:maxLines="2"
+					android:ellipsize="end"
 			/>
 			<TextView
 					android:id="@+id/Content"
@@ -72,6 +75,8 @@
 					android:layout_height="0dp"
 					android:layout_weight="1"
 					android:layout_gravity="clip_vertical"
+					android:maxLines="3"
+					android:ellipsize="end"
 			/>
 		</LinearLayout>
 	</LinearLayout>

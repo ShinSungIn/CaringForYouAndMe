@@ -22,15 +22,18 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 	Context context;
 	List<Item> items;
 	int activity_diary_sec_item;
+	String editID;
 
-	public RecyclerAdapter(Context context, List<Item> items, int activity_diary_sec_item) {
+	public RecyclerAdapter(Context context, List<Item> items, int activity_diary_sec_item, String editID) {
 		this.context = context;
 		this.items = items;
 		this.activity_diary_sec_item = activity_diary_sec_item;
+		this.editID = editID;
 	}
 
 	@Override
 	public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
 		View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_diary_sec_item, null);
 		return new ViewHolder(v);
 	}
@@ -49,8 +52,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 			public void onClick(View v) {
 				//Toast.makeText(context, String.valueOf(item.getSeq()), Toast.LENGTH_SHORT).show();
 
-				Intent intent = new Intent(context, DiarySecSetActivity.class);
+				Intent intent = new Intent(context, DiarySecGetActivity.class);
 				intent.putExtra("Seq", item.getSeq());
+				intent.putExtra("editID", editID);
 				context.startActivity(intent);
 
 			}

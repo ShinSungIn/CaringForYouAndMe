@@ -16,6 +16,7 @@ import android.widget.Toast;
 public class DiaryMenuActivity extends AppCompatActivity {
 
 	private Toolbar toolbar;
+	private String ID;
 	Context context;
 
 	TabHost tabHost;
@@ -27,6 +28,9 @@ public class DiaryMenuActivity extends AppCompatActivity {
 
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
+
+		Intent intent = getIntent();
+		ID = intent.getExtras().getString("ID");
 
 		setToolbar();
 
@@ -46,6 +50,7 @@ public class DiaryMenuActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View view) {
 				Intent intent = new Intent(DiaryMenuActivity.this, DiarySecActivity.class);
+				intent.putExtra("ID", ID);
 				DiaryMenuActivity.this.startActivity(intent);
 			}
 		});

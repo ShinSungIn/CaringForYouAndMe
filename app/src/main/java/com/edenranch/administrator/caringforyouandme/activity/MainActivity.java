@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -23,7 +24,6 @@ import android.widget.Toast;
 import com.edenranch.administrator.caringforyouandme.AlarmActivity;
 import com.edenranch.administrator.caringforyouandme.CureprogramActivity;
 import com.edenranch.administrator.caringforyouandme.DiaryMenuActivity;
-import com.edenranch.administrator.caringforyouandme.DictionaryActivity;
 import com.edenranch.administrator.caringforyouandme.DictionaryMenuActivity;
 import com.edenranch.administrator.caringforyouandme.FeelingActivity;
 import com.edenranch.administrator.caringforyouandme.KnownActivity;
@@ -34,7 +34,12 @@ import com.edenranch.administrator.caringforyouandme.RoadmapActivity;
 import com.edenranch.administrator.caringforyouandme.SupportMenuActivity;
 import com.edenranch.administrator.caringforyouandme.service.AlarmJobService;
 import com.edenranch.administrator.caringforyouandme.service.AlarmService;
-import lombok.core.Main;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 //implements NavigationView.OnNavigationItemSelectedListener
 public class MainActivity extends AppCompatActivity {
@@ -44,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 	private Activity activity;
 	private Context context;
 	private String loginID;	// 로그인 ID
+	String target;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
 
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
+
+		Intent intent = getIntent();
+		loginID = intent.getExtras().getString("ID");
 /*
 		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -72,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
 		knownBuuton1.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
+				//new BackgroundTask().execute(1);
+
 				Intent registerIntent = new Intent(MainActivity.this, KnownActivity.class);
 				MainActivity.this.startActivity(registerIntent);
 			}
@@ -82,6 +93,8 @@ public class MainActivity extends AppCompatActivity {
 		preventionButton2.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
+				//new BackgroundTask().execute(2);
+
 				Intent registerIntent = new Intent(MainActivity.this, PreventionActivity.class);
 				MainActivity.this.startActivity(registerIntent);
 			}
@@ -92,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
 		RoadmapButton3.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
+				//new BackgroundTask().execute(3);
+
 				Intent registerIntent = new Intent(MainActivity.this, RoadmapActivity.class);
 				MainActivity.this.startActivity(registerIntent);
 			}
@@ -102,6 +117,8 @@ public class MainActivity extends AppCompatActivity {
 		SupportButton4.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
+				//new BackgroundTask().execute(4);
+
 				Intent registerIntent = new Intent(MainActivity.this, SupportMenuActivity.class);
 				MainActivity.this.startActivity(registerIntent);
 			}
@@ -112,6 +129,8 @@ public class MainActivity extends AppCompatActivity {
 		CureProgramButton5.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
+				//new BackgroundTask().execute(5);
+
 				Intent registerIntent = new Intent(MainActivity.this, CureprogramActivity.class);
 				MainActivity.this.startActivity(registerIntent);
 			}
@@ -122,16 +141,21 @@ public class MainActivity extends AppCompatActivity {
 		DiaryButton6.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
+				//new BackgroundTask().execute(6);
+
 				Intent registerIntent = new Intent(MainActivity.this, DiaryMenuActivity.class);
+				registerIntent.putExtra("ID", loginID);
 				MainActivity.this.startActivity(registerIntent);
 			}
 		});
 
-		// 7.돌봄사전 클릭
+		// 7.치매환자돌봄방법 클릭
 		Button DictionaryButton7 = (Button) findViewById(R.id.DictionaryButton7);
 		DictionaryButton7.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
+				//new BackgroundTask().execute(7);
+
 				Intent registerIntent = new Intent(MainActivity.this, DictionaryMenuActivity.class);
 				MainActivity.this.startActivity(registerIntent);
 			}
@@ -142,15 +166,62 @@ public class MainActivity extends AppCompatActivity {
 		FeelingsButton8.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
+				//new BackgroundTask().execute(8);
+
 				Intent registerIntent = new Intent(MainActivity.this, FeelingActivity.class);
 				MainActivity.this.startActivity(registerIntent);
 			}
 		});
 
-		Intent intent = getIntent();
-		loginID = intent.getExtras().getString("ID");
-
 		this.activity = this;
+	}
+
+	// 사용자 조회수 저장
+	class BackgroundTask extends AsyncTask<Integer, Void, String> {
+
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+		}
+
+		@Override
+		protected String doInBackground(Integer... integers) {
+			try {
+
+				target = "http://sungin0605.cafe24.com/UseHistoryRegister.php?ID=" + loginID + "&MenuNum=" + integers[0];
+				URL url = new URL(target);
+
+				HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+				InputStream inputStream = httpURLConnection.getInputStream();
+				BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+				String temp;
+				StringBuilder stringBuilder = new StringBuilder();
+
+				while ((temp = bufferedReader.readLine()) != null) {
+					stringBuilder.append(temp + "\n");
+				}
+
+				bufferedReader.close();
+				inputStream.close();
+				httpURLConnection.disconnect();
+				// 반환값 없음
+				return stringBuilder.toString().trim();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return null;
+		}
+
+		@Override
+		public void onProgressUpdate(Void... values) {
+			super.onProgressUpdate();
+		}
+
+		@Override
+		public void onPostExecute(String result) {
+			// 반환값 없음
+		}
 	}
 
 	@Override
@@ -215,7 +286,7 @@ public class MainActivity extends AppCompatActivity {
 			AlertDialog.Builder builder2 = new AlertDialog.Builder(MainActivity.this);
 			builder2.setMessage("" +
 				"앱 정보\n\n" +
-				"치매돌봄 앱은 치매환자와 보호자를 위한 유용한 어플입니다.\n\n" +
+				"치매돌봄톡 앱은 치매환자와 보호자를 위한 유용한 어플입니다.\n\n" +
 				"안드로이드폰 기종이 너무 오래되었거나 또는 최신 안드로이드 폰에서는 사용시 제약사항이 발생 할 수 있습니다.")
 				.setNegativeButton("닫기", null)
 				.create()

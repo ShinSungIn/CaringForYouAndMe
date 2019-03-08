@@ -8,7 +8,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,6 +28,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.nio.channels.InterruptedByTimeoutException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -37,6 +40,7 @@ import java.util.Map;
 public class DiarySecActivity extends AppCompatActivity {
 
 	private Toolbar toolbar;
+	private String editID;
 	Context context;
 	private List<Item> items = new ArrayList<Item>();
 	private RecyclerView recyclerView;
@@ -49,6 +53,9 @@ public class DiarySecActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_diary_sec);
 
+		Intent intent = getIntent();
+		editID = intent.getExtras().getString("ID");
+
 		setToolbar();
 
 		recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
@@ -56,7 +63,7 @@ public class DiarySecActivity extends AppCompatActivity {
 		recyclerView.setHasFixedSize(true);
 		recyclerView.setLayoutManager(layoutManager);
 
-
+		// 검색
 		Button diarySearchButton = (Button) findViewById(R.id.diarySearchButton);
 		diarySearchButton.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -64,12 +71,14 @@ public class DiarySecActivity extends AppCompatActivity {
 				new BackgroundTask().execute();
 			}
 		});
-
+		// 글 작성하기
 		button = (FloatingActionButton) findViewById(R.id.floatingactionbutton_diarysec_create);
 		button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(context, DiarySecSetActivity.class));
+				Intent intent1 = new Intent(context, DiarySecSetActivity.class);
+				intent1.putExtra("editID", editID);
+				startActivity(intent1);
 			}
 		});
 
@@ -89,21 +98,42 @@ public class DiarySecActivity extends AppCompatActivity {
 	}
 
 	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+		if (requestCode == 1) {
+			if (resultCode == DiarySecSetActivity.RESULT_OK) {
+				new BackgroundTask().execute();
+			}
+			if (resultCode == DiarySecSetActivity.RESULT_CANCELED) {
+				//만약 반환값이 없을 경우의 코드를 여기에 작성
+			}
+		}
+	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+	}
+
+	@Override
 	public void onBackPressed() {
-		super.onBackPressed();
 		finish();
 	}
 
 	@Override
-	public void onResume() {
-		super.onResume();
-
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()){
+			case android.R.id.home:{ //toolbar의 back키 눌렀을 때 동작
+				finish();
+				return true;
+			}
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
-	class BackgroundTask extends AsyncTask<Void, Void, String> {
+	public class BackgroundTask extends AsyncTask<Void, Void, String> {
 
 		String target;
-
 
 		@Override
 		protected void onPreExecute() {
@@ -169,8 +199,7 @@ public class DiarySecActivity extends AppCompatActivity {
 					count++;
 				}
 
-
-				recyclerAdapter = new RecyclerAdapter(getApplicationContext(), items, R.layout.activity_diary_sec);
+				recyclerAdapter = new RecyclerAdapter(getApplicationContext(), items, R.layout.activity_diary_sec, editID);
 				recyclerView.setAdapter(recyclerAdapter);
 
 			} catch (Exception e) {
@@ -178,4 +207,5 @@ public class DiarySecActivity extends AppCompatActivity {
 			}
 		}
 	}
+
 }

@@ -1,5 +1,5 @@
 <resources>
-	<string name="app_name">치매돌봄</string>
+	<string name="app_name">치매돌봄톡</string>
 
 	<!-- Strings related to login -->
 	<string name="prompt_id">ID</string>
@@ -40,7 +40,7 @@
 	<string name="action_roadmap1">내비게이션</string>
 	<string name="action_roadmap2">치매진단받기</string>
 
-	<string name="action_dictionary1">치매환자의부탁말씀</string>
+	<string name="action_dictionary1">치매환자편지</string>
 	<string name="action_dictionary2">치매환자돌봄방법</string>
 	<string name="action_feelingmenu1">나의감정살피기</string>
 
@@ -65,7 +65,7 @@
 
 	<string name="title_activity_cureprogram">5.치료프로그램</string>
 	<string name="title_activity_diary">6.우리들의 돌봄일기</string>
-	<string name="title_activity_dictionary">7.돌봄사전</string>
+	<string name="title_activity_dictionary">7.치매환자돌봄방법</string>
 	<string name="title_activity_dicmain1">7-1.초기치매</string>
 	<string name="title_activity_dicmain2">7-2.중고도치매환자</string>
 	<string name="title_activity_dicmain3">7-3.정신행동증상</string>
@@ -490,7 +490,7 @@
 	</string>
 
 	<!-- 6.우리들의 돌봄일기 -->
-	<!-- 7.돌봄사전 -->
+	<!-- 7.치매환자돌봄방법 -->
 	<string name="dictionary_main1">초기치매</string>
 		<string name="dictionary_main1_sub0">치매환자편지</string>
 		<string name="dictionary_main1_sub1">돌봄원칙 및 대화</string>

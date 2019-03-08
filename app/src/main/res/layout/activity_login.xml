@@ -129,7 +129,7 @@
 					android:layout_marginTop="10dp"
 					android:layout_marginLeft="20dp"
 					android:layout_marginRight="20dp"
-					android:text="치매돌봄 앱 회원가입"
+					android:text="치매돌봄톡 앱 회원가입"
 					android:id="@+id/registerButton"
 			/-->
 

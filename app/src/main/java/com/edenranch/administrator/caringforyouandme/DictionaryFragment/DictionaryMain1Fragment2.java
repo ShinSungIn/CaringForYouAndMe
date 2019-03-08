@@ -18,7 +18,7 @@ import com.edenranch.administrator.caringforyouandme.YoutubePlayerActivity;
 import java.util.Locale;
 
 /**
- * 돌봄사전1-2
+ * 치매환자돌봄방법-2
  */
 public class DictionaryMain1Fragment2 extends Fragment {
 	private static final String ARG_PARAM1 = "param1";

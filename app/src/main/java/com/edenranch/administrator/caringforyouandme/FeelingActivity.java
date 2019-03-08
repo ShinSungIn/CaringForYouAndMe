@@ -48,8 +48,12 @@ public class FeelingActivity extends AppCompatActivity {
 		linkButton3.setOnClickListener(new ImageButton.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://goo.gl/forms/wCB0UQqoRFp4oIYt1")));
+				// 부양스트레스 설문지
+				//startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://goo.gl/forms/wCB0UQqoRFp4oIYt1")));
+				// 치매안심센터
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.nid.or.kr/quiz/quiz_intro.aspx")));
 			}
+
 		});
 
 		context = this;
