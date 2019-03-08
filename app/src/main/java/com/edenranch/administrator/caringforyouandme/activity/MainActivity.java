@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 		knownBuuton1.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				//new BackgroundTask().execute(1);
+				new BackgroundTask().execute(1);
 
 				Intent registerIntent = new Intent(MainActivity.this, KnownActivity.class);
 				MainActivity.this.startActivity(registerIntent);
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
 		preventionButton2.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				//new BackgroundTask().execute(2);
+				new BackgroundTask().execute(2);
 
 				Intent registerIntent = new Intent(MainActivity.this, PreventionActivity.class);
 				MainActivity.this.startActivity(registerIntent);
@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 		RoadmapButton3.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				//new BackgroundTask().execute(3);
+				new BackgroundTask().execute(3);
 
 				Intent registerIntent = new Intent(MainActivity.this, RoadmapActivity.class);
 				MainActivity.this.startActivity(registerIntent);
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
 		SupportButton4.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				//new BackgroundTask().execute(4);
+				new BackgroundTask().execute(4);
 
 				Intent registerIntent = new Intent(MainActivity.this, SupportMenuActivity.class);
 				MainActivity.this.startActivity(registerIntent);
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
 		CureProgramButton5.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				//new BackgroundTask().execute(5);
+				new BackgroundTask().execute(5);
 
 				Intent registerIntent = new Intent(MainActivity.this, CureprogramActivity.class);
 				MainActivity.this.startActivity(registerIntent);
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
 		DiaryButton6.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				//new BackgroundTask().execute(6);
+				new BackgroundTask().execute(6);
 
 				Intent registerIntent = new Intent(MainActivity.this, DiaryMenuActivity.class);
 				registerIntent.putExtra("ID", loginID);
@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
 		DictionaryButton7.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				//new BackgroundTask().execute(7);
+				new BackgroundTask().execute(7);
 
 				Intent registerIntent = new Intent(MainActivity.this, DictionaryMenuActivity.class);
 				MainActivity.this.startActivity(registerIntent);
@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
 		FeelingsButton8.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				//new BackgroundTask().execute(8);
+				new BackgroundTask().execute(8);
 
 				Intent registerIntent = new Intent(MainActivity.this, FeelingActivity.class);
 				MainActivity.this.startActivity(registerIntent);
