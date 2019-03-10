@@ -99,9 +99,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 		stringBuffer.append(" (");
 		stringBuffer.append(Column.DIARY_SEQ + " " + Type.INTEGER +  " PRIMARY KEY AUTOINCREMENT,");
 		stringBuffer.append(Column.DIARY_SUBJECT + " " + Type.TEXT +  ",");
+		stringBuffer.append(Column.DIARY_CONDITION + " " + Type.TEXT + ",");
+		stringBuffer.append(Column.DIARY_ACTIVITY + " " + Type.TEXT + ",");
+		stringBuffer.append(Column.DIARY_FEELING + " " + Type.TEXT + ",");
 		stringBuffer.append(Column.DIARY_CONTENT + " " + Type.TEXT + ",");
-//		stringBuffer.append(Column.DIARY_POSTDT + " " + Type.TEXT + ",");
 		stringBuffer.append(Column.DIARY_REGDT + " " + Type.TEXT);
+//		stringBuffer.append(Column.DIARY_POSTDT + " " + Type.TEXT + ",");
 		stringBuffer.append(" )" );
 		return stringBuffer.toString();
 	}

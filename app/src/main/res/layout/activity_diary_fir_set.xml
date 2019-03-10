@@ -90,10 +90,44 @@
                 android:background="#dee0e4"/>
 
         <EditText
-                android:id="@+id/edittext_diary_set_content"
-                android:layout_weight="10"
+                android:id="@+id/edittext_diary_set_condition"
+                android:hint="환자상태를 입력하세요"
+                android:layout_weight="2"
                 android:layout_marginTop="10dp"
-                android:maxLines="30"
+                android:maxLines="10"
+                android:gravity="top"
+                android:textSize="20sp"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+        <EditText
+                android:id="@+id/edittext_diary_set_activity"
+                android:hint="돌봄활동을 입력하세요"
+                android:layout_weight="3"
+                android:layout_marginTop="10dp"
+                android:maxLines="10"
+                android:gravity="top"
+                android:textSize="20sp"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+        <EditText
+                android:id="@+id/edittext_diary_set_feeling"
+                android:hint="느낌을 입력하세요"
+                android:layout_weight="2"
+                android:layout_marginTop="10dp"
+                android:maxLines="20"
+                android:gravity="top"
+                android:textSize="20sp"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+        <EditText
+                android:id="@+id/edittext_diary_set_content"
+                android:hint="기타내용을 입력하세요"
+                android:layout_weight="3"
+                android:layout_marginTop="10dp"
+                android:maxLines="20"
                 android:gravity="top"
                 android:textSize="20sp"
                 android:background="@android:color/transparent"

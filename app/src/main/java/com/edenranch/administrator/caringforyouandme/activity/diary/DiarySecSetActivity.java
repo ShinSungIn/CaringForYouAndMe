@@ -133,19 +133,19 @@ public class DiarySecSetActivity extends AppCompatActivity {
 								httpURLConnection.disconnect();
 								//return stringBuilder.toString().trim();
 
+								// 리스트 새로고침을 위함
+								Intent intent = new Intent(getApplicationContext(), DiarySecActivity.class);
+								intent.putExtra("ID", editID);
+								setResult(RESULT_OK, intent);
+								startActivityForResult(intent, 1);
+
+								finish();
+
 							} catch (Exception e) {
 								e.printStackTrace();
 							}
 						}
 					});
-
-					// 리스트 새로고침을 위함
-					Intent intent = new Intent(getApplicationContext(), DiarySecActivity.class);
-					intent.putExtra("ID", editID);
-					setResult(RESULT_OK, intent);
-					startActivityForResult(intent, 1);
-
-					finish();
 
 				}
 			})

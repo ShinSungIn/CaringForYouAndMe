@@ -22,7 +22,10 @@ public class Column {
 	// Diary
 	public static String DIARY_SEQ = "seq";				// 순번
 	public static String DIARY_SUBJECT = "subject";		// 제목
-	public static String DIARY_CONTENT = "content";		// 내용
+	public static String DIARY_CONDITION = "condition";	// 환자상태
+	public static String DIARY_ACTIVITY = "activity";	// 돌봄활동
+	public static String DIARY_FEELING = "feeling";		// 느낌
+	public static String DIARY_CONTENT = "content";		// 기타
 //	public static String DIARY_POSTDT = "postDt";		// 포스팅 일자
 	public static String DIARY_REGDT = "regDt";			// 등록 일자
 

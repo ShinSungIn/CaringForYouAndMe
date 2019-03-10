@@ -36,6 +36,9 @@ public class DiaryQuery {
     public long set(Diary diary) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(Column.DIARY_SUBJECT, diary.getSubject());
+        contentValues.put(Column.DIARY_CONDITION, diary.getCondition());
+        contentValues.put(Column.DIARY_ACTIVITY, diary.getActivity());
+        contentValues.put(Column.DIARY_FEELING, diary.getFeeling());
         contentValues.put(Column.DIARY_CONTENT, diary.getContent());
         contentValues.put(Column.DIARY_REGDT, diary.getRegDt());
 
@@ -64,6 +67,9 @@ public class DiaryQuery {
             diary = new Diary();
             diary.setSeq(cursor.getInt(cursor.getColumnIndex(Column.DIARY_SEQ)));
             diary.setSubject(cursor.getString(cursor.getColumnIndex(Column.DIARY_SUBJECT)));
+            diary.setCondition(cursor.getString(cursor.getColumnIndex(Column.DIARY_CONDITION)));
+            diary.setActivity(cursor.getString(cursor.getColumnIndex(Column.DIARY_ACTIVITY)));
+            diary.setFeeling(cursor.getString(cursor.getColumnIndex(Column.DIARY_FEELING)));
             diary.setContent(cursor.getString(cursor.getColumnIndex(Column.DIARY_CONTENT)));
             diary.setRegDt(cursor.getString(cursor.getColumnIndex(Column.DIARY_REGDT)));
         }
@@ -91,6 +97,9 @@ public class DiaryQuery {
             Diary diary = new Diary();
             diary.setSeq(cursor.getInt(cursor.getColumnIndex(Column.DIARY_SEQ)));
             diary.setSubject(cursor.getString(cursor.getColumnIndex(Column.DIARY_SUBJECT)));
+            diary.setCondition(cursor.getString(cursor.getColumnIndex(Column.DIARY_CONDITION)));
+            diary.setActivity(cursor.getString(cursor.getColumnIndex(Column.DIARY_ACTIVITY)));
+            diary.setFeeling(cursor.getString(cursor.getColumnIndex(Column.DIARY_FEELING)));
             diary.setContent(cursor.getString(cursor.getColumnIndex(Column.DIARY_CONTENT)));
             diary.setRegDt(cursor.getString(cursor.getColumnIndex(Column.DIARY_REGDT)));
 
@@ -106,6 +115,9 @@ public class DiaryQuery {
     public int modify(Diary diary) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(Column.DIARY_SUBJECT, diary.getSubject());
+        contentValues.put(Column.DIARY_CONDITION, diary.getCondition());
+        contentValues.put(Column.DIARY_ACTIVITY, diary.getActivity());
+        contentValues.put(Column.DIARY_FEELING, diary.getFeeling());
         contentValues.put(Column.DIARY_CONTENT, diary.getContent());
         contentValues.put(Column.DIARY_REGDT, diary.getRegDt());
 
