@@ -41,7 +41,7 @@
 	<android.support.design.widget.FloatingActionButton
 			android:layout_gravity="bottom|end"
 			android:layout_margin="20sp"
-			android:backgroundTint="#ffd000"
+			app:backgroundTint="#ffd000"
 			android:src="@drawable/add"
 			android:id="@+id/floatingactionbutton_diary_create"
 			android:layout_width="wrap_content"
