@@ -20,7 +20,8 @@
 	<string name="nav_header_desc">Navigation header</string>
 
 	<string name="action_main2">로그인정보</string>
-	<string name="action_main4">앱 평가하기</string>
+	<string name="action_main4">앱 평가하기(일반)</string>
+	<string name="action_main6">앱 평가하기(고급)</string>
 	<string name="action_main3">앱정보</string>
 	<string name="action_main5">로그아웃</string>
 	<string name="action_alarm">알람설정</string>

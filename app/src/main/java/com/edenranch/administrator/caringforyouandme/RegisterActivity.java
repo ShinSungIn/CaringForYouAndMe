@@ -1,6 +1,7 @@
 package com.edenranch.administrator.caringforyouandme;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -13,12 +14,16 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * 회원가입
+ */
 public class RegisterActivity extends AppCompatActivity {
 
 	private ArrayAdapter adapter;
@@ -77,6 +82,14 @@ public class RegisterActivity extends AppCompatActivity {
 
 		// 동의여부
 		CheckBox agreeYn = (CheckBox) findViewById(R.id.agreeYn);
+		// 개인정보처리방침 보기
+		TextView privacypolicy = (TextView) findViewById(R.id.privacypolicy);
+		privacypolicy.setOnClickListener(new TextView.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://sungin0605.cafe24.com/PrivacyPolicy.php")));
+			}
+		});
 
 		// 중복 체크
 		final Button validateButton  = (Button) findViewById(R.id.validateButton);
@@ -150,10 +163,12 @@ public class RegisterActivity extends AppCompatActivity {
 
 				if (!validate) {
 					AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-					builder.setMessage("중복 체크를 해주세요.")
+					builder.setMessage("아이디 중복 체크를 해주세요.")
 						.setNegativeButton("확인", null)
 						.create()
 						.show();
+
+					idText.requestFocus();
 					return;
 				}
 
@@ -167,7 +182,7 @@ public class RegisterActivity extends AppCompatActivity {
 				}
 				if (userAge.equals("") || userTel.equals("")) {
 					AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-					builder.setMessage("연락처 또는 나이를 입력해주세요.")
+					builder.setMessage("나이 또는 연락처를 입력해주세요.")
 						.setNegativeButton("확인", null)
 						.create()
 						.show();

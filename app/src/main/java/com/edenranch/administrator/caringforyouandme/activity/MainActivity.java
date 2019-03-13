@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 	private Context context;
 	private String loginID;	// 로그인 ID
 	String target;
+	PackageInfo packageInfo;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +73,14 @@ public class MainActivity extends AppCompatActivity {
 */
 		//NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 		//navigationView.setNavigationItemSelectedListener(this);
-
 		context = this;
+
+		// 버전 가져오기
+		try {
+			packageInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+		} catch (PackageManager.NameNotFoundException e) {
+			e.printStackTrace();
+		}
 
 		// 알람 서비스 시작
 		_startAlarmService();
@@ -287,14 +296,20 @@ public class MainActivity extends AppCompatActivity {
 			builder2.setMessage("" +
 				"앱 정보\n\n" +
 				"치매돌봄톡 앱은 치매환자와 보호자를 위한 유용한 어플입니다.\n\n" +
+				"앱 버전: " + packageInfo.versionCode + "\n" +
+				"앱 버전명: " + packageInfo.versionName + "\n\n" +
 				"안드로이드폰 기종이 너무 오래되었거나 또는 최신 안드로이드 폰에서는 사용시 제약사항이 발생 할 수 있습니다.")
 				.setNegativeButton("닫기", null)
 				.create()
 				.show();
 			return true;
 		} else if (id == R.id.action_main4) {
-			//앱 평가하기
+			//앱 평가하기(일반)
 			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://goo.gl/forms/ZNWt0XMUlzAH3zIx2")));
+			return true;
+		} else if (id == R.id.action_main6) {
+			//앱 평가하기(고급)
+			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://goo.gl/forms/TZNBTMygTh4ooI0Z2")));
 			return true;
 		} else if (id == R.id.action_main5) {
 			//로그아웃
