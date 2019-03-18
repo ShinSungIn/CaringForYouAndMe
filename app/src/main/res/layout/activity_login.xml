@@ -122,16 +122,15 @@
 					android:checked="false"
 					android:id="@+id/checkBox"
 			/>
-			<!--TextView
+			<TextView
 					android:layout_width="140dp"
 					android:layout_height="wrap_content"
 					android:layout_gravity="right"
-					android:layout_marginTop="10dp"
 					android:layout_marginLeft="20dp"
 					android:layout_marginRight="20dp"
 					android:text="치매돌봄톡 앱 회원가입"
-					android:id="@+id/registerButton"
-			/-->
+					android:id="@+id/registerButton2"
+			/>
 
 		</LinearLayout>
 

@@ -26,17 +26,17 @@ import java.net.URLEncoder;
 
 
 /**
- * 희망게시판 작성글 저장하기
+ * 희망게시판 작성글 보기
  * @author 신성인
  * @since 2019-02-26
  */
-public class DiarySecGetActivity extends AppCompatActivity {
+public class DiarySecViewActivity extends AppCompatActivity {
 
 	private Toolbar toolbar;
 
 	private TextView seqtext;
-	private EditText subject;
-	private EditText content;
+	private TextView subject;
+	private TextView content;
 
 	private Item item;
 	private int seq;
@@ -48,10 +48,10 @@ public class DiarySecGetActivity extends AppCompatActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_diary_sec_get);
+		setContentView(R.layout.activity_diary_sec_view);
 
-		subject = findViewById(R.id.subject_edit);
-        content = findViewById(R.id.content_edit);
+		subject = findViewById(R.id.subject_view);
+        content = findViewById(R.id.content_view);
 		seqtext = findViewById(R.id.Seq);
 		Intent intent = getIntent();
 		seq = intent.getIntExtra("Seq", 0);
@@ -109,7 +109,7 @@ public class DiarySecGetActivity extends AppCompatActivity {
 				JSONObject jsonObject = new JSONObject(result);
 				JSONArray jsonArray = jsonObject.getJSONArray("response");
 				int Seq;
-				String Subject, Content, ID, insertDT;
+				String Subject, Content, ID;
 				// 가져온 값이 있을 경우엔
 				if (jsonArray.length() > 0) {
 
@@ -127,11 +127,11 @@ public class DiarySecGetActivity extends AppCompatActivity {
 					content.setText(Content);
 
 					// 아이디값에 따른 저장버튼 숨기기
-					Button savebutton = (Button) findViewById(R.id.button_diary_set_save);
+					Button movebutton = (Button) findViewById(R.id.button_diary_set_move);
 					if (!editID.equals(ID)) {
-						savebutton.setVisibility(View.INVISIBLE);
+						movebutton.setVisibility(View.INVISIBLE);
 					} else {
-						savebutton.setVisibility(View.VISIBLE);
+						movebutton.setVisibility(View.VISIBLE);
 					}
 
 				}
@@ -169,56 +169,25 @@ public class DiarySecGetActivity extends AppCompatActivity {
 	}
 
 	/**
-	 * 저장
+	 * 수정하기
 	 */
-	public void onSaveBoard(View view){
+	public void onSaveMove(View view){
 
 		new AlertDialog.Builder(this)
-			.setTitle("저장").setMessage("저장 하시겠습니까?")
-			.setPositiveButton("저장", new DialogInterface.OnClickListener() {
+			.setTitle("수정").setMessage("수정 페이지로 이동합니까?")
+			.setPositiveButton("수정", new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int whichButton) {
 
 					AsyncTask.execute(new Runnable() {
 						@Override
 						public void run() {
-							try {
-								target = "http://sungin0605.cafe24.com/SetBoardContent.php?Seq=" + seq
-									+ "&subject=" + URLEncoder.encode(subject.getText().toString(), "UTF-8")
-									+ "&content=" + URLEncoder.encode(content.getText().toString(), "UTF-8");
-							} catch (UnsupportedEncodingException e) {
-								e.printStackTrace();
-							}
-
-							try {
-
-								URL url = new URL(target);
-
-								HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-								InputStream inputStream = httpURLConnection.getInputStream();
-								BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-								String temp;
-								StringBuilder stringBuilder = new StringBuilder();
-
-								while ((temp = bufferedReader.readLine()) != null) {
-									stringBuilder.append(temp + "\n");
-								}
-
-								bufferedReader.close();
-								inputStream.close();
-								httpURLConnection.disconnect();
-								//return stringBuilder.toString().trim();
-
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
+							// 수정페이지로 이동
+							Intent intent1 = new Intent(getApplicationContext(), DiarySecGetActivity.class);
+							intent1.putExtra("Seq", seq);
+							intent1.putExtra("editID", editID);
+							startActivity(intent1);
 						}
 					});
-
-					// 리스트 새로고침을 위함
-					Intent intent = new Intent(getApplicationContext(), DiarySecActivity.class);
-					intent.putExtra("ID", editID);
-					setResult(RESULT_OK, intent);
-					startActivityForResult(intent, 1);
 
 					finish();
 

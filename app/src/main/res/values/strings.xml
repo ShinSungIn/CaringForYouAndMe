@@ -24,7 +24,9 @@
 	<string name="action_main6">앱 평가하기(고급)</string>
 	<string name="action_main3">앱정보</string>
 	<string name="action_main5">로그아웃</string>
+	<string name="action_main7">개인정보처리방침</string>
 	<string name="action_alarm">알람설정</string>
+	<string name="action_centerlist">전국치매센터보기</string>
 	<string name="action_mainAll">도움말</string>
 	<string name="action_known1">치매종류 및 원인</string>
 
@@ -106,7 +108,7 @@
 
 	<string name="text_known_kind1">
 		기억력의 저하가 정형적 노화를 벗어나 진행하여 정상이 범주에 속하지 않지만 치매로 진단할 수 있을 정도로 심하지 않은 상태입니다.\n\n
-		매년 10~15% 비율로 치매로 이행되므로 치매의 조기진단과 치료에 중요하다.\n
+		매년 10~15% 비율로 치매로 이행되므로 치매의 조기진단과 치료에 중요합니다..\n
 		‘치매의 전 단계’라고도 합니다.\n\n
 		정상노화 \u003C 경도인지장애 \u003C 치매
 	</string>

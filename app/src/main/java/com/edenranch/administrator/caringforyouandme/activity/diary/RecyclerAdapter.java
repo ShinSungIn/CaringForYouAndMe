@@ -52,7 +52,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 			public void onClick(View v) {
 				//Toast.makeText(context, String.valueOf(item.getSeq()), Toast.LENGTH_SHORT).show();
 
-				Intent intent = new Intent(context, DiarySecGetActivity.class);
+				Intent intent = new Intent(context, DiarySecViewActivity.class);
 				intent.putExtra("Seq", item.getSeq());
 				intent.putExtra("editID", editID);
 				context.startActivity(intent);

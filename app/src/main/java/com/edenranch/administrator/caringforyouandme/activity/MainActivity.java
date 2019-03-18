@@ -298,6 +298,7 @@ public class MainActivity extends AppCompatActivity {
 				"치매돌봄톡 앱은 치매환자와 보호자를 위한 유용한 어플입니다.\n\n" +
 				"앱 버전: " + packageInfo.versionCode + "\n" +
 				"앱 버전명: " + packageInfo.versionName + "\n\n" +
+				"메인화면 상단 메뉴에서 전국치매센터 알아보기 및 알람기능이 제공되고 있습니다.\n\n" +
 				"안드로이드폰 기종이 너무 오래되었거나 또는 최신 안드로이드 폰에서는 사용시 제약사항이 발생 할 수 있습니다.")
 				.setNegativeButton("닫기", null)
 				.create()
@@ -310,6 +311,10 @@ public class MainActivity extends AppCompatActivity {
 		} else if (id == R.id.action_main6) {
 			//앱 평가하기(고급)
 			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://goo.gl/forms/TZNBTMygTh4ooI0Z2")));
+			return true;
+		} else if (id == R.id.action_main7) {
+			//개인정보처리방침
+			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://sungin0605.cafe24.com/PrivacyPolicy.php")));
 			return true;
 		} else if (id == R.id.action_main5) {
 			//로그아웃
@@ -340,6 +345,10 @@ public class MainActivity extends AppCompatActivity {
 			// 알람설정 클릭
 			Intent alarmIntent = new Intent(MainActivity.this, AlarmActivity.class);
 			MainActivity.this.startActivity(alarmIntent);
+			return true;
+		} else if (id == R.id.action_centerlist) {
+			// 전국치매센터 보기
+			startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://sungin0605.cafe24.com/CenterList.php")));
 			return true;
 		}
 

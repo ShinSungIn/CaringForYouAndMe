@@ -172,8 +172,8 @@ public class LoginActivity extends AppCompatActivity {
 				LoginActivity.this.startActivity(registerIntent);
 			}
 		});
-		/*
-		TextView registerButton = (TextView) findViewById(R.id.registerButton);
+
+		TextView registerButton = (TextView) findViewById(R.id.registerButton2);
 		registerButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -182,7 +182,7 @@ public class LoginActivity extends AppCompatActivity {
 				LoginActivity.this.startActivity(registerIntent);
 			}
 		});
-		*/
+
 		mLoginFormView = findViewById(R.id.login_form);
 		mProgressView = findViewById(R.id.login_progress);
 

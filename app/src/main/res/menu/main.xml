@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
 	<item
+			android:id="@+id/action_centerlist"
+			android:title="@string/action_centerlist"
+			android:icon="@drawable/ic_location_city_black_24dp"
+			app:showAsAction="always"/>
+	<item
 			android:id="@+id/action_alarm"
 			android:title="@string/action_alarm"
 			android:icon="@drawable/ic_access_alarm_black_24dp"
@@ -9,5 +14,6 @@
 	<item android:id="@+id/action_main4" android:title="@string/action_main4" android:orderInCategory="100" app:showAsAction="never"/>
 	<item android:id="@+id/action_main6" android:title="@string/action_main6" android:orderInCategory="100" app:showAsAction="never"/>
 	<item android:id="@+id/action_main3" android:title="@string/action_main3" android:orderInCategory="100" app:showAsAction="never"/>
+	<item android:id="@+id/action_main7" android:title="@string/action_main7" android:orderInCategory="100" app:showAsAction="never"/>
 	<item android:id="@+id/action_main5" android:title="@string/action_main5" android:orderInCategory="100" app:showAsAction="never"/>
 </menu>
